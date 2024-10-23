@@ -1,25 +1,25 @@
 {
   "categories": [
     {
-      "category_id": 1,
+      "id": 1,
       "category_name": "Electronics"
     },
     {
-      "category_id": 2,
+      "id": 2,
       "category_name": "Accessories"
     }
   ],
   "brands": [
     {
-      "brand_id": 1,
+      "id": 1,
       "brand_name": "AudioTech"
     },
     {
-      "brand_id": 2,
+      "id": 2,
       "brand_name": "ChargeMaster"
     },
     {
-      "brand_id": 3,
+      "id": 3,
       "brand_name": "ViewPlus"
     }
   ],
@@ -37,7 +37,7 @@
       "image_url": "https://example.com/images/headphones.jpg",
       "created_at": "2024-10-23",
       "updated_at": "2024-10-23",
-      "comments": [
+      "comments": [ 
         {
           "comment_id": 1,
           "user": "John Doe",
