@@ -36,46 +36,21 @@
       "sku": "ATH-5000",
       "image_url": "https://example.com/images/headphones.jpg",
       "created_at": "2024-10-23",
-      "updated_at": "2024-10-23",
-      "comments": [ 
-        {
-          "comment_id": 1,
-          "user": "John Doe",
-          "comment": "Great sound quality and comfortable to wear for long periods.",
-          "rating": 2,
-          "created_at": "2024-10-20"
-        },
-        {
-          "comment_id": 2,
-          "user": "Jane Smith",
-          "comment": "Battery life could be better, but overall a solid product.",
-          "rating": 4.0,
-          "created_at": "2024-10-21"
-        }
-      ]
+      "updated_at": "2024-10-23"
     },
     {
       "id": 2,
       "product_name": "Smartphone Charger",
       "product_description": "Fast-charging USB-C charger compatible with most smartphones.",
       "product_price": 19.99,
-      "available_stock": 300,
+      "available_stock": 0,
       "category_id": 2,
       "brand_id": 2,
       "discount_price": null,
       "sku": "CM-200",
       "image_url": "https://example.com/images/charger.jpg",
       "created_at": "2024-09-12",
-      "updated_at": "2024-10-20",
-      "comments": [
-        {
-          "comment_id": 1,
-          "user": "Alice Green",
-          "comment": "Charges fast and works with all my devices!",
-          "rating": 5.0,
-          "created_at": "2024-10-18"
-        }
-      ]
+      "updated_at": "2024-10-20"
     },
     {
       "id": 3,
@@ -89,23 +64,41 @@
       "sku": "VP-5500",
       "image_url": "https://example.com/images/tv.jpg",
       "created_at": "2024-08-15",
-      "updated_at": "2024-10-22",
-      "comments": [
-        {
-          "comment_id": 1,
-          "user": "Bob Brown",
-          "comment": "Amazing picture quality! Worth every penny.",
-          "rating": 5.0,
-          "created_at": "2024-10-10"
-        },
-        {
-          "comment_id": 2,
-          "user": "Sara Lee",
-          "comment": "Good TV but the sound could be improved.",
-          "rating": 4.2,
-          "created_at": "2024-10-12"
-        }
-      ]
+      "updated_at": "2024-10-22"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "user": "John Doe",
+      "comment": "Great sound quality and comfortable to wear for long periods.",
+      "rating": 2,
+      "created_at": "2024-10-20",
+      "product_id": 1
+    },
+    {
+      "id": 2,
+      "user": "Jane Smith",
+      "comment": "Battery life could be better, but overall a solid product.",
+      "rating": 4.0,
+      "created_at": "2024-10-21",
+      "product_id": 1
+    },
+    {
+      "id": 3,
+      "user": "Alice Green",
+      "comment": "Charges fast and works with all my devices!",
+      "rating": 5.0,
+      "created_at": "2024-10-18",
+      "product_id": 2
+    },
+    {
+      "id": 4,
+      "user": "Bob Brown",
+      "comment": "Amazing picture quality! Worth every penny.",
+      "rating": 5.0,
+      "created_at": "2024-10-10",
+      "product_id": 3
     }
   ],
   "users": [
