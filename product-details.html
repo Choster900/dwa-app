@@ -81,7 +81,7 @@
                                 <div class="breadcrumb-action justify-content-center flex-wrap">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#"><i
+                                            <li class="breadcrumb-item"><a href="/"><i
                                                         class="uil uil-estate"></i>Dashboard</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">Product Details</li>
                                         </ol>
@@ -164,7 +164,7 @@
                                             <!-- Start: Product Title -->
                                             <div class="product-item__title">
                                                 <a href="#">
-                                                    <h1 class="card-title">
+                                                    <h1 class="card-title"  id="product_name">
                                                         This stools are also decently
                                                         stored
                                                     </h1>
@@ -173,7 +173,8 @@
                                             <!-- End: Product Title -->
                                             <div class="product-item__content text-capitalize">
                                                 <!-- Start: Product Ratings -->
-                                                <div class="stars-rating d-flex align-items-center">
+                                                <div id="stars-rating-detail-product"
+                                                    class="stars-rating d-flex align-items-center">
                                                     <span class="star-icon las la-star active"></span>
                                                     <span class="star-icon las la-star active"></span>
                                                     <span class="star-icon las la-star active"></span>
@@ -185,17 +186,15 @@
                                                 </div>
                                                 <!-- End: Product Ratings -->
                                                 <!-- Start: Product Brand -->
-                                                <span class="product-details-brandName">Brand:<span>Louis
-                                                        Poulsen</span></span>
-                                                <span class="product-desc-price">
-                                                    <sub>$</sub>200.00</span>
+                                                <span class="product-details-brandName">Brand:<span id="brand"></span></span>
+                                                <span class="product-desc-price" id="product_price">$1000</span>
                                                 <div class="d-flex align-items-center mb-2">
-                                                    <span class="product-price">$100.00</span>
+                                                    <span class="product-price" id="discount_price">$100.00</span>
                                                     <span class="product-discount">50% Off</span>
                                                 </div>
                                                 <!-- End: Product Brand -->
                                                 <!-- Start: Product Description -->
-                                                <p class=" product-deatils-pera">Lorem ipsum dolor sit amet, consetetur
+                                                <p class=" product-deatils-pera" id="product_description">Lorem ipsum dolor sit amet, consetetur
                                                     sadipscing elitr, sed diam
                                                     nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
                                                 <!-- End: Product Description -->
@@ -204,7 +203,7 @@
                                                 <div class="product-details__availability">
                                                     <div class="title">
                                                         <p>Available:</p>
-                                                        <span class="stock">In stock</span>
+                                                        <span class="stock" id="available_stock">In stock</span>
                                                     </div>
                                                     <div class="title">
                                                         <p>Shipping:</p>
@@ -222,7 +221,7 @@
                                                         <input type="button" value="+"
                                                             class="qty-plus bttn bttn-right wh-36">
                                                     </div>
-                                                    <span class="fs-13 fw-400 color-light my-sm-0 my-10">540 pieces
+                                                    <span id="amount-stock" class="fs-13 fw-400 color-light my-sm-0 my-10">540 pieces
                                                         available</span>
                                                 </div>
                                                 <!-- End: Product Quantity -->
@@ -290,11 +289,7 @@
                                     <div class="product-details__availability">
                                         <div class="title">
                                             <p>Category:</p>
-                                            <span class="free">Furniture</span>
-                                        </div>
-                                        <div class="title">
-                                            <p>Tags:</p>
-                                            <span class="free"> Blue, Green, Light</span>
+                                            <span class="free" id="category">Furniture</span>
                                         </div>
                                     </div>
                                     <!-- End: Product Availability -->
