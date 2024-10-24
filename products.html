@@ -478,9 +478,9 @@
                            </div>
                         </div>
                      </div>
-                      
- 
-                        
+
+
+
                      <!-- End: Top Bar -->
                      <!-- End: Top Bar -->
                      <!-- Start: Shop Item -->
@@ -490,10 +490,10 @@
                            <!-- Start: Shop Item -->
                            <div id="product-page-list" class="row product-page-list justify-content-center">
 
-                             
-                              
+
+
                            </div>
-                           
+
                            <!-- End: Shop Item -->
                         </div>
                         <div class="tab-pane fade" id="timeline" role="tabpanel" aria-labelledby="timeline-tab">
@@ -1342,43 +1342,35 @@
                         <div class="col-12">
                            <div class="user-pagination">
                               <div class="d-flex justify-content-lg-end justify-content-center mt-1 mb-30">
-
-                                 <nav class="dm-page ">
+                                 <nav class="dm-page">
                                     <ul class="dm-pagination d-flex">
                                        <li class="dm-pagination__item">
-                                          <a href="#" class="dm-pagination__link pagination-control"><span
-                                                class="la la-angle-left"></span></a>
-                                          <a href="#" class="dm-pagination__link"><span class="page-number">1</span></a>
-                                          <a href="#" class="dm-pagination__link active"><span
-                                                class="page-number">2</span></a>
-                                          <a href="#" class="dm-pagination__link"><span class="page-number">3</span></a>
-                                          <a href="#" class="dm-pagination__link pagination-control"><span
-                                                class="page-number">...</span></a>
-                                          <a href="#" class="dm-pagination__link"><span
-                                                class="page-number">12</span></a>
-                                          <a href="#" class="dm-pagination__link pagination-control"><span
-                                                class="la la-angle-right"></span></a>
-                                          <a href="#" class="dm-pagination__option">
+                                          <a href="#" class="dm-pagination__link pagination-control" data-page="prev">
+                                             <span class="la la-angle-left"></span>
                                           </a>
                                        </li>
+                                       <!-- Páginas generadas dinámicamente aquí -->
                                        <li class="dm-pagination__item">
                                           <div class="paging-option">
                                              <select name="page-number" class="page-selection">
-                                                <option value="20">20/page</option>
-                                                <option value="40">40/page</option>
-                                                <option value="60">60/page</option>
+                                                <option value="4">4/page</option>
+                                                <option value="8">8/page</option>
+                                                <option value="12">12/page</option>
                                              </select>
                                           </div>
                                        </li>
+                                       <li class="dm-pagination__item">
+                                          <a href="#" class="dm-pagination__link pagination-control" data-page="next">
+                                             <span class="la la-angle-right"></span>
+                                          </a>
+                                       </li>
                                     </ul>
                                  </nav>
-
-
                               </div>
-                              <!-- End of Pagination-->
                            </div>
                         </div>
                      </div>
+
                   </div><!-- End: .columns-2 -->
                </div>
             </div>

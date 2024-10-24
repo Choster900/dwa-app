@@ -2,34 +2,95 @@ $(document).ready(function () {
     const productList = $('#product-page-list');
 
     // Obtener productos
-    $.ajax({
-        type: "GET",
-        url: baseURL + "/products",
-        dataType: "json",
-        success: function (products) {
-            products.forEach(product => {
-                const { id, product_name, product_price, discount_price } = product;
+    let currentPage = 1;
+    const itemsPerPage = 4; // Cambia esto según la opción seleccionada
+    const totalPages = 4; // Este valor deberías obtenerlo dinámicamente
 
-                // Obtener comentarios por productos
-                $.ajax({
-                    type: "GET",
-                    url: baseURL + "/comments?product_id=" + id,
-                    dataType: "json",
-                    success: function (comments) {
-                        const promedioRating = calcularPromedioRating(comments);
-                        productList.append(crearProductoHTML({ id, product_name, product_price, promedioRating, discount_price }));
-                    },
-                    error: function (error) {
-                        console.error("Error al obtener comentarios:", error);
-                        productList.append(crearProductoHTML({ id, product_name, product_price, promedioRating: null, discount_price }));
-                    }
+    // Función para obtener productos
+    function obtenerProductos(page) {
+        $.ajax({
+            type: "GET",
+            url: baseURL + "/products?_page=" + page + "&_per_page=" + itemsPerPage,
+            dataType: "json",
+            success: function (products) {
+                console.log(products);
+                
+                productList.empty(); // Limpia la lista de productos antes de agregar nuevos
+                products.data.forEach(product => {
+                    const { id, product_name, product_price, discount_price } = product;
+
+                    // Obtener comentarios por productos
+                    $.ajax({
+                        type: "GET",
+                        url: baseURL + "/comments?product_id=" + id,
+                        dataType: "json",
+                        success: function (comments) {
+                            const promedioRating = calcularPromedioRating(comments);
+                            productList.append(crearProductoHTML({ id, product_name, product_price, promedioRating, discount_price }));
+                        },
+                        error: function (error) {
+                            console.error("Error al obtener comentarios:", error);
+                            productList.append(crearProductoHTML({ id, product_name, product_price, promedioRating: null, discount_price }));
+                        }
+                    });
                 });
-            });
-        },
-        error: function (error) {
-            console.error("Error al obtener productos:", error);
+
+                // Actualiza la paginación
+                actualizarPaginacion(page, totalPages);
+            },
+            error: function (error) {
+                console.error("Error al obtener productos:", error);
+            }
+        });
+    }
+
+    // Función para actualizar la paginación
+    function actualizarPaginacion(currentPage, totalPages) {
+        const paginationItems = $('.dm-pagination__item').not('.paging-option');
+        paginationItems.slice(1, -1).remove(); // Elimina las páginas actuales antes de agregar nuevas
+
+        for (let i = 1; i <= totalPages; i++) {
+            const pageItem = `<li class="dm-pagination__item">
+                              <a href="#" class="dm-pagination__link page-number" data-page="${i}">
+                                  <span class="page-number">${i}</span>
+                              </a>
+                          </li>`;
+            paginationItems.eq(0).before(pageItem);
+        }
+
+        // Marca la página activa
+        $('.page-number').removeClass('active');
+        $(`.page-number[data-page="${currentPage}"]`).addClass('active');
+    }
+
+    // Manejar eventos de paginación
+    $(document).on('click', '.pagination-control[data-page="prev"]', function (e) {
+        e.preventDefault();
+        if (currentPage > 1) {
+            currentPage--;
+            obtenerProductos(currentPage);
         }
     });
+
+    $(document).on('click', '.pagination-control[data-page="next"]', function (e) {
+        e.preventDefault();
+        if (currentPage < totalPages) {
+            currentPage++;
+            obtenerProductos(currentPage);
+        }
+    });
+
+    $(document).on('click', '.page-number', function (e) {
+        e.preventDefault();
+        currentPage = parseInt($(this).data('page'));
+        obtenerProductos(currentPage);
+    });
+
+    // Inicializa la primera carga de productos
+    $(document).ready(function () {
+        obtenerProductos(currentPage);
+    });
+
 
     function crearProductoHTML({ id, product_name, product_price, promedioRating, discount_price }) {
         let discountPercentage = 0;
