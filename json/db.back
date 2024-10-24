@@ -1,31 +1,31 @@
 {
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "category_name": "Electronics"
     },
     {
-      "id": 2,
+      "id": "2",
       "category_name": "Accessories"
     }
   ],
   "brands": [
     {
-      "id": 1,
+      "id": "1",
       "brand_name": "AudioTech"
     },
     {
-      "id": 2,
+      "id": "2",
       "brand_name": "ChargeMaster"
     },
     {
-      "id": 3,
+      "id": "3",
       "brand_name": "ViewPlus"
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "product_name": "Wireless Bluetooth Headphones",
       "product_description": "Noise-cancelling over-ear headphones with long battery life.",
       "product_price": 59.99,
@@ -39,7 +39,7 @@
       "updated_at": "2024-10-23"
     },
     {
-      "id": 2,
+      "id": "2",
       "product_name": "Smartphone Charger",
       "product_description": "Fast-charging USB-C charger compatible with most smartphones.",
       "product_price": 19.99,
@@ -53,14 +53,14 @@
       "updated_at": "2024-10-20"
     },
     {
-      "id": 3,
+      "id": "3",
       "product_name": "4K Ultra HD Smart TV",
       "product_description": "55-inch 4K UHD smart TV with built-in streaming apps.",
       "product_price": 499.99,
       "available_stock": 75,
       "category_id": 1,
       "brand_id": 3,
-      "discount_price": 449.99,
+      "discount_price": 100,
       "sku": "VP-5500",
       "image_url": "https://example.com/images/tv.jpg",
       "created_at": "2024-08-15",
@@ -69,7 +69,7 @@
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "user": "John Doe",
       "comment": "Great sound quality and comfortable to wear for long periods.",
       "rating": 2,
@@ -77,38 +77,83 @@
       "product_id": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "user": "Jane Smith",
       "comment": "Battery life could be better, but overall a solid product.",
-      "rating": 4.0,
+      "rating": 4,
       "created_at": "2024-10-21",
       "product_id": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "user": "Alice Green",
       "comment": "Charges fast and works with all my devices!",
-      "rating": 5.0,
+      "rating": 5,
       "created_at": "2024-10-18",
       "product_id": 2
     },
     {
-      "id": 4,
+      "id": "4",
       "user": "Bob Brown",
       "comment": "Amazing picture quality! Worth every penny.",
-      "rating": 5.0,
+      "rating": 5,
       "created_at": "2024-10-10",
       "product_id": 3
     }
   ],
   "users": [
     {
-      "id": 1,
-      "name": "John Doe"
+      "id": "1",
+      "name": "John Doe",
+      "username": "Choster900",
+      "email": "john.doe@example.com",
+      "password": "12345678",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+      "roles": [
+        "admin",
+        "seller"
+      ],
+      "created_at": "2024-10-23T10:00:00Z",
+      "updated_at": "2024-10-23T12:00:00Z"
     },
     {
-      "id": 2,
-      "name": "Jane Smith"
+      "id": "2",
+      "name": "Jane Smith",
+      "username": "Choster900",
+      "email": "jane.smith@example.com",
+      "password": "hashed_password_2",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ8",
+      "roles": [
+        "customer"
+      ],
+      "created_at": "2024-10-23T10:30:00Z",
+      "updated_at": "2024-10-23T12:30:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Alice Johnson",
+      "username": "Choster900",
+      "email": "alice.johnson@example.com",
+      "password": "hashed_password_3",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ7",
+      "roles": [
+        "moderator"
+      ],
+      "created_at": "2024-10-23T11:00:00Z",
+      "updated_at": "2024-10-23T12:45:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Bob Lee",
+      "email": "bob.lee@example.com",
+      "username": "Choster900",
+      "password": "hashed_password_4",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
+      "roles": [
+        "guest"
+      ],
+      "created_at": "2024-10-23T11:15:00Z",
+      "updated_at": "2024-10-23T11:30:00Z"
     }
   ]
 }
