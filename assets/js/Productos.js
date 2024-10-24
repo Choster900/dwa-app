@@ -8,23 +8,20 @@ $(document).ready(function () {
         dataType: "json",
         success: function (products) {
             products.forEach(product => {
-                const { id, product_name, product_price } = product;
+                const { id, product_name, product_price, discount_price } = product;
 
-                // Hacer segunda petición para obtener los comentarios
+                // Obtener comentarios por productos
                 $.ajax({
                     type: "GET",
                     url: baseURL + "/comments?product_id=" + id,
                     dataType: "json",
                     success: function (comments) {
                         const promedioRating = calcularPromedioRating(comments);
-                        
-                        // Solo aquí se agrega el producto al DOM, ya con el rating calculado
-                        productList.append(crearProductoHTML({ id, product_name, product_price, promedioRating }));
+                        productList.append(crearProductoHTML({ id, product_name, product_price, promedioRating, discount_price }));
                     },
                     error: function (error) {
                         console.error("Error al obtener comentarios:", error);
-                        // En caso de error, puedes agregar el producto sin rating
-                        productList.append(crearProductoHTML({ id, product_name, product_price, promedioRating: null }));
+                        productList.append(crearProductoHTML({ id, product_name, product_price, promedioRating: null, discount_price }));
                     }
                 });
             });
@@ -34,7 +31,15 @@ $(document).ready(function () {
         }
     });
 
-    function crearProductoHTML({ id, product_name, product_price, promedioRating }) {
+    function crearProductoHTML({ id, product_name, product_price, promedioRating, discount_price }) {
+        let discountPercentage = 0;
+        if (discount_price && discount_price < product_price) {
+            discountPercentage = ((product_price - discount_price) / product_price) * 100;
+            discountPercentage = discountPercentage.toFixed(0); // Redondear a número entero
+        }
+
+        let finalPrice = discount_price ? discount_price : product_price;
+
         return `
             <div class="cus-xl-3 col-lg-6 col-md-11 col-12 mb-30 px-10">
                 <div class="card product product--grid">
@@ -63,9 +68,11 @@ $(document).ready(function () {
                                 </div>
                                 <div class="product-item__footer">
                                     <div class="d-flex align-items-center flex-wrap">
-                                        <span class="product-desc-price">$${product_price.toFixed(2)}</span>
-                                        <span class="product-price">$${product_price.toFixed(2)}</span>
-                                        <span class="product-discount">${product_price}</span>
+                                        <span class="product-desc-price">$${finalPrice.toFixed(2)}</span>
+                                        ${discount_price ? `
+                                            <span class="product-price text-muted" style="text-decoration: line-through;">$${product_price.toFixed(2)}</span>
+                                            <span class="product-discount">${discountPercentage}% Off</span>
+                                        ` : ''}
                                     </div>
                                 </div>
                                 <div class="product-item__button d-flex mt-20 flex-wrap">

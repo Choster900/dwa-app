@@ -10,10 +10,7 @@ $(document).ready(function () {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    // Obtener el 'id' del producto desde la URL
     const productId = getParameterByName('id');
-
-    console.log(productId);
 
     $.ajax({
         type: "GET",
@@ -22,38 +19,31 @@ $(document).ready(function () {
         success: function (productResponse) {
             console.log(productResponse);
     
-            // Calcular el porcentaje de descuento si el precio de descuento existe
             let discountPercentage = 0;
             if (productResponse.discount_price && productResponse.discount_price < productResponse.product_price) {
                 discountPercentage = ((productResponse.product_price - productResponse.discount_price) / productResponse.product_price) * 100;
                 discountPercentage = discountPercentage.toFixed(0); // Redondear a número entero
             }
     
-            // Actualizar el nombre del producto
             $("#product_name").text(productResponse.product_name);
     
-            // Actualizar el precio con descuento si existe, si no, mostrar el precio original
             $("#product_price").html(`<sub>$</sub>${productResponse.discount_price || productResponse.product_price}`);
     
-            // Si no hay descuento, oculta el precio original y el porcentaje
             if (!productResponse.discount_price) {
-                $("#discount_price").hide(); // Si no hay descuento, ocultar el precio original
+                $("#discount_price").hide(); 
             } else {
-                $("#discount_price").show(); // Mostrar el precio original si existe descuento
-                $("#discount_price").text(productResponse.product_price); // Mostrar el precio original
+                $("#discount_price").show();
+                $("#discount_price").text(productResponse.product_price);
             }
     
-            // Mostrar el porcentaje de descuento si existe
             if (discountPercentage > 0) {
                 $(".product-discount").text(`${discountPercentage}% Off`);
             } else {
-                $(".product-discount").text(""); // Si no hay descuento, ocultar
+                $(".product-discount").text("");
             }
     
-            // Actualizar la descripción del producto
             $("#product_description").text(productResponse.product_description);
     
-            // Actualizar la disponibilidad del stock
             if (productResponse.available_stock <= 0) {
                 $("#available_stock").text("Out of stock");
                 $("#available_stock").css("color", "red");
@@ -87,7 +77,7 @@ $(document).ready(function () {
                 }
             });
 
-
+            // Obtener la categoria
             $.ajax({
                 type: "GET",
                 url: baseURL + "/categories/" + productResponse.category_id,

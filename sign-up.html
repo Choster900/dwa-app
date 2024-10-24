@@ -70,14 +70,22 @@
                      <div class="card border-0">
                         <div class="card-header">
                            <div class="edit-profile__title">
-                              <h6>Sign in HexaDash</h6>
+                              <h6>Sign Up HexaDash</h6>
                            </div>
                         </div>
                         <div class="card-body">
                            <div class="edit-profile__body">
-                              <div class="form-group mb-25">
-                                 <label for="username">Email Address</label>
-                                 <input type="text" class="form-control" id="username" placeholder="name@example.com">
+                              <div class="form-group mb-20">
+                                 <label for="name">Name</label>
+                                 <input type="text" class="form-control" id="name" placeholder="Full Name">
+                              </div>
+                              <div class="form-group mb-20">
+                                 <label for="username">Username</label>
+                                 <input type="text" class="form-control" id="username" placeholder="Username">
+                              </div>
+                              <div class="form-group mb-20">
+                                 <label for="email">Email Address</label>
+                                 <input type="text" class="form-control" id="email" placeholder="name@example.com">
                               </div>
                               <div class="form-group mb-15">
                                  <label for="password-field">Password</label>
@@ -89,18 +97,20 @@
                               </div>
                               <div class="admin-condition">
                                  <div class="checkbox-theme-default custom-checkbox ">
-                                    <input class="checkbox" type="checkbox" id="check-1">
-                                    <label for="check-1">
-                                       <span class="checkbox-text">Keep me logged in</span>
+                                    <input class="checkbox" type="checkbox" id="admin-1">
+                                    <label for="admin-1">
+                                       <span class="checkbox-text">Creating an account means you’re okay with our
+                                          <a href="#" class="color-primary">Terms of Service</a> and
+                                          <a href="#" class="color-primary">Privacy Policy</a>
+                                       </span>
                                     </label>
                                  </div>
-                                 <a href="forget-password.html">Forget password?</a>
                               </div>
                               <div
                                  class="admin__button-group button-group d-flex pt-1 justify-content-md-start justify-content-center">
                                  <button
                                     class="btn btn-primary btn-default w-100 btn-squared text-capitalize lh-normal px-50 signIn-createBtn">
-                                    Sign In
+                                    Create Account
                                  </button>
                               </div>
                               <div id="error-message" style="color: red; display: none; margin-top: 10px; text-align: center;"></div>
@@ -138,8 +148,8 @@
                         <div class="admin-topbar">
                            <p class="mb-0">
                               Don't have an account?
-                              <a href="sign-up.html" class="color-primary">
-                                 Sign up
+                              <a href="login.html" class="color-primary">
+                                 Sign In
                               </a>
                            </p>
                         </div><!-- End: .admin-topbar  -->
@@ -262,10 +272,10 @@
 
    <script src="assets/theme_assets/js/main.js"></script>
 
-   <!-- endinject-->
-
    <script src="config.js"></script>
    <script src="assets/js/Login.js"></script>
+
+   <!-- endinject-->
 </body>
 
 </html>
