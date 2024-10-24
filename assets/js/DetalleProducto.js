@@ -70,7 +70,7 @@ $(document).ready(function () {
             // Obtener la marca
             $.ajax({
                 type: "GET",
-                url: baseURL + "/brands/" + productResponse.brand_id,
+                url: baseURL + "/brands/" + productResponse.brandId,
                 dataType: "json",
                 success: function (response) {
                     $("#brand").html(response.brand_name);
@@ -83,7 +83,7 @@ $(document).ready(function () {
                 url: baseURL + "/categories/" + productResponse.category_id,
                 dataType: "json",
                 success: function (response) {
-                    $("#category").html(response.response.category_name);
+                    $("#category").html(response.category_name);
                 }
             });
         },

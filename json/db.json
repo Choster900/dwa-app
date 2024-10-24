@@ -43,7 +43,7 @@
       "product_price": 59.99,
       "available_stock": 150,
       "category_id": 1,
-      "brand_id": 1,
+      "brandId": "1",
       "discount_price": 49.99,
       "sku": "ATH-5000",
       "image_url": "https://example.com/images/headphones.jpg",
@@ -57,7 +57,7 @@
       "product_price": 19.99,
       "available_stock": 0,
       "category_id": 2,
-      "brand_id": 2,
+      "brandId": "2",
       "discount_price": null,
       "sku": "CM-200",
       "image_url": "https://example.com/images/charger.jpg",
@@ -71,152 +71,12 @@
       "product_price": 499.99,
       "available_stock": 75,
       "category_id": 1,
-      "brand_id": 3,
+      "brandId": "3",
       "discount_price": 100,
       "sku": "VP-5500",
       "image_url": "https://example.com/images/tv.jpg",
       "created_at": "2024-08-15",
       "updated_at": "2024-10-22"
-    },
-    {
-      "id": "4",
-      "product_name": "Portable Power Bank",
-      "product_description": "10,000mAh portable power bank with dual USB output.",
-      "product_price": 29.99,
-      "available_stock": 120,
-      "category_id": 2,
-      "brand_id": 5,
-      "discount_price": 24.99,
-      "sku": "PT-1000",
-      "image_url": "https://example.com/images/powerbank.jpg",
-      "created_at": "2024-10-01",
-      "updated_at": "2024-10-20"
-    },
-    {
-      "id": "5",
-      "product_name": "Smart Refrigerator",
-      "product_description": "Energy-efficient refrigerator with WiFi connectivity and smart temperature control.",
-      "product_price": 999.99,
-      "available_stock": 30,
-      "category_id": 3,
-      "brand_id": 4,
-      "discount_price": 899.99,
-      "sku": "HB-4000",
-      "image_url": "https://example.com/images/fridge.jpg",
-      "created_at": "2024-07-18",
-      "updated_at": "2024-10-22"
-    },
-    {
-      "id": "6",
-      "product_name": "Wireless Earbuds",
-      "product_description": "Compact wireless earbuds with charging case and touch controls.",
-      "product_price": 79.99,
-      "available_stock": 200,
-      "category_id": 1,
-      "brand_id": 1,
-      "discount_price": 69.99,
-      "sku": "ATH-EB200",
-      "image_url": "https://example.com/images/earbuds.jpg",
-      "created_at": "2024-10-05",
-      "updated_at": "2024-10-20"
-    },
-    {
-      "id": "7",
-      "product_name": "Smartwatch",
-      "product_description": "Fitness tracking smartwatch with heart rate monitor and GPS.",
-      "product_price": 149.99,
-      "available_stock": 80,
-      "category_id": 1,
-      "brand_id": 2,
-      "discount_price": 129.99,
-      "sku": "CM-SW500",
-      "image_url": "https://example.com/images/smartwatch.jpg",
-      "created_at": "2024-09-20",
-      "updated_at": "2024-10-23"
-    },
-    {
-      "id": "8",
-      "product_name": "Electric Kettle",
-      "product_description": "1.7L stainless steel electric kettle with auto shut-off.",
-      "product_price": 39.99,
-      "available_stock": 150,
-      "category_id": 3,
-      "brand_id": 4,
-      "discount_price": 34.99,
-      "sku": "HB-EK700",
-      "image_url": "https://example.com/images/kettle.jpg",
-      "created_at": "2024-08-10",
-      "updated_at": "2024-10-23"
-    },
-    {
-      "id": "9",
-      "product_name": "Laptop Cooling Pad",
-      "product_description": "Portable laptop cooling pad with adjustable fan speeds.",
-      "product_price": 24.99,
-      "available_stock": 95,
-      "category_id": 2,
-      "brand_id": 5,
-      "discount_price": null,
-      "sku": "PT-LC600",
-      "image_url": "https://example.com/images/coolingpad.jpg",
-      "created_at": "2024-09-05",
-      "updated_at": "2024-10-23"
-    },
-    {
-      "id": "10",
-      "product_name": "Noise-Cancelling Microphone",
-      "product_description": "High-sensitivity microphone with noise-cancellation and USB connection.",
-      "product_price": 49.99,
-      "available_stock": 60,
-      "category_id": 1,
-      "brand_id": 1,
-      "discount_price": null,
-      "sku": "ATH-MC300",
-      "image_url": "https://example.com/images/microphone.jpg",
-      "created_at": "2024-07-22",
-      "updated_at": "2024-10-19"
-    },
-    {
-      "id": "11",
-      "product_name": "Bluetooth Speaker",
-      "product_description": "Portable Bluetooth speaker with 360-degree sound and 10-hour battery life.",
-      "product_price": 89.99,
-      "available_stock": 110,
-      "category_id": 1,
-      "brand_id": 1,
-      "discount_price": 79.99,
-      "sku": "ATH-BS800",
-      "image_url": "https://example.com/images/speaker.jpg",
-      "created_at": "2024-09-14",
-      "updated_at": "2024-10-20"
-    },
-    {
-      "id": "12",
-      "product_name": "USB-C Docking Station",
-      "product_description": "Docking station with multiple USB-C ports, HDMI, and Ethernet support.",
-      "product_price": 99.99,
-      "available_stock": 50,
-      "category_id": 2,
-      "brand_id": 5,
-      "discount_price": 89.99,
-      "sku": "PT-DS900",
-      "image_url": "https://example.com/images/dockingstation.jpg",
-      "created_at": "2024-09-29",
-      "updated_at": "2024-10-23"
-    },
-    {
-      "id": "13",
-      "product_name": "Air Purifier",
-      "product_description": "HEPA air purifier for large rooms, with smart air quality monitoring.",
-      "product_price": 199.99,
-      "available_stock": 40,
-      "category_id": 3,
-      "brand_id": 4,
-      "discount_price": 179.99,
-      "sku": "HB-AP1500",
-      "image_url": "https://example.com/images/airpurifier.jpg",
-      "created_at": "2024-07-30",
-      "updated_at": "2024-10-23"
     }
   ],
   "comments": [
@@ -226,7 +86,7 @@
       "comment": "Great sound quality and comfortable to wear for long periods.",
       "rating": 4,
       "created_at": "2024-10-20",
-      "product_id": 1
+      "productId": "1"
     },
     {
       "id": "2",
@@ -234,7 +94,7 @@
       "comment": "Charges my phone quickly, but the cable feels a bit flimsy.",
       "rating": 3,
       "created_at": "2024-09-14",
-      "product_id": 2
+      "productId": "2"
     },
     {
       "id": "3",
@@ -242,10 +102,71 @@
       "comment": "Picture quality is amazing, and setup was a breeze!",
       "rating": 5,
       "created_at": "2024-08-25",
-      "product_id": 3
+      "productId": "3"
     }
   ],
-
+  "shopping_cart": [
+    {
+      "quantity": 10,
+      "userId": "1",
+      "productId": "1",
+      "added_at": "2024-10-24T14:30:00Z",
+      "updated_at": "2024-10-24T14:30:00Z",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "productId": "3",
+      "quantity": 1,
+      "added_at": "2024-10-24T14:30:00Z",
+      "updated_at": "2024-10-24T14:30:00Z"
+    },
+    {
+      "quantity": 2,
+      "userId": "1",
+      "productId": "3",
+      "added_at": "2024-10-24T14:30:00Z",
+      "updated_at": "2024-10-24T14:30:00Z",
+      "id": "3"
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "1",
+      "userId": "1",
+      "total_amount": 159.97,
+      "created_at": "2024-10-24T15:00:00Z",
+      "products": [
+        {
+          "product_id": "1",
+          "product_name": "Wireless Bluetooth Headphones",
+          "quantity": 2,
+          "price_per_unit": 59.99
+        },
+        {
+          "product_id": "3",
+          "product_name": "4K Ultra HD Smart TV",
+          "quantity": 1,
+          "price_per_unit": 499.99
+        }
+      ]
+    },
+    {
+      "invoice_id": "2",
+      "userId": "2",
+      "total_amount": 59.97,
+      "created_at": "2024-10-24T15:05:00Z",
+      "products": [
+        {
+          "product_id": "2",
+          "product_name": "Smartphone Charger",
+          "quantity": 3,
+          "price_per_unit": 19.99
+        }
+      ]
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -254,7 +175,10 @@
       "email": "john.doe@example.com",
       "password": "12345678",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-      "roles": ["admin", "seller"],
+      "roles": [
+        "admin",
+        "seller"
+      ],
       "created_at": "2024-10-23T10:00:00Z",
       "updated_at": "2024-10-23T12:00:00Z"
     },
@@ -265,7 +189,9 @@
       "email": "jane.smith@example.com",
       "password": "hashed_password_2",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ8",
-      "roles": ["customer"],
+      "roles": [
+        "customer"
+      ],
       "created_at": "2024-10-23T10:30:00Z",
       "updated_at": "2024-10-23T12:30:00Z"
     },
@@ -276,7 +202,9 @@
       "email": "alice.johnson@example.com",
       "password": "hashed_password_3",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ7",
-      "roles": ["moderator"],
+      "roles": [
+        "moderator"
+      ],
       "created_at": "2024-10-23T11:00:00Z",
       "updated_at": "2024-10-23T12:45:00Z"
     },
@@ -287,7 +215,9 @@
       "username": "Choster900",
       "password": "hashed_password_4",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
-      "roles": ["guest"],
+      "roles": [
+        "guest"
+      ],
       "created_at": "2024-10-23T11:15:00Z",
       "updated_at": "2024-10-23T11:30:00Z"
     }
