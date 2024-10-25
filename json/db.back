@@ -205,12 +205,12 @@
   ],
   "shopping_cart": [
     {
-      "quantity": 1,
+      "quantity": 10,
       "userId": "1",
-      "isSelled": false,
       "productId": "1",
+      "isSelled": false,
       "added_at": "2024-10-24T14:30:00Z",
-      "updated_at": "2024-10-24T14:30:00Z",
+      "updated_at": "2024-10-25T15:45:47.890Z",
       "id": "1"
     },
     {
@@ -230,6 +230,33 @@
       "quantity": 3,
       "added_at": "2024-10-24T14:31:00Z",
       "updated_at": "2024-10-24T14:31:00Z"
+    },
+    {
+      "id": "5dcd",
+      "quantity": 10,
+      "userId": "1",
+      "productId": "4",
+      "isSelled": false,
+      "added_at": "2024-10-24T14:30:00Z",
+      "updated_at": "2024-10-25T15:43:21.305Z"
+    },
+    {
+      "id": "beea",
+      "quantity": 39,
+      "userId": 1,
+      "productId": "8",
+      "isSelled": false,
+      "added_at": "2024-10-25T15:44:05.720Z",
+      "updated_at": "2024-10-25T16:30:10.532Z"
+    },
+    {
+      "id": "143f",
+      "quantity": 12,
+      "userId": 1,
+      "productId": "7",
+      "isSelled": false,
+      "added_at": "2024-10-25T15:48:15.117Z",
+      "updated_at": "2024-10-25T17:26:11.626Z"
     }
   ],
   "invoices": [

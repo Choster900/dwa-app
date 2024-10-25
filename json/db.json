@@ -251,12 +251,12 @@
     },
     {
       "id": "143f",
-      "quantity": 3,
+      "quantity": 12,
       "userId": 1,
       "productId": "7",
       "isSelled": false,
       "added_at": "2024-10-25T15:48:15.117Z",
-      "updated_at": "2024-10-25T16:26:25.022Z"
+      "updated_at": "2024-10-25T17:26:11.626Z"
     }
   ],
   "invoices": [

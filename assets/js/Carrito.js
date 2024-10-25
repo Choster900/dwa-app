@@ -63,7 +63,7 @@ $(document).ready(function () {
                     const quantity = cartItem.quantity || 1;
 
                     return `
-                        <tr id="row-${id}">
+                        <tr id="row-${id}" data-product-id="${id}">
                             <td class="Product-cart-title">
                                 <div class="media align-items-center">
                                     <img class="me-3 wh-80 align-self-center radius-xl" src="img/cart1.png" alt="${product_name}">
@@ -104,7 +104,7 @@ $(document).ready(function () {
                             </td>
                             <td class="text-center subtotal" id="subtotal-${id}">$${(discount_price ? discount_price * quantity : product_price * quantity).toFixed(2)} </td>
                             <td class="actions">
-                                <button type="button" class="action-btn float-end" data-product-id="${id}">
+                                <button type="button"  class="action-btn btn-delete float-end" data-product-id="${id}">
                                     <i class="las la-trash-alt"></i>
                                 </button>
                             </td>
@@ -136,65 +136,101 @@ $(document).ready(function () {
         }
     });
 
-    // Evento para incrementar la cantidad
+    // Click para aumentar uno en los productos
     $(document).on('click', '.qty-plus', function (event) {
-        event.preventDefault(); // Evitar recarga de página si está dentro de un formulario o botón submit
+        event.preventDefault();
 
         const cartItemId = $(this).data('product-id');
         const productPrice = $(this).data('product-price');
         console.log(productPrice);
 
-        // Actualizar subtotal
         actualizarSubtotal(cartItemId, parseInt($(this).siblings('.input').val()) + 1, productPrice);
         actualizarCarrito(cartItemId, parseInt($(this).siblings('.input').val()) + 1)
     });
 
 
-    // Evento para disminuir la cantidad
+    // Click para disminuir uno en los productos
     $(document).on('click', '.qty-minus', function () {
         const cartItemId = $(this).data('product-id');
         const productPrice = $(this).data('product-price');
-
+        const $quantityInput = $(this).siblings('.input');
 
         actualizarSubtotal(cartItemId, parseInt($(this).siblings('.input').val()) - 1, productPrice);
-         actualizarCarrito(cartItemId, parseInt($(this).siblings('.input').val()) - 1)
 
-        /* 
-        console.log(parseInt($(this).siblings('.input').val()) - 1);
 
         if ((parseInt($(this).siblings('.input').val()) - 1) === 0) {
-            // Pregunta al usuario si desea eliminar el artículo
+            $('#modal-info-confirmed').modal({
+                backdrop: 'static',
+                keyboard: false
+            }).modal('show');
 
             $('#modal-info-confirmed').modal('show');
 
-            //  alert("se elimina")
 
             $('#modal-info-confirmed .btn-info').off('click').on('click', function () {
-                parseInt($(this).siblings('.input').val()) + 1
-                $('#modal-info-confirmed').modal('hide'); // Oculta el modal después de la acción
+                $('#modal-info-confirmed').modal('hide');
+                eliminarDelCarrito(cartItemId);
+                $(`tr[data-product-id="${cartItemId}"]`).remove();
             });
 
-            // Si hace clic en "Cancel", restablece la cantidad a 1
             $('#modal-info-confirmed .btn-light').off('click').on('click', function () {
-                $('#modal-info-confirmed').modal('hide'); // Oculta el modal sin eliminar el artículo
+                $quantityInput.val(1);
+                actualizarSubtotal(cartItemId, 1, productPrice);
+                $('#modal-info-confirmed').modal('hide');
             });
 
         } else {
-            // Actualizar el subtotal y la cantidad si no es 0
-            console.log("continua disminuyendo" + parseInt($(this).siblings('.input').val()));
 
-        } */
+            actualizarCarrito(cartItemId, parseInt($(this).siblings('.input').val()) - 1)
+        }
     });
 
-    // Evento para actualizar cantidad al cambiar manualmente el input
-    $(document).on('change', '.input', function () {
 
+    $(document).on('click', '.btn-delete', function (e) {
+        const cartItemId = $(this).data('product-id');
+
+        $('#modal-info-confirmed').modal('show');
+
+        $('#modal-info-confirmed .btn-info').off('click').on('click', function () {
+            eliminarDelCarrito(cartItemId); // Llama a la función para eliminar el producto
+            $(`tr[data-product-id="${cartItemId}"]`).remove();
+
+            $('#modal-info-confirmed').modal('hide'); // Cierra el modal
+        });
+
+        $('#modal-info-confirmed .btn-light').off('click').on('click', function () {
+            $('#modal-info-confirmed').modal('hide'); // Cierra el modal sin eliminar
+        });
+    });
+
+
+
+    function eliminarDelCarrito(cartItemId) {
+        $.ajax({
+            type: "DELETE",
+            url: `${baseURL}/shopping_cart/${cartItemId}`,
+            success: function (response) {
+                console.log("Artículo eliminado del carrito:", response);
+            },
+            error: function (error) {
+                console.error("Error al eliminar el artículo:", error);
+            }
+        });
+    }
+
+    $(document).on('change', '.input', function () {
         const cartItemId = $(this).data('product-id');
         const productPrice = $(this).siblings('.qty-plus').data('product-price');
+        let quantity = parseInt($(this).val());
 
-        actualizarSubtotal(cartItemId, parseInt($(this).val()), productPrice);
-        actualizarCarrito(cartItemId, parseInt($(this).val()))
+        if (quantity <= 0) {
 
+            $('#modal-info-error').modal('show');
+            quantity = 1;
+            $(this).val(quantity);
+        }
+
+        actualizarSubtotal(cartItemId, quantity, productPrice);
+        actualizarCarrito(cartItemId, quantity);
     });
-
 });
