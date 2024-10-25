@@ -15,6 +15,40 @@ $(document).ready(function () {
         $("#total-cart").text(`$${total.toFixed(2)}`);
     }
 
+    function calcularTotalCompra(totalOrder) {
+        console.log(totalOrder);
+
+        const coupon = {
+            "id": "1",
+            "codigo": "DESCUENTO10",
+            "descuento": 0.10, // Valor del descuento
+            "tipo": "porcentaje" // Puede ser "porcentaje" o "fijo"
+        };
+
+        const totPrice = totalOrder.reduce((acc, cart) =>
+            acc + (cart.product.discount_price !== null ? cart.product.discount_price : cart.product.product_price) * cart.quantity
+            , 0);
+
+        console.log("Total Price (with quantities):", totPrice);
+
+        // Muestra el subtotal antes de aplicar el descuento
+        $('#subtotal-value').text(`$${totPrice.toFixed(2)}`);
+
+        let finalPrice = 0;
+
+        // Aplica el descuento solo si el cupón tiene datos
+        if (coupon) {
+            finalPrice = totPrice * coupon.descuento;
+            $("#discount-price").text(`-$${finalPrice.toFixed(2)}`);
+        }else{
+            $("#discount-div").hide();
+        }
+
+        // Muestra el precio final con el descuento aplicado
+    }
+
+
+
     function actualizarCarrito(cartItemId, nuevaCantidad) {
 
         $.ajax({
@@ -49,6 +83,8 @@ $(document).ready(function () {
                     `);
                     return;
                 }
+
+                calcularTotalCompra(response);
 
                 const cartItemsHTML = response.map(cartItem => {
                     const { product, id } = cartItem;
@@ -233,4 +269,38 @@ $(document).ready(function () {
         actualizarSubtotal(cartItemId, quantity, productPrice);
         actualizarCarrito(cartItemId, quantity);
     });
+
+    $(document).on('submit', '#coupon-form', function (e) {
+        e.preventDefault(); // Evita el envío por defecto del formulario
+
+        const couponCode = $('#coupon-code').val().trim();
+
+        // Validar que el campo no esté vacío
+        if (!couponCode) {
+            alert('Please enter a coupon code.');
+            return;
+        }
+
+        // Realizar llamada AJAX para buscar el cupón en JSON Server
+        $.ajax({
+            url: `${baseURL}/coupons?codigo=${couponCode}`,
+            method: 'GET',
+            success: function (coupons) {
+                if (coupons.length > 0) {
+                    const coupon = coupons[0]; // Toma el primer resultado
+
+                    console.log(coupon);
+
+                    // Aplicar el descuento según el tipo de cupón
+                } else {
+                    alert('Coupon not found or invalid.');
+                }
+            },
+            error: function () {
+                alert('Error applying coupon.');
+            }
+        });
+    });
+
+
 });

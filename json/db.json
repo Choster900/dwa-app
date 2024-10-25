@@ -205,12 +205,12 @@
   ],
   "shopping_cart": [
     {
-      "quantity": 10,
+      "quantity": 12,
       "userId": "1",
       "productId": "1",
       "isSelled": false,
       "added_at": "2024-10-24T14:30:00Z",
-      "updated_at": "2024-10-25T15:45:47.890Z",
+      "updated_at": "2024-10-25T20:03:53.504Z",
       "id": "1"
     },
     {
@@ -302,6 +302,7 @@
       "username": "Choster900",
       "email": "john.doe@example.com",
       "password": "12345678",
+      "couponId": "1",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
       "roles": [
         "admin",
@@ -316,6 +317,7 @@
       "username": "Choster900",
       "email": "jane.smith@example.com",
       "password": "hashed_password_2",
+      "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ8",
       "roles": [
         "customer"
@@ -324,30 +326,101 @@
       "updated_at": "2024-10-23T12:30:00Z"
     },
     {
-      "id": "3",
-      "name": "Alice Johnson",
+      "id": "7693",
+      "name": "SERGIO ADONAY LOPEZ MEJIA",
       "username": "Choster900",
-      "email": "alice.johnson@example.com",
-      "password": "hashed_password_3",
-      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ7",
-      "roles": [
-        "moderator"
-      ],
-      "created_at": "2024-10-23T11:00:00Z",
-      "updated_at": "2024-10-23T12:45:00Z"
-    },
-    {
-      "id": "4",
-      "name": "Bob Lee",
-      "email": "bob.lee@example.com",
-      "username": "Choster900",
-      "password": "hashed_password_4",
+      "email": "16adonaysergio@gmail.com",
+      "password": "12345678",
+      "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
       "roles": [
         "guest"
       ],
-      "created_at": "2024-10-23T11:15:00Z",
-      "updated_at": "2024-10-23T11:30:00Z"
+      "created_at": "2024-10-25T21:30:05.287Z",
+      "updated_at": null
+    }
+  ],
+  "addresses": [
+    {
+      "id": "A001",
+      "userId": "1",
+      "saveForNextShop": true,
+      "principalAddress": true,
+      "contactName": "John Doe",
+      "companyName": "Doe Corp",
+      "phoneNumber": "+440123456789",
+      "countryRegion": "Event",
+      "streetAddress": {
+        "houseNumberAndStreetName": "123 Example Street",
+        "apartmentSuiteUnit": "Apt 4B"
+      },
+      "city": "Enter city",
+      "zipPostalCode": "12345"
+    }
+  ],
+  "coupons": [
+    {
+      "id": "1",
+      "codigo": "DESCUENTO10",
+      "descuento": 10,
+      "tipo": "porcentaje"
+    },
+    {
+      "id": "2",
+      "codigo": "DESCUENTO5",
+      "descuento": 5,
+      "tipo": "fijo"
+    },
+    {
+      "id": "3",
+      "codigo": "ENVIOGRATIS",
+      "descuento": 0,
+      "tipo": "envio"
+    }
+  ],
+  "envios": [
+    {
+      "id": "1",
+      "tipo_envio": "estándar",
+      "tiempo_entrega": "5-7 días hábiles",
+      "tarifa": 5,
+      "zona_geografica": "nacional"
+    },
+    {
+      "id": "2",
+      "tipo_envio": "expreso",
+      "tiempo_entrega": "1-2 días hábiles",
+      "tarifa": 15,
+      "zona_geografica": "nacional"
+    },
+    {
+      "id": "3",
+      "tipo_envio": "internacional",
+      "tiempo_entrega": "10-15 días hábiles",
+      "tarifa_base": 20,
+      "tarifa_por_peso": 5,
+      "zona_geografica": "internacional"
+    }
+  ],
+  "zonas": [
+    {
+      "id": "local",
+      "descripcion": "Dentro de la misma ciudad",
+      "tarifa_base": 3,
+      "tiempo_entrega": "1-2 días hábiles"
+    },
+    {
+      "id": "nacional",
+      "descripcion": "Dentro del mismo país",
+      "tarifa_base": 5,
+      "tiempo_entrega": "3-5 días hábiles"
+    },
+    {
+      "id": "internacional",
+      "descripcion": "Fuera del país",
+      "tarifa_base": 20,
+      "tarifa_por_peso": 10,
+      "tiempo_entrega": "10-15 días hábiles"
     }
   ]
 }

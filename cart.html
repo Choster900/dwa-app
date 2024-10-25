@@ -105,8 +105,9 @@
 
          </div>
 
-         
-         <div class="modal-info-error modal fade show" id="modal-info-error" tabindex="-1" role="dialog" aria-hidden="true">
+
+         <div class="modal-info-error modal fade show" id="modal-info-error" tabindex="-1" role="dialog"
+            aria-hidden="true">
 
 
             <div class="modal-dialog modal-sm modal-info" role="document">
@@ -175,18 +176,6 @@
                               <tbody>
 
                               </tbody>
-                              <tfoot>
-                                 <tr>
-                                    <td colspan="2">
-                                       <div class="product-cart__cupon">
-                                          <input type="text" class="form-control  col-xl-4 col-md-6 "
-                                             placeholder="Coupon code" />
-                                          <a href="#" class="btn btn-primary col-xl-3 col-lg-4 space-nowrap">Apply
-                                             Coupon</a>
-                                       </div>
-                                    </td>
-                                 </tr>
-                              </tfoot>
                            </table><!-- End: table -->
                         </div>
                      </div><!-- End: .product-cart-->
@@ -200,35 +189,39 @@
                            <div class="total">
                               <div class="subtotalTotal">
                                  Subtotal:
-                                 <span>$1,690.26</span>
+                                 <span id="subtotal-value">$1,690.26</span>
                               </div>
-                              <div class="taxes">
+                              <div class="taxes" id="discount-div">
                                  discount:
-                                 <span>-$126.30</span>
+                                 <span id="discount-price">-$126.30</span>
                               </div>
-                              <div class="shipping">
+                            <!--   <div class="shipping">
                                  Shipping charge:
                                  <span>$46.30</span>
-                              </div>
+                              </div> -->
                            </div>
-                           <div class="select-cupon position-relative">
-                              <span class="percent"><img src="img/svg/coupon.svg" alt="svg" class="svg"></span>
-                              <select class="js-example-basic-single js-states form-control" id="cupon">
-                                 <option value="01">HROJSF</option>
-                                 <option value="02">RYZZWK</option>
-                                 <option value="03">CLMVBG</option>
-                                 <option value="04">RQAEAD</option>
-                                 <option value="05">DFINSX</option>
-                              </select>
-                           </div>
+
                            <div class="promo-code">
-                              <form>
-                                 <label for="exampleInputEmail1">promo code</label>
+                              <form id="coupon-form">
+                                 <label for="coupon-code">Promo Code</label>
                                  <div class="d-flex align-items-center">
-                                    <input id="exampleInputEmail1" type="text" class="form-control" />
-                                    <a href="#" class="btn">apply</a>
+                                    <input type="text" id="coupon-code" class="form-control"
+                                       placeholder="Enter coupon code" required />
+                                    <button type="submit" style="border-color: rgb(0, 238, 0);"
+                                       class="btn">Apply</button>
                                  </div>
                               </form>
+
+                              <!-- <div class="select-cupon position-relative">
+                                 <span class="percent"><img src="img/svg/coupon.svg" alt="svg" class="svg"></span>
+                                 <select class="js-example-basic-single js-states form-control" id="cupon">
+                                    <option value="01">HROJSF</option>
+                                    <option value="02">RYZZWK</option>
+                                    <option value="03">CLMVBG</option>
+                                    <option value="04">RQAEAD</option>
+                                    <option value="05">DFINSX</option>
+                                 </select>
+                              </div> -->
                            </div>
                            <div class="total-money d-flex justify-content-between">
                               <h6>Total :</h6>

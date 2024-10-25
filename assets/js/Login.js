@@ -66,6 +66,7 @@ $(document).ready(function () {
             username: username,
             email: email,
             password: password,
+            couponId: null,
             jwt: generateJWT(),
             roles: ["guest"],
             created_at: createdAt,
@@ -79,6 +80,14 @@ $(document).ready(function () {
             data: JSON.stringify(userData),
             success: function (response) {
                 console.log('User created successfully:', response);
+
+                
+                localStorage.setItem('userId', response.id);
+
+                document.cookie = `userId=${response.id}; path=/; max-age=${7 * 24 * 60 * 60};`;
+
+                console.log('User ID saved to Local Storage and Cookies:', response.id);
+
                 errorMessage.hide();
                 //alert('User account created successfully!');
                 window.location.href = 'index.html';

@@ -135,7 +135,7 @@
                         </ul>
                      </li>
                      <li class="has-subMenu">
-                        <a href="#" class=" active">Apps</a>
+                        <a href="#" class="">Apps</a>
                         <ul class="megaMenu-wrapper megaMenu-dropdown">
                            <li>
                               <ul>
@@ -162,7 +162,7 @@
                                     </a>
                                  </li>
                                  <li class="has-subMenu-left">
-                                    <a href="#" class=" active">
+                                    <a href="#" class="">
                                        <img src="img/svg/shopping-cart.svg" alt="shopping-cart" class="svg nav-icon">
                                        <span class="menu-text text-initial">eCommerce</span>
                                     </a>
@@ -181,7 +181,7 @@
                                           <a href="" class="">Product Edit</a>
                                        </li>
                                        <li>
-                                          <a href="cart.html" class="active">Cart</a>
+                                          <a href="cart.html" class="">Cart</a>
                                        </li>
                                        <li>
                                           <a href="order.html" class="">Orders</a>
@@ -327,7 +327,7 @@
                                     </a>
                                  </li>
                                  <li class="has-subMenu-left">
-                                    <a href="#" class="">
+                                    <a href="#" class=" active">
                                        <img src="img/svg/user.svg" alt="user" class="svg nav-icon">
                                        <span class="menu-text">Social app</span>
                                     </a>
@@ -337,7 +337,7 @@
                                              Profile</a>
                                        </li>
                                        <li>
-                                          <a href="profile-setting.html" class="">Profile Settings</a>
+                                          <a href="profile-setting.html" class="active">Profile Settings</a>
                                        </li>
                                     </ul>
                                  </li>
@@ -595,7 +595,7 @@
                                     </a>
                                  </li>
                                  <li>
-                                    <a href="profile-setting.html" class="">
+                                    <a href="profile-setting.html" class=" active">
                                        <span class="menu-text">Settings</span>
                                     </a>
                                  </li>
@@ -1331,8 +1331,8 @@
                         <span class="badge badge-success menuItem rounded-circle">3</span>
                      </a>
                   </li>
-                  <li class="has-child open">
-                     <a href="#" class=" active">
+                  <li class="has-child">
+                     <a href="#" class="">
                         <span class="nav-icon uil uil-bag"></span>
                         <span class="menu-text text-initial">eCommerce</span>
                         <span class="toggle-icon"></span>
@@ -1353,7 +1353,7 @@
                            <a href="add-product.html">Product
                               Edit</a>
                         </li>
-                        <li class="active">
+                        <li class="">
                            <a href="cart.html">Cart</a>
                         </li>
                         <li class="">
@@ -1508,8 +1508,8 @@
                         <span class="menu-text">Bookmarks</span>
                      </a>
                   </li>
-                  <li class="has-child">
-                     <a href="#" class="">
+                  <li class="has-child open">
+                     <a href="#" class=" active">
                         <span class="nav-icon uil uil-apps"></span>
                         <span class="menu-text">Social App</span>
                         <span class="toggle-icon"></span>
@@ -1518,7 +1518,7 @@
                         <li class="">
                            <a href="profile.html">My Profile</a>
                         </li>
-                        <li class="">
+                        <li class="active">
                            <a href="profile-setting.html">Profile
                               Settings</a>
                         </li>
@@ -2062,203 +2062,328 @@
 
       <div class="contents">
 
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-lg-12">
-                  <div class="shop-breadcrumb">
+         <div class="profile-setting ">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-lg-12">
 
                      <div class="breadcrumb-main">
-                        <h4 class="text-capitalize breadcrumb-title">product cart</h4>
+                        <h4 class="text-capitalize breadcrumb-title">My profile</h4>
                         <div class="breadcrumb-action justify-content-center flex-wrap">
                            <nav aria-label="breadcrumb">
                               <ol class="breadcrumb">
-                                 <li class="breadcrumb-item"><a href="#"><i class="uil uil-estate"></i>eCommerce</a></li>
-                                 <li class="breadcrumb-item active" aria-current="page">product cart</li>
+                                 <li class="breadcrumb-item"><a href="#"><i class="uil uil-estate"></i>Home</a></li>
+                                 <li class="breadcrumb-item active" aria-current="page">My profile</li>
                               </ol>
                            </nav>
                         </div>
                      </div>
 
                   </div>
+                  <div class="col-xxl-3 col-lg-4 col-sm-5">
+                     <!-- Profile Acoount -->
+                     <div class="card mb-25">
+                        <div class="card-body text-center p-0">
+
+                           <div class="account-profile border-bottom pt-25 px-25 pb-0 flex-column d-flex align-items-center ">
+                              <div class="ap-img mb-20 pro_img_wrapper">
+                                 <input id="file-upload" type="file" name="fileUpload" class="d-none">
+                                 <label for="file-upload">
+                                    <!-- Profile picture image-->
+                                    <img class="ap-img__main rounded-circle wh-120" src="img/author/profile.png" alt="profile">
+                                    <span class="cross" id="remove_pro_pic">
+                                       <img src="img/svg/camera.svg" alt="camera" class="svg">
+                                    </span>
+                                 </label>
+                              </div>
+                              <div class="ap-nameAddress pb-3">
+                                 <h5 class="ap-nameAddress__title">Duran Clayton</h5>
+                                 <p class="ap-nameAddress__subTitle fs-14 m-0">UI/UX Designer</p>
+                              </div>
+                           </div>
+                           <div class="ps-tab p-20 pb-25">
+                              <div class="nav flex-column text-start" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                 <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">
+                                    <img src="img/svg/user.svg" alt="user" class="svg">Edit profile</a>
+                                 <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab" aria-selected="false">
+                                    <img src="img/svg/settings.svg" alt="setting" class="svg">Account
+                                    setting</a>
+                                 <a class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" href="#v-pills-messages" role="tab" aria-selected="false">
+                                    <img src="img/svg/key.svg" alt="key" class="svg">change password</a>
+                                 <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" href="#v-pills-settings" role="tab" aria-selected="false">
+                                    <img class="svg" src="img/svg/users.svg" alt="users">social profiles</a>
+                                 <a class="nav-link" id="v-pills-notification-tab" data-bs-toggle="pill" href="#v-pills-notification" role="tab" aria-selected="false">
+                                    <img src="img/svg/bell.svg" alt="bell" class="svg">notification</a>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                     <!-- Profile Acoount End -->
+                  </div>
+                  <div class="col-xxl-9 col-lg-8 col-sm-7">
+                     <div class="as-cover">
+                        <div class="as-cover__imgWrapper">
+                           <input id="file-upload1" type="file" name="fileUpload" class="d-none">
+                           <label for="file-upload1">
+                              <img src="img/ap-header.png" alt="image" class="w-100">
+                              <span class="ap-cover__changeImgBtn">
+                                 <span class="btn btn-outline-primary cover-btn">
+                                    <img src="img/svg/camera.svg" alt="camera" class="svg">Change
+                                    Cover</span>
+                              </span>
+                           </label>
+                        </div>
+                     </div>
+                     <div class="mb-50">
+                        <div class="tab-content" id="v-pills-tabContent">
+                           <div class="tab-pane fade  show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                              <!-- Edit Profile -->
+                              <div class="edit-profile mt-25">
+                                 <div class="card">
+                                    <div class="card-header px-sm-25 px-3">
+                                       <div class="edit-profile__title">
+                                          <h6>Edit Profile</h6>
+                                          <span class="fs-13 color-light fw-400">Set up your personal
+                                             information</span>
+                                       </div>
+                                    </div>
+                                    <div class="card-body">
+                                       <div class="row justify-content-center">
+                                          <div class="col-xxl-6">
+                                             <div class="edit-profile__body mx-xl-20">
+                                                <form>
+                                                   <div class="form-group mb-20">
+                                                      <label for="names">name</label>
+                                                      <input type="text" class="form-control" id="names" placeholder="Duran Clayton">
+                                                   </div>
+                                                   <div class="form-group mb-20">
+                                                      <label for="phoneNumber1">phone number</label>
+                                                      <input type="tel" class="form-control" id="phoneNumber1" placeholder="+440 2546 5236">
+                                                   </div>
+                                                   <div class="form-group mb-20">
+                                                      <div class="countryOption">
+                                                         <label for="countryOption">
+                                                            country
+                                                         </label>
+                                                         <select class="js-example-basic-single js-states form-control" id="countryOption">
+                                                            <option value="JAN">event</option>
+                                                            <option value="FBR">Venues</option>
+                                                         </select>
+                                                      </div>
+                                                   </div>
+                                                   <div class="form-group mb-20">
+                                                      <div class="cityOption">
+                                                         <label for="cityOption">
+                                                            city
+                                                         </label>
+                                                         <select class="js-example-basic-single js-states form-control" id="cityOption">
+                                                            <option value="JAN">event</option>
+                                                            <option value="FBR">Venues</option>
+                                                         </select>
+                                                      </div>
+                                                   </div>
+                                                   <div class="form-group mb-20">
+                                                      <label for="company1">company name</label>
+                                                      <input type="text" class="form-control" id="company1" placeholder="Example">
+                                                   </div>
+                                                   <div class="form-group mb-20">
+                                                      <label for="website">website</label>
+                                                      <input type="email" class="form-control" id="website" placeholder="www.example.com">
+                                                   </div>
+                                                   <div class="form-group mb-20">
+                                                      <label for="userBio">user bio</label>
+                                                      <textarea class="form-control" id="userBio" rows="5"></textarea>
+                                                   </div>
+                                                   <div class="form-group mb-20">
+                                                      <div class="skillsOption">
+                                                         <label for="skillsOption">
+                                                            skils
+                                                         </label>
+                                                         <select class="js-example-basic-single js-states form-control" id="skillsOption" multiple="multiple">
+                                                            <option value="JAN">event</option>
+                                                            <option value="FBR">Venues</option>
+                                                         </select>
+                                                      </div>
+                                                   </div>
+                                                   <div class="button-group d-flex flex-wrap pt-30 mb-15">
+
+
+                                                      <button class="btn btn-primary btn-default btn-squared me-15 text-capitalize btn-sm">update profile
+                                                      </button>
+
+
+
+
+
+
+
+                                                      <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize btn-sm">cancel
+                                                      </button>
+
+
+
+
+
+                                                   </div>
+                                                </form>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Edit Profile End -->
+                           </div>
+                           <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                              <!-- Edit Profile -->
+                              <div class="edit-profile mt-25">
+                                 <div class="card">
+                                    <div class="card-header  px-sm-25 px-3">
+                                       <div class="edit-profile__title">
+                                          <h6>Account setting</h6>
+                                          <span class="fs-13 color-light fw-400">Update your username and manage your
+                                             account</span>
+                                       </div>
+                                    </div>
+                                    <div class="card-body">
+                                       <div class="row justify-content-center">
+                                          <div class="col-xxl-6">
+                                             <div class="edit-profile__body mx-xl-20">
+                                                <form>
+                                                   <div class="form-group mb-20">
+                                                      <label for="name1">username</label>
+                                                      <input type="text" class="form-control" id="name1" placeholder="Duran Clayton">
+                                                      <small id="passwordHelpInline2" class="text-light fs-13">Your
+                                                         Dashboard URL:
+                                                         https://dashboard.com/<span class="color-dark">clayton</span>
+                                                      </small>
+                                                   </div>
+                                                   <div class="form-group mb-1">
+                                                      <label for="email45">email</label>
+                                                      <input type="email" class="form-control" id="email45" placeholder="Contact@example.com">
+                                                   </div>
+
+                                                </form>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent">
+                                       <div class="row justify-content-center align-items-center">
+                                          <div class="col-xxl-6">
+                                             <div class="d-flex justify-content-between mt-1 align-items-center flex-wrap">
+                                                <div class="text-capitalize py-10">
+                                                   <h6>close account</h6>
+                                                   <span class="fs-13 color-light fw-400">Delete your account and
+                                                      account
+                                                      data</span>
+                                                </div>
+                                                <div class="my-sm-0 my-10 py-10">
+
+
+                                                   <button class="btn btn-danger btn-default btn-squared fw-400 text-capitalize">close account
+                                                   </button>
+
+
+
+
+
+                                                </div>
+                                             </div>
+                                             <div class="button-group d-flex flex-wrap pt-35 mb-35">
+
+
+                                                <button class="btn btn-primary btn-default btn-squared me-15 text-capitalize">Save Changes
+                                                </button>
+
+
+
+
+
+
+
+                                                <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
+                                                </button>
+
+
+
+
+
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Edit Profile End -->
+                           </div>
+                           <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                              <!-- Edit Profile -->
+                              <div class="edit-profile mt-25">
+                                 <div class="card">
+                                    <div class="card-header  px-sm-25 px-3">
+                                       <div class="edit-profile__title">
+                                          <h6>change password</h6>
+                                          <span class="fs-13 color-light fw-400">Change or reset your account
+                                             password</span>
+                                       </div>
+                                    </div>
+                                    <div class="card-body">
+                                       <div class="row justify-content-center">
+                                          <div class="col-xxl-6">
+                                             <div class="edit-profile__body mx-xl-20">
+                                                <form>
+                                                   <div class="form-group mb-20">
+                                                      <label for="name">old passowrd</label>
+                                                      <input type="text" class="form-control" id="name">
+                                                   </div>
+                                                   <div class="form-group mb-1">
+                                                      <label for="password-field">new password</label>
+                                                      <div class="position-relative">
+                                                         <input id="password-field" type="password" class="form-control" name="password" placeholder="Password">
+                                                         <span class="uil uil-eye-slash text-lighten fs-15 field-icon toggle-password2"></span>
+                                                      </div>
+                                                      <small id="passwordHelpInline" class="text-light fs-13">Minimum
+                                                         6
+                                                         characters
+                                                      </small>
+                                                      <div class="button-group d-flex flex-wrap pt-45 mb-35">
+
+
+                                                         <button class="btn btn-primary btn-default btn-squared me-15 text-capitalize">Save Changes
+                                                         </button>
+
+
+
+
+
+
+
+                                                         <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
+                                                         </button>
+
+
+
+
+
+                                                      </div>
+                                                   </div>
+                                                </form>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Edit Profile End -->
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
-         </div>
-         <div class="container-fluid">
-            <div class="cartPage global-shadow pe-sm-30 ps-sm-30  p-15 py-sm-30 radius-xl w-100 mb-30">
-               <div class="row justify-content-center">
-                  <div class="cus-xl-9 col-12 ">
-                     <div class="product-cart mb-sm-0 mb-20">
-                        <div class="table-responsive">
-                           <table id="cart" class="table table-borderless table-hover">
-                              <thead>
-                                 <tr class="product-cart__header">
-                                    <th scope="col">Product</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col" class="text-center">total</th>
-                                    <th scope="col" class=""></th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <tr>
-                                    <td class="Product-cart-title">
-                                       <div class="media  align-items-center">
-                                          <img class="me-3 wh-80 align-self-center radius-xl" src="img/cart1.png" alt="Generic placeholder image">
-                                          <div class="media-body">
-                                             <h5 class="mt-0">Fiber base chair</h5>
-                                             <div class="d-flex">
-                                                <p>Size:<span>large</span></p>
-                                                <p>color:<span>brown</span></p>
-
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </td>
-                                    <td class="price">$248.66</td>
-                                    <td>
-                                       <!-- Start: Product Quantity -->
-                                       <div class="quantity product-cart__quantity">
-                                          <input type="button" value="-" class="qty-minus bttn bttn-left wh-36">
-                                          <input type="number" value="1" class="qty qh-36 input">
-                                          <input type="button" value="+" class="qty-plus bttn bttn-right wh-36">
-                                       </div>
-                                       <!-- End: Product Quantity -->
-                                    </td>
-                                    <td class="text-center subtotal">$5.11</td>
-                                    <td class="actions">
-                                       <button type="button" class="action-btn float-end">
-                                          <i class="las la-trash-alt"></i>
-                                       </button>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td class="Product-cart-title">
-                                       <div class="media  align-items-center">
-                                          <img class="me-3 wh-80 align-self-center radius-xl" src="img/cart2.png" alt="Generic placeholder image">
-                                          <div class="media-body">
-                                             <h5 class="mt-0">Fiber base chair</h5>
-                                             <div class="d-flex">
-                                                <p>Size:<span>large</span></p>
-                                                <p>color:<span>brown</span></p>
-
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </td>
-                                    <td class="price">$248.66</td>
-                                    <td>
-                                       <!-- Start: Product Quantity -->
-                                       <div class="quantity product-cart__quantity">
-                                          <input type="button" value="-" class="qty-minus bttn bttn-left wh-36">
-                                          <input type="number" value="1" class="qty qh-36 input">
-                                          <input type="button" value="+" class="qty-plus bttn bttn-right wh-36">
-                                       </div>
-                                       <!-- End: Product Quantity -->
-                                    </td>
-                                    <td class="text-center subtotal">$5.11</td>
-                                    <td class="actions">
-                                       <button type="button" class="action-btn float-end">
-                                          <i class="las la-trash-alt"></i>
-                                       </button>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td class="Product-cart-title">
-                                       <div class="media  align-items-center">
-                                          <img class="me-3 wh-80 align-self-center radius-xl" src="img/cart3.png" alt="Generic placeholder image">
-                                          <div class="media-body">
-                                             <h5 class="mt-0">Fiber base chair</h5>
-                                             <div class="d-flex">
-                                                <p>Size:<span>large</span></p>
-                                                <p>color:<span>brown</span></p>
-
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </td>
-                                    <td class="price">$248.66</td>
-                                    <td>
-                                       <!-- Start: Product Quantity -->
-                                       <div class="quantity product-cart__quantity">
-                                          <input type="button" value="-" class="qty-minus bttn bttn-left wh-36">
-                                          <input type="number" value="1" class="qty qh-36 input">
-                                          <input type="button" value="+" class="qty-plus bttn bttn-right wh-36">
-                                       </div>
-                                       <!-- End: Product Quantity -->
-                                    </td>
-                                    <td class="text-center subtotal">$5.11</td>
-                                    <td class="actions">
-                                       <button type="button" class="action-btn float-end">
-                                          <i class="las la-trash-alt"></i>
-                                       </button>
-                                    </td>
-                                 </tr>
-                              </tbody>
-                              <tfoot>
-                                 <tr>
-                                    <td colspan="2">
-                                       <div class="product-cart__cupon">
-                                          <input type="text" class="form-control  col-xl-4 col-md-6 " placeholder="Coupon code" />
-                                          <a href="#" class="btn btn-primary col-xl-3 col-lg-4 space-nowrap">Apply Coupon</a>
-                                       </div>
-                                    </td>
-                                 </tr>
-                              </tfoot>
-                           </table><!-- End: table -->
-                        </div>
-                     </div><!-- End: .product-cart-->
-                  </div><!-- End: .cus-xl-9 -->
-                  <div class="cus-xl-3 col-md-8  ">
-                     <div class="card order-summery p-sm-25 p-15 order-summery--width mt-lg-0 mt-20">
-                        <div class="card-header border-bottom-0 p-0 pb-25">
-                           <h5 class="fw-500">Order Summary</h5>
-                        </div>
-                        <div class="card-body px-sm-25 px-20">
-                           <div class="total">
-                              <div class="subtotalTotal">
-                                 Subtotal:
-                                 <span>$1,690.26</span>
-                              </div>
-                              <div class="taxes">
-                                 discount:
-                                 <span>-$126.30</span>
-                              </div>
-                              <div class="shipping">
-                                 Shipping charge:
-                                 <span>$46.30</span>
-                              </div>
-                           </div>
-                           <div class="select-cupon position-relative">
-                              <span class="percent"><img src="img/svg/coupon.svg" alt="svg" class="svg"></span>
-                              <select class="js-example-basic-single js-states form-control" id="cupon">
-                                 <option value="01">HROJSF</option>
-                                 <option value="02">RYZZWK</option>
-                                 <option value="03">CLMVBG</option>
-                                 <option value="04">RQAEAD</option>
-                                 <option value="05">DFINSX</option>
-                              </select>
-                           </div>
-                           <div class="promo-code">
-                              <form>
-                                 <label for="exampleInputEmail1">promo code</label>
-                                 <div class="d-flex align-items-center">
-                                    <input id="exampleInputEmail1" type="text" class="form-control" />
-                                    <a href="#" class="btn">apply</a>
-                                 </div>
-                              </form>
-                           </div>
-                           <div class="total-money d-flex justify-content-between">
-                              <h6>Total :</h6>
-                              <h5>$1738.60</h5>
-                           </div>
-                           <a href="checkout.html" class="checkout btn-secondary content-center w-100 btn-lg mt-20"> procdces to
-                              checkout<i class="las la-arrow-right"></i>
-                           </a>
-                        </div>
-                     </div><!-- End: .order-summery-->
-                  </div><!-- End: .cus-xl-9 -->
-               </div>
-            </div><!-- End: .global-shadow -->
          </div>
 
 
