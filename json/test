@@ -1,220 +1,323 @@
 {
-    "categories": [
-      {
-        "id": "1",
-        "category_name": "Electronics"
-      },
-      {
-        "id": "2",
-        "category_name": "Accessories"
-      },
-      {
-        "id": "3",
-        "category_name": "Home Appliances"
-      }
-    ],
-    "brands": [
-      {
-        "id": "1",
-        "brand_name": "AudioTech"
-      },
-      {
-        "id": "2",
-        "brand_name": "ChargeMaster"
-      },
-      {
-        "id": "3",
-        "brand_name": "ViewPlus"
-      },
-      {
-        "id": "4",
-        "brand_name": "HomeBreeze"
-      },
-      {
-        "id": "5",
-        "brand_name": "PowerTech"
-      }
-    ],
-    "products": [
-      {
-        "id": "1",
-        "product_name": "Wireless Bluetooth Headphones",
-        "product_description": "Noise-cancelling over-ear headphones with long battery life.",
-        "product_price": 59.99,
-        "available_stock": 150,
-        "category_id": 1,
-        "brandId": "1",
-        "discount_price": 49.99,
-        "sku": "ATH-5000",
-        "image_url": "https://example.com/images/headphones.jpg",
-        "created_at": "2024-10-23",
-        "updated_at": "2024-10-23"
-      },
-      {
-        "id": "2",
-        "product_name": "Smartphone Charger",
-        "product_description": "Fast-charging USB-C charger compatible with most smartphones.",
-        "product_price": 19.99,
-        "available_stock": 0,
-        "category_id": 2,
-        "brandId": "2",
-        "discount_price": null,
-        "sku": "CM-200",
-        "image_url": "https://example.com/images/charger.jpg",
-        "created_at": "2024-09-12",
-        "updated_at": "2024-10-20"
-      },
-      {
-        "id": "3",
-        "product_name": "4K Ultra HD Smart TV",
-        "product_description": "55-inch 4K UHD smart TV with built-in streaming apps.",
-        "product_price": 499.99,
-        "available_stock": 75,
-        "category_id": 1,
-        "brandId": "3",
-        "discount_price": 100,
-        "sku": "VP-5500",
-        "image_url": "https://example.com/images/tv.jpg",
-        "created_at": "2024-08-15",
-        "updated_at": "2024-10-22"
-      }
-    ],
-    "comments": [
-      {
-        "id": "1",
-        "user": "John Doe",
-        "comment": "Great sound quality and comfortable to wear for long periods.",
-        "rating": 4,
-        "created_at": "2024-10-20",
-        "productId": "1"
-      },
-      {
-        "id": "2",
-        "user": "Jane Smith",
-        "comment": "Charges my phone quickly, but the cable feels a bit flimsy.",
-        "rating": 3,
-        "created_at": "2024-09-14",
-        "productId": "2"
-      },
-      {
-        "id": "3",
-        "user": "Sam Wilson",
-        "comment": "Picture quality is amazing, and setup was a breeze!",
-        "rating": 5,
-        "created_at": "2024-08-25",
-        "productId": "3"
-      }
-    ],
-  
-    "shopping_cart": [
-      {
-        "id": "1",
-        "user_id": "1",
-        "product_id": "1",
-        "quantity": 2,
-        "added_at": "2024-10-24T14:30:00Z",
-        "updated_at": "2024-10-24T14:30:00Z"
-      },
-      {
-        "id": "2",
-        "user_id": "1",
-        "product_id": "3",
-        "quantity": 1,
-        "added_at": "2024-10-24T14:30:00Z",
-        "updated_at": "2024-10-24T14:30:00Z"
-      },
-      {
-        "id": "3",
-        "user_id": "2",
-        "product_id": "2",
-        "quantity": 3,
-        "added_at": "2024-10-24T14:31:00Z",
-        "updated_at": "2024-10-24T14:31:00Z"
-      }
-    ],
-  
-    "invoices": [
-      {
-        "invoice_id": "1",
-        "user_id": "1",
-        "total_amount": 159.97,
-        "created_at": "2024-10-24T15:00:00Z",
-        "products": [
-          {
-            "product_id": "1",
-            "product_name": "Wireless Bluetooth Headphones",
-            "quantity": 2,
-            "price_per_unit": 59.99
-          },
-          {
-            "product_id": "3",
-            "product_name": "4K Ultra HD Smart TV",
-            "quantity": 1,
-            "price_per_unit": 499.99
-          }
-        ]
-      },
-      {
-        "invoice_id": "2",
-        "user_id": "2",
-        "total_amount": 59.97,
-        "created_at": "2024-10-24T15:05:00Z",
-        "products": [
-          {
-            "product_id": "2",
-            "product_name": "Smartphone Charger",
-            "quantity": 3,
-            "price_per_unit": 19.99
-          }
-        ]
-      }
-    ],
-  
-    "users": [
-      {
-        "id": "1",
-        "name": "John Doe",
-        "username": "Choster900",
-        "email": "john.doe@example.com",
-        "password": "12345678",
-        "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-        "roles": ["admin", "seller"],
-        "created_at": "2024-10-23T10:00:00Z",
-        "updated_at": "2024-10-23T12:00:00Z"
-      },
-      {
-        "id": "2",
-        "name": "Jane Smith",
-        "username": "Choster900",
-        "email": "jane.smith@example.com",
-        "password": "hashed_password_2",
-        "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ8",
-        "roles": ["customer"],
-        "created_at": "2024-10-23T10:30:00Z",
-        "updated_at": "2024-10-23T12:30:00Z"
-      },
-      {
-        "id": "3",
-        "name": "Alice Johnson",
-        "username": "Choster900",
-        "email": "alice.johnson@example.com",
-        "password": "hashed_password_3",
-        "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ7",
-        "roles": ["moderator"],
-        "created_at": "2024-10-23T11:00:00Z",
-        "updated_at": "2024-10-23T12:45:00Z"
-      },
-      {
-        "id": "4",
-        "name": "Bob Lee",
-        "email": "bob.lee@example.com",
-        "username": "Choster900",
-        "password": "hashed_password_4",
-        "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
-        "roles": ["guest"],
-        "created_at": "2024-10-23T11:15:00Z",
-        "updated_at": "2024-10-23T11:30:00Z"
-      }
-    ]
-  }
-  
+  "categories": [
+    {
+      "id": "1",
+      "category_name": "Electronics"
+    },
+    {
+      "id": "2",
+      "category_name": "Accessories"
+    },
+    {
+      "id": "3",
+      "category_name": "Home Appliances"
+    }
+  ],
+  "brands": [
+    {
+      "id": "1",
+      "brand_name": "AudioTech"
+    },
+    {
+      "id": "2",
+      "brand_name": "ChargeMaster"
+    },
+    {
+      "id": "3",
+      "brand_name": "ViewPlus"
+    },
+    {
+      "id": "4",
+      "brand_name": "HomeBreeze"
+    },
+    {
+      "id": "5",
+      "brand_name": "PowerTech"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "product_name": "Wireless Bluetooth Headphones",
+      "product_description": "Noise-cancelling over-ear headphones with long battery life.",
+      "product_price": 59.99,
+      "available_stock": 150,
+      "category_id": 1,
+      "brandId": "1",
+      "discount_price": 49.99,
+      "sku": "ATH-5000",
+      "image_url": "https://example.com/images/headphones.jpg",
+      "created_at": "2024-10-23",
+      "updated_at": "2024-10-23"
+    },
+    {
+      "id": "2",
+      "product_name": "Smartphone Charger",
+      "product_description": "Fast-charging USB-C charger compatible with most smartphones.",
+      "product_price": 19.99,
+      "available_stock": 0,
+      "category_id": 2,
+      "brandId": "2",
+      "discount_price": null,
+      "sku": "CM-200",
+      "image_url": "https://example.com/images/charger.jpg",
+      "created_at": "2024-09-12",
+      "updated_at": "2024-10-20"
+    },
+    {
+      "id": "3",
+      "product_name": "4K Ultra HD Smart TV",
+      "product_description": "55-inch 4K UHD smart TV with built-in streaming apps.",
+      "product_price": 499.99,
+      "available_stock": 75,
+      "category_id": 1,
+      "brandId": "3",
+      "discount_price": 449.99,
+      "sku": "VP-5500",
+      "image_url": "https://example.com/images/tv.jpg",
+      "created_at": "2024-08-15",
+      "updated_at": "2024-10-22"
+    },
+    {
+      "id": "4",
+      "product_name": "Portable Bluetooth Speaker",
+      "product_description": "Water-resistant speaker with deep bass and 12-hour playtime.",
+      "product_price": 89.99,
+      "available_stock": 60,
+      "category_id": 1,
+      "brandId": "1",
+      "discount_price": 74.99,
+      "sku": "AT-SPK",
+      "image_url": "https://example.com/images/speaker.jpg",
+      "created_at": "2024-10-10",
+      "updated_at": "2024-10-15"
+    },
+    {
+      "id": "5",
+      "product_name": "Wireless Earbuds",
+      "product_description": "Compact and lightweight earbuds with high-fidelity sound.",
+      "product_price": 29.99,
+      "available_stock": 100,
+      "category_id": 2,
+      "brandId": "1",
+      "discount_price": 24.99,
+      "sku": "AT-BUD",
+      "image_url": "https://example.com/images/earbuds.jpg",
+      "created_at": "2024-09-05",
+      "updated_at": "2024-10-01"
+    },
+    {
+      "id": "6",
+      "product_name": "Smart Microwave Oven",
+      "product_description": "900W microwave with smart app control and voice commands.",
+      "product_price": 199.99,
+      "available_stock": 40,
+      "category_id": 3,
+      "brandId": "4",
+      "discount_price": 179.99,
+      "sku": "HB-MW-900",
+      "image_url": "https://example.com/images/microwave.jpg",
+      "created_at": "2024-08-30",
+      "updated_at": "2024-10-22"
+    },
+    {
+      "id": "7",
+      "product_name": "Electric Kettle",
+      "product_description": "1.7L electric kettle with rapid boil technology.",
+      "product_price": 39.99,
+      "available_stock": 85,
+      "category_id": 3,
+      "brandId": "4",
+      "discount_price": null,
+      "sku": "HB-KT-1700",
+      "image_url": "https://example.com/images/kettle.jpg",
+      "created_at": "2024-07-15",
+      "updated_at": "2024-10-12"
+    },
+    {
+      "id": "8",
+      "product_name": "Portable Power Bank",
+      "product_description": "10,000mAh power bank for mobile devices with dual USB ports.",
+      "product_price": 24.99,
+      "available_stock": 130,
+      "category_id": 2,
+      "brandId": "5",
+      "discount_price": 19.99,
+      "sku": "PT-PB10000",
+      "image_url": "https://example.com/images/powerbank.jpg",
+      "created_at": "2024-09-22",
+      "updated_at": "2024-10-23"
+    },
+    {
+      "id": "9",
+      "product_name": "Wireless Gaming Mouse",
+      "product_description": "Ergonomic design with customizable buttons and RGB lighting.",
+      "product_price": 49.99,
+      "available_stock": 95,
+      "category_id": 2,
+      "brandId": "2",
+      "discount_price": 44.99,
+      "sku": "CM-GM-100",
+      "image_url": "https://example.com/images/gamingmouse.jpg",
+      "created_at": "2024-08-05",
+      "updated_at": "2024-10-05"
+    },
+    {
+      "id": "10",
+      "product_name": "Smart Air Conditioner",
+      "product_description": "Energy-efficient air conditioner with Wi-Fi connectivity.",
+      "product_price": 299.99,
+      "available_stock": 20,
+      "category_id": 3,
+      "brandId": "4",
+      "discount_price": 269.99,
+      "sku": "HB-AC-SMART",
+      "image_url": "https://example.com/images/airconditioner.jpg",
+      "created_at": "2024-06-30",
+      "updated_at": "2024-10-20"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "user": "John Doe",
+      "comment": "Great sound quality and comfortable to wear for long periods.",
+      "rating": 4,
+      "created_at": "2024-10-20",
+      "productId": "1"
+    },
+    {
+      "id": "2",
+      "user": "Jane Smith",
+      "comment": "Charges my phone quickly, but the cable feels a bit flimsy.",
+      "rating": 3,
+      "created_at": "2024-09-14",
+      "productId": "2"
+    },
+    {
+      "id": "3",
+      "user": "Sam Wilson",
+      "comment": "Picture quality is amazing, and setup was a breeze!",
+      "rating": 5,
+      "created_at": "2024-08-25",
+      "productId": "3"
+    }
+  ],
+  "shopping_cart": [
+    {
+      "id": "1",
+      "user_id": "1",
+      "product_id": "1",
+      "quantity": 2,
+      "added_at": "2024-10-24T14:30:00Z",
+      "updated_at": "2024-10-24T14:30:00Z"
+    },
+    {
+      "id": "2",
+      "user_id": "1",
+      "product_id": "3",
+      "quantity": 1,
+      "added_at": "2024-10-24T14:30:00Z",
+      "updated_at": "2024-10-24T14:30:00Z"
+    },
+    {
+      "id": "3",
+      "user_id": "2",
+      "product_id": "2",
+      "quantity": 3,
+      "added_at": "2024-10-24T14:31:00Z",
+      "updated_at": "2024-10-24T14:31:00Z"
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "1",
+      "user_id": "1",
+      "total_amount": 159.97,
+      "created_at": "2024-10-24T15:00:00Z",
+      "products": [
+        {
+          "product_id": "1",
+          "product_name": "Wireless Bluetooth Headphones",
+          "quantity": 2,
+          "price_per_unit": 59.99
+        },
+        {
+          "product_id": "3",
+          "product_name": "4K Ultra HD Smart TV",
+          "quantity": 1,
+          "price_per_unit": 499.99
+        }
+      ]
+    },
+    {
+      "invoice_id": "2",
+      "user_id": "2",
+      "total_amount": 59.97,
+      "created_at": "2024-10-24T15:05:00Z",
+      "products": [
+        {
+          "product_id": "2",
+          "product_name": "Smartphone Charger",
+          "quantity": 3,
+          "price_per_unit": 19.99
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "username": "Choster900",
+      "email": "john.doe@example.com",
+      "password": "12345678",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+      "roles": [
+        "admin",
+        "seller"
+      ],
+      "created_at": "2024-10-23T10:00:00Z",
+      "updated_at": "2024-10-23T12:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "username": "Choster900",
+      "email": "jane.smith@example.com",
+      "password": "hashed_password_2",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ8",
+      "roles": [
+        "customer"
+      ],
+      "created_at": "2024-10-23T10:30:00Z",
+      "updated_at": "2024-10-23T12:30:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Alice Johnson",
+      "username": "Choster900",
+      "email": "alice.johnson@example.com",
+      "password": "hashed_password_3",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ7",
+      "roles": [
+        "moderator"
+      ],
+      "created_at": "2024-10-23T11:00:00Z",
+      "updated_at": "2024-10-23T12:45:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Bob Lee",
+      "email": "bob.lee@example.com",
+      "username": "Choster900",
+      "password": "hashed_password_4",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
+      "roles": [
+        "guest"
+      ],
+      "created_at": "2024-10-23T11:15:00Z",
+      "updated_at": "2024-10-23T11:30:00Z"
+    }
+  ]
+}

@@ -72,11 +72,109 @@
       "available_stock": 75,
       "category_id": 1,
       "brandId": "3",
-      "discount_price": 100,
+      "discount_price": 449.99,
       "sku": "VP-5500",
       "image_url": "https://example.com/images/tv.jpg",
       "created_at": "2024-08-15",
       "updated_at": "2024-10-22"
+    },
+    {
+      "id": "4",
+      "product_name": "Portable Bluetooth Speaker",
+      "product_description": "Water-resistant speaker with deep bass and 12-hour playtime.",
+      "product_price": 89.99,
+      "available_stock": 60,
+      "category_id": 1,
+      "brandId": "1",
+      "discount_price": 74.99,
+      "sku": "AT-SPK",
+      "image_url": "https://example.com/images/speaker.jpg",
+      "created_at": "2024-10-10",
+      "updated_at": "2024-10-15"
+    },
+    {
+      "id": "5",
+      "product_name": "Wireless Earbuds",
+      "product_description": "Compact and lightweight earbuds with high-fidelity sound.",
+      "product_price": 29.99,
+      "available_stock": 100,
+      "category_id": 2,
+      "brandId": "1",
+      "discount_price": 24.99,
+      "sku": "AT-BUD",
+      "image_url": "https://example.com/images/earbuds.jpg",
+      "created_at": "2024-09-05",
+      "updated_at": "2024-10-01"
+    },
+    {
+      "id": "6",
+      "product_name": "Smart Microwave Oven",
+      "product_description": "900W microwave with smart app control and voice commands.",
+      "product_price": 199.99,
+      "available_stock": 40,
+      "category_id": 3,
+      "brandId": "4",
+      "discount_price": 179.99,
+      "sku": "HB-MW-900",
+      "image_url": "https://example.com/images/microwave.jpg",
+      "created_at": "2024-08-30",
+      "updated_at": "2024-10-22"
+    },
+    {
+      "id": "7",
+      "product_name": "Electric Kettle",
+      "product_description": "1.7L electric kettle with rapid boil technology.",
+      "product_price": 39.99,
+      "available_stock": 85,
+      "category_id": 3,
+      "brandId": "4",
+      "discount_price": null,
+      "sku": "HB-KT-1700",
+      "image_url": "https://example.com/images/kettle.jpg",
+      "created_at": "2024-07-15",
+      "updated_at": "2024-10-12"
+    },
+    {
+      "id": "8",
+      "product_name": "Portable Power Bank",
+      "product_description": "10,000mAh power bank for mobile devices with dual USB ports.",
+      "product_price": 24.99,
+      "available_stock": 130,
+      "category_id": 2,
+      "brandId": "5",
+      "discount_price": 19.99,
+      "sku": "PT-PB10000",
+      "image_url": "https://example.com/images/powerbank.jpg",
+      "created_at": "2024-09-22",
+      "updated_at": "2024-10-23"
+    },
+    {
+      "id": "9",
+      "product_name": "Wireless Gaming Mouse",
+      "product_description": "Ergonomic design with customizable buttons and RGB lighting.",
+      "product_price": 49.99,
+      "available_stock": 95,
+      "category_id": 2,
+      "brandId": "2",
+      "discount_price": 44.99,
+      "sku": "CM-GM-100",
+      "image_url": "https://example.com/images/gamingmouse.jpg",
+      "created_at": "2024-08-05",
+      "updated_at": "2024-10-05"
+    },
+    {
+      "id": "10",
+      "product_name": "Smart Air Conditioner",
+      "product_description": "Energy-efficient air conditioner with Wi-Fi connectivity.",
+      "product_price": 299.99,
+      "available_stock": 20,
+      "category_id": 3,
+      "brandId": "4",
+      "discount_price": 269.99,
+      "sku": "HB-AC-SMART",
+      "image_url": "https://example.com/images/airconditioner.jpg",
+      "created_at": "2024-06-30",
+      "updated_at": "2024-10-20"
     }
   ],
   "comments": [
@@ -107,28 +205,31 @@
   ],
   "shopping_cart": [
     {
-      "quantity": 10,
+      "quantity": 5,
       "userId": "1",
       "productId": "1",
+      "isSelled": false,
       "added_at": "2024-10-24T14:30:00Z",
       "updated_at": "2024-10-24T14:30:00Z",
       "id": "1"
     },
     {
-      "id": "2",
-      "userId": "2",
-      "productId": "3",
-      "quantity": 1,
-      "added_at": "2024-10-24T14:30:00Z",
-      "updated_at": "2024-10-24T14:30:00Z"
-    },
-    {
       "quantity": 2,
       "userId": "1",
-      "productId": "3",
+      "productId": "2",
+      "isSelled": true,
       "added_at": "2024-10-24T14:30:00Z",
       "updated_at": "2024-10-24T14:30:00Z",
-      "id": "3"
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "userId": "2",
+      "productId": "2",
+      "isSelled": true,
+      "quantity": 3,
+      "added_at": "2024-10-24T14:31:00Z",
+      "updated_at": "2024-10-24T14:31:00Z"
     }
   ],
   "invoices": [
@@ -154,7 +255,7 @@
     },
     {
       "invoice_id": "2",
-      "userId": "2",
+      "user_id": "2",
       "total_amount": 59.97,
       "created_at": "2024-10-24T15:05:00Z",
       "products": [

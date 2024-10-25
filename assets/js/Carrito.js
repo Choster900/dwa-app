@@ -1,8 +1,6 @@
 $(document).ready(function () {
 
     function actualizarSubtotal(productId, nuevaCantidad, productPrice) {
-        console.log(nuevaCantidad);
-
         const subtotal = (nuevaCantidad * productPrice).toFixed(2);
         $(`#subtotal-${productId}`).text(`$${subtotal}`);
         recalcularTotal();
@@ -21,12 +19,13 @@ $(document).ready(function () {
 
         $.ajax({
             type: "PUT",
-            url: `${baseURL}/shopping_cart/${productId}`, // Actualizar según el ID del producto en el carrito
+            url: `${baseURL}/shopping_cart/${productId}`,
             contentType: "application/json",
             data: JSON.stringify({
                 quantity: nuevaCantidad,
                 userId: "1", // TODO: Poner el id que corresponde
-                productId: productId.toString(), // Convertir a string
+                productId: productId.toString(),
+                isSelled: false,
                 added_at: "2024-10-24T14:30:00Z",
                 updated_at: "2024-10-24T14:30:00Z"
             }),
@@ -42,7 +41,7 @@ $(document).ready(function () {
     // Cargar el carrito inicialmente
     $.ajax({
         type: "GET",
-        url: baseURL + "/shopping_cart?_embed=product&userId=1", // TODO: Ponerle el id usuario que corresponde
+        url: baseURL + "/shopping_cart?_embed=product&isSelled=false&userId=1", // TODO: Ponerle el id usuario que corresponde
         dataType: "json",
         success: function (response) {
             console.log(response);
@@ -60,7 +59,13 @@ $(document).ready(function () {
                 const cartItemsHTML = response.map(cartItem => {
                     const { product } = cartItem;
                     console.log(product);
-                    const { id: productId, product_name, product_price } = product;
+                    const { id: productId, product_name, product_price, discount_price } = product;
+
+                    let discountPercentage = 0;
+                    if (discount_price && discount_price < product_price) {
+                        discountPercentage = ((product_price - discount_price) / product_price) * 100;
+                        discountPercentage = discountPercentage.toFixed(0); // Redondear a número entero
+                    }
 
                     const quantity = cartItem.quantity || 1;
 
@@ -71,22 +76,40 @@ $(document).ready(function () {
                                     <img class="me-3 wh-80 align-self-center radius-xl" src="img/cart1.png" alt="${product_name}">
                                     <div class="media-body">
                                         <h5 class="mt-0">${product_name}</h5>
-                                        <div class="d-flex">
+                                                                                <div class="d-flex">
                                             <p>Size: <span>large</span></p>
                                             <p>Color: <span>brown</span></p>
                                         </div>
+
                                     </div>
                                 </div>
                             </td>
-                            <td class="price">$${product_price.toFixed(2)}</td>
-                            <td>
-                                <div class="quantity product-cart__quantity">
-                                    <input type="button" value="-" class="qty-minus bttn bttn-left wh-36" data-product-id="${productId}" data-product-price="${product_price}">
-                                    <input type="number" value="${quantity}" class="qty qh-36 input" data-product-id="${productId}" min="1">
-                                    <input type="button" value="+" class="qty-plus bttn bttn-right wh-36" data-product-id="${productId}" data-product-price="${product_price}">
+                           <td class="price">
+                                <div class="d-flex flex-column">
+                                    <span class="product-price" id="discount_price" style="font-size: 0.9rem; font-weight: bold; color: #8231d3;">
+                                        $${discount_price ? discount_price.toFixed(2) : product_price.toFixed(2)}
+                                    </span>
+                                    ${discount_price ? `
+                                        <div class="d-flex align-items-center">
+                                            <span class="product-desc-price text-muted" style="text-decoration: line-through; font-size: 0.9rem;">
+                                                $${product_price.toFixed(2)}
+                                            </span>
+                                            <span class="product-discount ms-2" style="font-size: 0.75rem; color: #5840ff">
+                                                ${discountPercentage}% Off
+                                            </span>
+                                        </div>
+                                    ` : ''}
                                 </div>
                             </td>
-                            <td class="text-center subtotal" id="subtotal-${productId}">$${(product_price * quantity).toFixed(2)}</td>
+
+                            <td>
+                                <div class="quantity product-cart__quantity">
+                                    <input type="button" value="-" class="qty-minus bttn bttn-left wh-36" data-product-id="${productId}" data-product-price="${discount_price ? discount_price.toFixed(2) : product_price.toFixed(2)}">
+                                    <input type="number" value="${quantity}" class="qty qh-36 input" data-product-id="${productId}" min="1">
+                                    <input type="button" value="+" class="qty-plus bttn bttn-right wh-36" data-product-id="${productId}" data-product-price="${discount_price ? discount_price.toFixed(2) : product_price.toFixed(2)}">
+                                </div>
+                            </td>
+                            <td class="text-center subtotal" id="subtotal-${productId}">$${(discount_price ? discount_price : product_price.toFixed(2) * quantity).toFixed(2)}</td>
                             <td class="actions">
                                 <button type="button" class="action-btn float-end" data-product-id="${productId}">
                                     <i class="las la-trash-alt"></i>
@@ -126,29 +149,11 @@ $(document).ready(function () {
 
         const productId = $(this).data('product-id');
         const productPrice = $(this).data('product-price');
-
+        console.log(productPrice);
+        
         // Actualizar subtotal
         actualizarSubtotal(productId, parseInt($(this).siblings('.input').val()) + 1, productPrice);
-
-        // Realizar la actualización del carrito
-        $.ajax({
-            type: "PUT",
-            url: `${baseURL}/shopping_cart/${productId}`,
-            contentType: "application/json",
-            data: JSON.stringify({
-                quantity: parseInt($(this).siblings('.input').val()) + 1,
-                userId: "1", // TODO: Poner el id que corresponde
-                productId: productId.toString(),
-                added_at: "2024-10-24T14:30:00Z",
-                updated_at: "2024-10-24T14:30:00Z"
-            }),
-            success: function (response) {
-                console.log("Carrito actualizado:", response);
-            },
-            error: function (error) {
-                console.error("Error al actualizar el carrito:", error);
-            }
-        });
+        actualizarCarrito(productId, parseInt($(this).siblings('.input').val()) + 1)
     });
 
 
@@ -157,16 +162,27 @@ $(document).ready(function () {
         const productId = $(this).data('product-id');
         const productPrice = $(this).data('product-price');
 
-       // if (parseInt($(this).siblings('.input').val()) < 1) parseInt($(this).siblings('.input').val())  = 1;
+        // if (parseInt($(this).siblings('.input').val()) < 1) parseInt($(this).siblings('.input').val())  = 1;
 
         actualizarSubtotal(productId, parseInt($(this).siblings('.input').val()) - 1, productPrice);
+        actualizarCarrito(productId, parseInt($(this).siblings('.input').val()) - 1)
 
+    });
+
+    // Evento para actualizar cantidad al cambiar manualmente el input
+    $(document).on('change', '.input', function () {
+
+        const productId = $(this).data('product-id');
+        const productPrice = $(this).siblings('.qty-plus').data('product-price');
+
+
+        actualizarSubtotal(productId, parseInt($(this).val()), productPrice);
         $.ajax({
             type: "PUT",
             url: `${baseURL}/shopping_cart/${productId}`,
             contentType: "application/json",
             data: JSON.stringify({
-                quantity: parseInt($(this).siblings('.input').val()) - 1,
+                quantity: parseInt($(this).val()),
                 userId: "1", // TODO: Poner el id que corresponde
                 productId: productId.toString(),
                 added_at: "2024-10-24T14:30:00Z",
@@ -180,35 +196,5 @@ $(document).ready(function () {
             }
         });
     });
-
-    // Evento para actualizar cantidad al cambiar manualmente el input
-    $(document).on('change', '.input', function () {
-        //alert("")
-        //console.log(parseInt($(this).val()));
-        
-         const productId = $(this).data('product-id');
-        const productPrice = $(this).siblings('.qty-plus').data('product-price');
-        
-
-        actualizarSubtotal(productId, parseInt($(this).val()), productPrice);
-        $.ajax({
-            type: "PUT",
-            url: `${baseURL}/shopping_cart/${productId}`,
-            contentType: "application/json",
-            data: JSON.stringify({
-                quantity: parseInt($(this).val()) ,
-                userId: "1", // TODO: Poner el id que corresponde
-                productId: productId.toString(),
-                added_at: "2024-10-24T14:30:00Z",
-                updated_at: "2024-10-24T14:30:00Z"
-            }),
-            success: function (response) {
-                console.log("Carrito actualizado:", response);
-            },
-            error: function (error) {
-                console.error("Error al actualizar el carrito:", error);
-            }
-        });   
-     });
 
 });
