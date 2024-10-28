@@ -69,6 +69,9 @@ $(document).ready(function () {
             couponId: null,
             jwt: generateJWT(),
             roles: ["guest"],
+            centralAmericaCountrieId: "" ,
+            phoneNumber: "" ,
+            houseNumberAndStreetName: "",
             created_at: createdAt,
             updated_at: null
         };
@@ -81,7 +84,7 @@ $(document).ready(function () {
             success: function (response) {
                 console.log('User created successfully:', response);
 
-                
+
                 localStorage.setItem('userId', response.id);
 
                 document.cookie = `userId=${response.id}; path=/; max-age=${7 * 24 * 60 * 60};`;

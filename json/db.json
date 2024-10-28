@@ -299,7 +299,7 @@
     {
       "id": "1",
       "name": "John Doe",
-      "username": "Choster900",
+      "username": "Choster901",
       "email": "john.doe@example.com",
       "password": "12345678",
       "couponId": "1",
@@ -314,7 +314,7 @@
     {
       "id": "2",
       "name": "Jane Smith",
-      "username": "Choster900",
+      "username": "Choster902",
       "email": "jane.smith@example.com",
       "password": "hashed_password_2",
       "couponId": null,
@@ -326,7 +326,7 @@
       "updated_at": "2024-10-23T12:30:00Z"
     },
     {
-      "id": "7693",
+      "id": "79df",
       "name": "SERGIO ADONAY LOPEZ MEJIA",
       "username": "Choster900",
       "email": "16adonaysergio@gmail.com",
@@ -336,26 +336,11 @@
       "roles": [
         "guest"
       ],
-      "created_at": "2024-10-25T21:30:05.287Z",
+      "centralAmericaCountrieId": "1",
+      "phoneNumber": "+503 6162-1431",
+      "houseNumberAndStreetName": "123 Example Street",
+      "created_at": "2024-10-28T17:09:46.849Z",
       "updated_at": null
-    }
-  ],
-  "addresses": [
-    {
-      "id": "A001",
-      "userId": "1",
-      "saveForNextShop": true,
-      "principalAddress": true,
-      "contactName": "John Doe",
-      "companyName": "Doe Corp",
-      "phoneNumber": "+440123456789",
-      "countryRegion": "Event",
-      "streetAddress": {
-        "houseNumberAndStreetName": "123 Example Street",
-        "apartmentSuiteUnit": "Apt 4B"
-      },
-      "city": "Enter city",
-      "zipPostalCode": "12345"
     }
   ],
   "coupons": [
@@ -421,6 +406,43 @@
       "tarifa_base": 20,
       "tarifa_por_peso": 10,
       "tiempo_entrega": "10-15 días hábiles"
+    }
+  ],
+  "centralAmericaCountries": [
+    {
+      "id": "1",
+      "name": "El Salvador",
+      "average_shipping_cost": 8.5
+    },
+    {
+      "id": "2",
+      "name": "Guatemala",
+      "average_shipping_cost": 9
+    },
+    {
+      "id": "3",
+      "name": "Honduras",
+      "average_shipping_cost": 8.75
+    },
+    {
+      "id": "4",
+      "name": "Nicaragua",
+      "average_shipping_cost": 9.25
+    },
+    {
+      "id": "5",
+      "name": "Costa Rica",
+      "average_shipping_cost": 10
+    },
+    {
+      "id": "6",
+      "name": "Panama",
+      "average_shipping_cost": 10.5
+    },
+    {
+      "id": "7",
+      "name": "Belize",
+      "average_shipping_cost": 9.5
     }
   ]
 }

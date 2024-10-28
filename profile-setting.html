@@ -176,80 +176,33 @@
                                                    <div class="form-group mb-20">
                                                       <label for="phoneNumber1">phone number</label>
                                                       <input type="tel" class="form-control" id="phoneNumber1"
-                                                         placeholder="+440 2546 5236">
+                                                         placeholder="">
                                                    </div>
                                                    <div class="form-group mb-20">
                                                       <div class="countryOption">
                                                          <label for="countryOption">
                                                             country
                                                          </label>
-                                                         <select class="js-example-basic-single js-states form-control"
-                                                            id="countryOption">
-                                                            <option value="JAN">event</option>
-                                                            <option value="FBR">Venues</option>
-                                                         </select>
-                                                      </div>
-                                                   </div>
-                                                   <div class="form-group mb-20">
-                                                      <div class="cityOption">
-                                                         <label for="cityOption">
-                                                            city
-                                                         </label>
-                                                         <select class="js-example-basic-single js-states form-control"
-                                                            id="cityOption">
-                                                            <option value="JAN">event</option>
-                                                            <option value="FBR">Venues</option>
-                                                         </select>
-                                                      </div>
-                                                   </div>
-                                                   <div class="form-group mb-20">
-                                                      <label for="company1">company name</label>
-                                                      <input type="text" class="form-control" id="company1"
-                                                         placeholder="Example">
-                                                   </div>
-                                                   <div class="form-group mb-20">
-                                                      <label for="website">website</label>
-                                                      <input type="email" class="form-control" id="website"
-                                                         placeholder="www.example.com">
-                                                   </div>
-                                                   <div class="form-group mb-20">
-                                                      <label for="userBio">user bio</label>
-                                                      <textarea class="form-control" id="userBio" rows="5"></textarea>
-                                                   </div>
-                                                   <div class="form-group mb-20">
-                                                      <div class="skillsOption">
-                                                         <label for="skillsOption">
-                                                            skils
-                                                         </label>
-                                                         <select class="js-example-basic-single js-states form-control"
-                                                            id="skillsOption" multiple="multiple">
-                                                            <option value="JAN">event</option>
-                                                            <option value="FBR">Venues</option>
-                                                         </select>
-                                                      </div>
-                                                   </div>
-                                                   <div class="button-group d-flex flex-wrap pt-30 mb-15">
+                                                         <select name="select-alerts2" id="select-alerts2"
+                                                            class="form-control ">
 
-
-                                                      <button
+                                                         </select>
+                                                      </div>
+                                                   </div>
+                                                   <div class="form-group mb-20">
+                                                      <label for="phoneNumber1">Complete Address</label>
+                                                      <input type="tel" class="form-control" id="houseNumberAndStreetName"
+                                                         placeholder="Complete address">
+                                                   </div>
+                                                  
+                                                   <div class="button-group  flex-wrap pt-30 mb-15" id="profile-section-buttons">
+                                                      <button id="update-profile"
                                                          class="btn btn-primary btn-default btn-squared me-15 text-capitalize btn-sm">update
                                                          profile
-                                                      </button>
-
-
-
-
-
-
-
+                                                      </button> 
                                                       <button
                                                          class="btn btn-light btn-default btn-squared fw-400 text-capitalize btn-sm">cancel
                                                       </button>
-
-
-
-
-
                                                    </div>
                                                 </form>
                                              </div>
@@ -280,10 +233,10 @@
                                                    <div class="form-group mb-20">
                                                       <label for="name1">username</label>
                                                       <input type="text" class="form-control" id="name1"
-                                                         placeholder="Duran Clayton">
+                                                         placeholder="">
                                                       <small id="passwordHelpInline2" class="text-light fs-13">Your
                                                          Dashboard URL:
-                                                         https://dashboard.com/<span class="color-dark">clayton</span>
+                                                         https://dashboard.com/?username=<span class="color-dark" id="span-username">clayton</span>
                                                       </small>
                                                    </div>
                                                    <div class="form-group mb-1">
@@ -309,41 +262,20 @@
                                                       data</span>
                                                 </div>
                                                 <div class="my-sm-0 my-10 py-10">
-
-
                                                    <button
                                                       class="btn btn-danger btn-default btn-squared fw-400 text-capitalize">close
                                                       account
                                                    </button>
-
-
-
-
-
                                                 </div>
                                              </div>
-                                             <div class="button-group d-flex flex-wrap pt-35 mb-35">
-
-
-                                                <button
+                                             <div class="button-group d-flex flex-wrap pt-35 mb-35" i>
+                                                <button id="btn-save-account-settings"
                                                    class="btn btn-primary btn-default btn-squared me-15 text-capitalize">Save
                                                    Changes
                                                 </button>
-
-
-
-
-
-
-
                                                 <button
                                                    class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
                                                 </button>
-
-
-
-
-
                                              </div>
                                           </div>
                                        </div>
@@ -372,12 +304,12 @@
                                                 <form>
                                                    <div class="form-group mb-20">
                                                       <label for="name">old passowrd</label>
-                                                      <input type="text" class="form-control" id="name">
+                                                      <input type="text" class="form-control" id="old-password">
                                                    </div>
                                                    <div class="form-group mb-1">
                                                       <label for="password-field">new password</label>
                                                       <div class="position-relative">
-                                                         <input id="password-field" type="password" class="form-control"
+                                                         <input id="new-password" type="password" class="form-control"
                                                             name="password" placeholder="Password">
                                                          <span
                                                             class="uil uil-eye-slash text-lighten fs-15 field-icon toggle-password2"></span>
@@ -387,27 +319,13 @@
                                                          characters
                                                       </small>
                                                       <div class="button-group d-flex flex-wrap pt-45 mb-35">
-
-
-                                                         <button
+                                                         <button id="btn-change-password"
                                                             class="btn btn-primary btn-default btn-squared me-15 text-capitalize">Save
                                                             Changes
-                                                         </button>
-
-
-
-
-
-
-
+                                                         </button> 
                                                          <button
                                                             class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
-                                                         </button>
-
-
-
-
-
+                                                         </button> 
                                                       </div>
                                                    </div>
                                                 </form>
