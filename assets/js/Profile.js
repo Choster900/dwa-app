@@ -19,48 +19,49 @@ function getParameterByName(name) {
 $(document).ready(function () {
 
     const userId = getCookie('userId');
-    const userName = getParameterByName('userName');
+    const username = getParameterByName('username');
 
-    if (userId) {
-        $.ajax({
-            type: 'GET',
-            url: `${baseURL}/users?username=${userName}`,
-            dataType: 'json',
-            success: function (res) {
+    /* if (userId) { */
+    $.ajax({
+        type: 'GET',
+        url: `${baseURL}/users?username=${username}`,
+        dataType: 'json',
+        success: function (res) {
 
-                if (res) {
+            if (res) {
 
-                    const response = res[0]
+                const response = res[0]
 
-                    // Update the user information
-                    $('.ap-nameAddress__title').text(response.name);
-                    $('.ap-nameAddress__subTitle').text(response.username);
-                    $('#names').val(response.name);
+                // Update the user information
+                $('.ap-nameAddress__title').text(response.name);
+                $('.ap-nameAddress__subTitle').text(response.username);
+                $('#names').val(response.name);
 
-                    $('#phoneNumber1').val(response.phoneNumber);
-                    $("#houseNumberAndStreetName").val(response.houseNumberAndStreetName);
+                $('#phoneNumber1').val(response.phoneNumber);
+                $("#houseNumberAndStreetName").val(response.houseNumberAndStreetName);
 
-                    loadCountries(response.centralAmericaCountrieId);
+                loadCountries(response.centralAmericaCountrieId);
 
 
-                    if (response.id != userId) {
-                        $("div#profile-section-buttons").hide();
-                    }
-
-                    $("#name1").val(response.username);
-                    $("#span-username").text(response.username);
-                    $("#email45").val(response.email);
-                } else {
-                    console.error('No user found with the provided ID.');
+                if (response.id != userId) {
+                    $("div.actions-buttons").hide();
                 }
-            },
-            error: function () {
-                console.error('Error occurred while trying to retrieve the user.');
+
+                $("#name1").val(response.username);
+                $("#span-username").text(response.username);
+                $("#email45").val(response.email);
+            } else {
+                console.error('No user found with the provided ID.');
             }
-        });
-    } else {
+        },
+        error: function () {
+            console.error('Error occurred while trying to retrieve the user.');
+        }
+    });
+    /* } else {
         console.log('No userId cookie found.');
-    }
+        $("div.actions-buttons").hide();
+    } */
 
     var countrySelect = $('#select-alerts2');
 

@@ -251,12 +251,12 @@
     },
     {
       "id": "143f",
-      "quantity": 12,
+      "quantity": 4,
       "userId": 1,
       "productId": "7",
       "isSelled": false,
       "added_at": "2024-10-25T15:48:15.117Z",
-      "updated_at": "2024-10-25T17:26:11.626Z"
+      "updated_at": "2024-10-28T19:22:51.286Z"
     }
   ],
   "invoices": [
@@ -278,7 +278,8 @@
           "quantity": 1,
           "price_per_unit": 499.99
         }
-      ]
+      ],
+      "id": "a845"
     },
     {
       "invoice_id": "2",
@@ -292,7 +293,8 @@
           "quantity": 3,
           "price_per_unit": 19.99
         }
-      ]
+      ],
+      "id": "3bad"
     }
   ],
   "users": [
