@@ -1,15 +1,26 @@
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
+
+function getParameterByName(name) {
+    const url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+    const results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 $(document).ready(function () {
 
-    function getParameterByName(name) {
-        const url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
-        const results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
+    
 
+    const userId = getCookie('userId');
     const productId = getParameterByName('id');
 
     $.ajax({
@@ -126,8 +137,6 @@ $(document).ready(function () {
         // Obtener la cantidad actual del producto
         const quantity = parseInt($(".current-quantity").val());
         const productId = getParameterByName('id'); // Asumiendo que tienes esta función para obtener el id del producto
-        const userId = 1; // Cambiar según el usuario actual
-       // const baseURL = "URL_DE_TU_API"; // Reemplaza con la URL base de tu API
     
         $.ajax({
             type: "GET",

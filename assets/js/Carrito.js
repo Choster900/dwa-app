@@ -1,4 +1,14 @@
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
 $(document).ready(function () {
+
+    const userId = getCookie('userId');
 
     function actualizarSubtotal(cartItemId, nuevaCantidad, productPrice) {
         const subtotal = (nuevaCantidad * productPrice).toFixed(2);
@@ -16,36 +26,45 @@ $(document).ready(function () {
     }
 
     function calcularTotalCompra(totalOrder) {
-        console.log(totalOrder);
+        $.ajax({
+            type: "GET",
+            url: `${baseURL}/users?_embed=coupon&id=${userId}&_embed=centralAmericaCountrie`,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
 
-        const coupon = {
-            "id": "1",
-            "codigo": "DESCUENTO10",
-            "descuento": 0.10, // Valor del descuento
-            "tipo": "porcentaje" // Puede ser "porcentaje" o "fijo"
-        };
+                const coupon = response[0]?.coupon || {};
+                const totPrice = totalOrder.reduce((acc, cart) => {
+                    const price = cart.product.discount_price !== null ? cart.product.discount_price : cart.product.product_price;
+                    return acc + (price * cart.quantity);
+                }, 0);
 
-        const totPrice = totalOrder.reduce((acc, cart) =>
-            acc + (cart.product.discount_price !== null ? cart.product.discount_price : cart.product.product_price) * cart.quantity
-            , 0);
+                // Mostrar el subtotal antes de aplicar el descuento
+                $('#subtotal-value').text(`$${totPrice.toFixed(2)}`);
 
-        console.log("Total Price (with quantities):", totPrice);
+                const descuento = coupon.descuento ? totPrice * coupon.descuento : totPrice;
+                const shippingCost = response[0].centralAmericaCountrie.average_shipping_cost;
 
-        // Muestra el subtotal antes de aplicar el descuento
-        $('#subtotal-value').text(`$${totPrice.toFixed(2)}`);
-
-        let finalPrice = 0;
-
-        // Aplica el descuento solo si el cupón tiene datos
-        if (coupon) {
-            finalPrice = totPrice * coupon.descuento;
-            $("#discount-price").text(`-$${finalPrice.toFixed(2)}`);
-        }else{
-            $("#discount-div").hide();
-        }
-
-        // Muestra el precio final con el descuento aplicado
+                if (coupon.descuento) {
+                    $("#discount-price").text(`- $${(descuento).toFixed(2)}`);
+                    $("#discount-div").show(); // Asegúrate de mostrar el div del descuento
+                    $("#percent-discount").text(parseFloat(coupon.descuento) * 100 + "% OFF");
+                    $("#coupon-code").val(coupon.codigo);
+                    $("#shipping-charge").text("$" + shippingCost.toFixed(2));
+                    $("#total-total").text("$" + (parseFloat(totPrice) - parseFloat(descuento) + parseFloat(shippingCost)).toFixed(2));
+                } else {
+                    $("#discount-div").hide(); // Ocultar si no hay descuento
+                }
+                recalcularTotal()
+                // Actualiza el precio final
+                $('#final-price').text(`$${descuento.toFixed(2)}`); // Asegúrate de tener un elemento para mostrar el precio final
+            },
+            error: function () {
+                console.error("Error al obtener el cupón.");
+            }
+        });
     }
+
 
 
 
@@ -61,6 +80,15 @@ $(document).ready(function () {
             }),
             success: function (response) {
                 console.log("Carrito actualizado:", response);
+
+                $.ajax({
+                    type: "GET",
+                    url: baseURL + "/shopping_cart?_embed=product&isSelled=false&userId=" + userId,
+                    dataType: "json",
+                    success: function (response) {
+                        calcularTotalCompra(response);
+                    }
+                });
             },
             error: function (error) {
                 console.error("Error al actualizar el carrito:", error);
@@ -71,9 +99,11 @@ $(document).ready(function () {
     // Cargar el carrito inicialmente
     $.ajax({
         type: "GET",
-        url: baseURL + "/shopping_cart?_embed=product&isSelled=false&userId=1", // TODO: Ponerle el id usuario que corresponde
+        url: baseURL + "/shopping_cart?_embed=product&isSelled=false&userId=" + userId,
         dataType: "json",
         success: function (response) {
+            console.log(response);
+
             try {
                 if (response.length === 0) {
                     $("#cart >tbody").html(`
@@ -178,10 +208,11 @@ $(document).ready(function () {
 
         const cartItemId = $(this).data('product-id');
         const productPrice = $(this).data('product-price');
-        console.log(productPrice);
 
         actualizarSubtotal(cartItemId, parseInt($(this).siblings('.input').val()) + 1, productPrice);
         actualizarCarrito(cartItemId, parseInt($(this).siblings('.input').val()) + 1)
+
+
     });
 
 
@@ -247,6 +278,16 @@ $(document).ready(function () {
             url: `${baseURL}/shopping_cart/${cartItemId}`,
             success: function (response) {
                 console.log("Artículo eliminado del carrito:", response);
+
+                $.ajax({
+                    type: "GET",
+                    url: baseURL + "/shopping_cart?_embed=product&isSelled=false&userId=" + userId,
+                    dataType: "json",
+                    success: function (response) {
+                        calcularTotalCompra(response);
+                    }
+                });
+
             },
             error: function (error) {
                 console.error("Error al eliminar el artículo:", error);
@@ -288,10 +329,29 @@ $(document).ready(function () {
             success: function (coupons) {
                 if (coupons.length > 0) {
                     const coupon = coupons[0]; // Toma el primer resultado
-
+                    // Aplicar el descuento según el tipo de cupón
                     console.log(coupon);
 
-                    // Aplicar el descuento según el tipo de cupón
+                    $.ajax({
+                        type: "PATCH",
+                        url: baseURL + "/users/" + userId,
+                        data: JSON.stringify({ couponId: coupon.id }),
+                        dataType: "json",
+                        success: function (response) {
+
+                            $.ajax({
+                                type: "GET",
+                                url: baseURL + "/shopping_cart?_embed=product&isSelled=false&userId=" + userId,
+                                dataType: "json",
+                                success: function (response) {
+                                    calcularTotalCompra(response);
+                                }
+                            });
+
+                            console.log("cupo agregado al usuario", response);
+
+                        }
+                    });
                 } else {
                     alert('Coupon not found or invalid.');
                 }

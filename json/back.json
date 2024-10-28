@@ -205,12 +205,12 @@
   ],
   "shopping_cart": [
     {
-      "quantity": 12,
+      "quantity": 1,
       "userId": "1",
       "productId": "1",
       "isSelled": false,
       "added_at": "2024-10-24T14:30:00Z",
-      "updated_at": "2024-10-25T20:03:53.504Z",
+      "updated_at": "2024-10-28T20:20:55.063Z",
       "id": "1"
     },
     {
@@ -232,31 +232,13 @@
       "updated_at": "2024-10-24T14:31:00Z"
     },
     {
-      "id": "5dcd",
-      "quantity": 10,
-      "userId": "1",
-      "productId": "4",
-      "isSelled": false,
-      "added_at": "2024-10-24T14:30:00Z",
-      "updated_at": "2024-10-25T15:43:21.305Z"
-    },
-    {
-      "id": "beea",
-      "quantity": 39,
-      "userId": 1,
+      "id": "ce38",
+      "quantity": 1,
+      "userId": "79df",
       "productId": "8",
       "isSelled": false,
-      "added_at": "2024-10-25T15:44:05.720Z",
-      "updated_at": "2024-10-25T16:30:10.532Z"
-    },
-    {
-      "id": "143f",
-      "quantity": 12,
-      "userId": 1,
-      "productId": "7",
-      "isSelled": false,
-      "added_at": "2024-10-25T15:48:15.117Z",
-      "updated_at": "2024-10-25T17:26:11.626Z"
+      "added_at": "2024-10-28T20:30:39.138Z",
+      "updated_at": "2024-10-28T20:55:21.767Z"
     }
   ],
   "invoices": [
@@ -278,7 +260,8 @@
           "quantity": 1,
           "price_per_unit": 499.99
         }
-      ]
+      ],
+      "id": "a845"
     },
     {
       "invoice_id": "2",
@@ -292,79 +275,69 @@
           "quantity": 3,
           "price_per_unit": 19.99
         }
-      ]
+      ],
+      "id": "3bad"
     }
   ],
   "users": [
     {
       "id": "1",
       "name": "John Doe",
-      "username": "Choster900",
+      "username": "Choster901",
       "email": "john.doe@example.com",
       "password": "12345678",
-      "phoneNumber": "+503 6162-1431",
       "couponId": "1",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-      "roles": ["admin", "seller"],
+      "roles": [
+        "admin",
+        "seller"
+      ],
       "created_at": "2024-10-23T10:00:00Z",
       "updated_at": "2024-10-23T12:00:00Z"
     },
     {
       "id": "2",
       "name": "Jane Smith",
-      "username": "Choster900",
+      "username": "Choster902",
       "email": "jane.smith@example.com",
       "password": "hashed_password_2",
-      "phoneNumber": "+503 6162-1431",
       "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ8",
-      "roles": ["customer"],
+      "roles": [
+        "customer"
+      ],
       "created_at": "2024-10-23T10:30:00Z",
       "updated_at": "2024-10-23T12:30:00Z"
     },
     {
-      "id": "7693",
+      "id": "79df",
       "name": "SERGIO ADONAY LOPEZ MEJIA",
       "username": "Choster900",
       "email": "16adonaysergio@gmail.com",
       "password": "12345678",
-      "phoneNumber": "+503 6162-1431",
       "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
-      "roles": ["guest"],
-      "created_at": "2024-10-25T21:30:05.287Z",
+      "roles": [
+        "guest"
+      ],
+      "centralAmericaCountrieId": "1",
+      "phoneNumber": "+503 6162-1431",
+      "houseNumberAndStreetName": "123 Example Street",
+      "created_at": "2024-10-28T17:09:46.849Z",
       "updated_at": null
-    }
-  ],
-  "addresses": [
-    {
-      "id": "A001",
-      "userId": "1",
-      "saveForNextShop": true,
-      "principalAddress": true,
-      "contactName": "John Doe",
-      "companyName": "Doe Corp",
-      "phoneNumber": "+440123456789",
-      "countryRegion": "Event",
-      "streetAddress": {
-        "houseNumberAndStreetName": "123 Example Street",
-        "apartmentSuiteUnit": "Apt 4B"
-      },
-      "city": "Enter city",
-      "zipPostalCode": "12345"
     }
   ],
   "coupons": [
     {
       "id": "1",
       "codigo": "DESCUENTO10",
-      "descuento": 10,
+      "descuento": 0.1,
       "tipo": "porcentaje"
     },
     {
       "id": "2",
       "codigo": "DESCUENTO5",
-      "descuento": 5,
+      "descuento": 0.5,
       "tipo": "fijo"
     },
     {
@@ -419,7 +392,6 @@
       "tiempo_entrega": "10-15 días hábiles"
     }
   ],
-
   "centralAmericaCountries": [
     {
       "id": "1",
@@ -429,7 +401,7 @@
     {
       "id": "2",
       "name": "Guatemala",
-      "average_shipping_cost": 9.0
+      "average_shipping_cost": 9
     },
     {
       "id": "3",
@@ -444,7 +416,7 @@
     {
       "id": "5",
       "name": "Costa Rica",
-      "average_shipping_cost": 10.0
+      "average_shipping_cost": 10
     },
     {
       "id": "6",
