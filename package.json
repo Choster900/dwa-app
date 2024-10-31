@@ -1,7 +1,7 @@
 {
   "scripts": {
     "backend": "json-server --watch json/db.json",    
-    "server": "httpserver 81 localhost"    
+    "server": "httpserver 90 localhost"    
   },
   "dependencies": {
     "httpserver": "^0.3.0",

@@ -238,13 +238,14 @@
       "productId": "8",
       "isSelled": false,
       "added_at": "2024-10-28T20:30:39.138Z",
-      "updated_at": "2024-10-29T00:40:22.563Z"
+      "updated_at": "2024-10-31T21:38:20.094Z"
     }
   ],
   "invoices": [
     {
-      "invoice_id": "1",
+      "id": "a845",
       "userId": "1",
+      "paymentMethodId": "1",
       "total_amount": 159.97,
       "created_at": "2024-10-24T15:00:00Z",
       "products": [
@@ -260,12 +261,10 @@
           "quantity": 1,
           "price_per_unit": 499.99
         }
-      ],
-      "id": "a845"
+      ]
     },
     {
-      "invoice_id": "2",
-      "user_id": "2",
+      "userId": "2",
       "total_amount": 59.97,
       "created_at": "2024-10-24T15:05:00Z",
       "products": [
@@ -277,6 +276,33 @@
         }
       ],
       "id": "3bad"
+    },
+    {
+      "id": "a945",
+      "userId": "1",
+      "paymentMethodId": "1",
+      "total_amount": 159.97,
+      "created_at": "2024-10-24T15:00:00Z",
+      "products": []
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": "1",
+      "userId": "79df",
+      "cardType": "credit",
+      "cardHolderName": "John Doe",
+      "cardNumber": "4111111111111111",
+      "expirationDate": "12/26",
+      "securityCode": "123",
+      "billingAddress": {
+        "street": "Main St.",
+        "city": "San Francisco",
+        "postalCode": "94103",
+        "country": "USA"
+      },
+      "issuingBank": "Example Bank",
+      "status": "active"
     }
   ],
   "users": [
@@ -315,12 +341,12 @@
       "username": "Choster900",
       "email": "16adonaysergio@gmail.com",
       "password": "12345678",
-      "couponId": "2",
+      "couponId": "1",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
       "roles": [
         "guest"
       ],
-      "centralAmericaCountrieId": "6",
+      "centralAmericaCountrieId": "1",
       "phoneNumber": "+503 6162-1431",
       "houseNumberAndStreetName": "123 Example Street",
       "created_at": "2024-10-28T17:09:46.849Z",
