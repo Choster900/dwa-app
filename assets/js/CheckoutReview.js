@@ -25,7 +25,6 @@ $(document).ready(function () {
             url: `${baseURL}/users?_embed=coupon&id=${userId}&_embed=centralAmericaCountrie`,
             dataType: "json",
             success: function (response) {
-                console.log(response);
 
                 const coupon = response[0]?.coupon || {};
                 const totPrice = totalOrder.reduce((acc, cart) => {
@@ -81,7 +80,6 @@ $(document).ready(function () {
                 if (coupons.length > 0) {
                     const coupon = coupons[0]; // Toma el primer resultado
                     // Aplicar el descuento según el tipo de cupón
-                    console.log(coupon);
 
                     $.ajax({
                         type: "PATCH",
@@ -120,7 +118,6 @@ $(document).ready(function () {
         url: baseURL + "/shopping_cart?_embed=product&isSelled=false&userId=" + userId,
         dataType: "json",
         success: function (response) {
-            console.log(response);
 
             try {
                 if (response.length === 0) {
@@ -235,7 +232,6 @@ $(document).ready(function () {
                 updated_at: new Date().toISOString()
             }),
             success: function (response) {
-                console.log("Carrito actualizado:", response);
 
                 $.ajax({
                     type: "GET",
