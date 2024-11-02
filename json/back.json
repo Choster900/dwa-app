@@ -43,43 +43,13 @@
       "product_price": 59.99,
       "userId": "1",
       "available_stock": 150,
-      "category_id": 1,
+      "category": 1,
       "brandId": "1",
       "status": "published",
       "discount_price": 49.99,
       "image_url": "https://example.com/images/headphones.jpg",
       "created_at": "2024-10-23",
       "updated_at": "2024-10-23"
-    },
-    {
-      "id": "2",
-      "product_name": "Smartphone Charger",
-      "product_description": "Fast-charging USB-C charger compatible with most smartphones.",
-      "product_price": 19.99,
-      "userId": "1",
-      "available_stock": 0,
-      "category_id": 2,
-      "brandId": "2",
-      "discount_price": null,
-      "status": "draft",
-      "image_url": "https://example.com/images/charger.jpg",
-      "created_at": "2024-09-12",
-      "updated_at": "2024-10-20"
-    },
-    {
-      "id": "1",
-      "product_name": "PRUEBA DE PRODUCTO",
-      "product_description": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"",
-      "product_price": 29.5,
-      "userId": "7cf1",
-      "available_stock": "30",
-      "category_id": 2,
-      "brandId": "3",
-      "status": "published",
-      "discount_price": 7,
-      "image_url": "https://example.com/images/headphones.jpg",
-      "created_at": "2024-11-02",
-      "updated_at": "2024-11-02"
     }
   ],
   "comments": [
@@ -90,22 +60,6 @@
       "rating": 4,
       "created_at": "2024-10-20",
       "productId": "1"
-    },
-    {
-      "id": "2",
-      "user": "Jane Smith",
-      "comment": "Charges my phone quickly, but the cable feels a bit flimsy.",
-      "rating": 3,
-      "created_at": "2024-09-14",
-      "productId": "2"
-    },
-    {
-      "id": "3",
-      "user": "Sam Wilson",
-      "comment": "Picture quality is amazing, and setup was a breeze!",
-      "rating": 5,
-      "created_at": "2024-08-25",
-      "productId": "3"
     }
   ],
   "shopping_cart": [
@@ -147,41 +101,6 @@
     }
   ],
   "invoices": [
-    {
-      "id": "a845",
-      "userId": "1",
-      "paymentMethodId": "1",
-      "total_amount": 159.97,
-      "created_at": "2024-10-24T15:00:00Z",
-      "products": [
-        {
-          "product_id": "1",
-          "product_name": "Wireless Bluetooth Headphones",
-          "quantity": 2,
-          "price_per_unit": 59.99
-        },
-        {
-          "product_id": "3",
-          "product_name": "4K Ultra HD Smart TV",
-          "quantity": 1,
-          "price_per_unit": 499.99
-        }
-      ]
-    },
-    {
-      "userId": "2",
-      "total_amount": 59.97,
-      "created_at": "2024-10-24T15:05:00Z",
-      "products": [
-        {
-          "product_id": "2",
-          "product_name": "Smartphone Charger",
-          "quantity": 3,
-          "price_per_unit": 19.99
-        }
-      ],
-      "id": "3bad"
-    },
     {
       "id": "a945",
       "userId": "1",
@@ -285,7 +204,7 @@
   "coupons": [
     {
       "id": "1",
-      "codigo": "DESCUENTO10",
+      "codigo": "DESCUENTO1",
       "descuento": 0.1,
       "tipo": "porcentaje"
     },
@@ -297,33 +216,9 @@
     },
     {
       "id": "3",
-      "codigo": "ENVIOGRATIS",
-      "descuento": 0,
-      "tipo": "envio"
-    }
-  ],
-  "envios": [
-    {
-      "id": "1",
-      "tipo_envio": "estándar",
-      "tiempo_entrega": "5-7 días hábiles",
-      "tarifa": 5,
-      "zona_geografica": "nacional"
-    },
-    {
-      "id": "2",
-      "tipo_envio": "expreso",
-      "tiempo_entrega": "1-2 días hábiles",
-      "tarifa": 15,
-      "zona_geografica": "nacional"
-    },
-    {
-      "id": "3",
-      "tipo_envio": "internacional",
-      "tiempo_entrega": "10-15 días hábiles",
-      "tarifa_base": 20,
-      "tarifa_por_peso": 5,
-      "zona_geografica": "internacional"
+      "codigo": "DESCUENTO25",
+      "descuento": 0.25,
+      "tipo": "fijo"
     }
   ],
   "zonas": [

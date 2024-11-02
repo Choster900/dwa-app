@@ -13,11 +13,10 @@ $(document).ready(function () {
         url: `${baseURL}/products?_embed=brand&userId=${userId}`, // URL para obtener productos con marca y categoría
         dataType: 'json',
         success: function (products) {
-            const tbody = $('.table tbody'); // Selector para el <tbody> de la tabla
-            tbody.empty(); // Limpiar el contenido anterior
+            const tbody = $('.table tbody');
+            tbody.empty();
 
             if (products.length === 0) {
-                // Si no hay productos, mostrar un mensaje
                 const noProductsMessage = `
                     <tr>
                         <td colspan="7" class="text-center">
@@ -27,9 +26,8 @@ $(document).ready(function () {
                         </td>
                     </tr>
                 `;
-                tbody.append(noProductsMessage); // Agregar mensaje de no productos
+                tbody.append(noProductsMessage);
             } else {
-                // Si hay productos, llenar la tabla
                 products.forEach(product => {
                     const productRow = `
                         <tr>
@@ -58,17 +56,17 @@ $(document).ready(function () {
                             </td>
                             <td>
                                 <div class="userDatatable-content">
-                                    ${product.category ? product.category.category_name : 'N/A'} <!-- Nombre de la categoría -->
+                                    ${product.category ? product.category.category_name : 'N/A'}
                                 </div>
                             </td>
                             <td>
                                 <div class="userDatatable-content">
-                                    ${product.product_price.toFixed(2)}  <!-- Precio original -->
+                                    ${product.product_price.toFixed(2)}
                                 </div>
                             </td>
                             <td>
                                 <div class="userDatatable-content">
-                                    ${product.discount_price ? product.discount_price.toFixed(2) : 'N/A'} <!-- Precio con descuento -->
+                                    ${product.discount_price ? product.discount_price.toFixed(2) : 'N/A'}
                                 </div>
                             </td>
                             <td>
@@ -78,18 +76,18 @@ $(document).ready(function () {
                             </td>
                             <td>
                                 <div class="userDatatable-content d-inline-block">
-                                    <span class="bg-opacity-success color-success rounded-pill userDatatable-content-status active">${product.status}</span>
+                                    <span class="bg-opacity-success color-success rounded-pill userDatatable-content-status ${product.status === 'published' ? 'active' : ''}">${product.status}</span>
                                 </div>
                             </td>
                             <td>
-                                <ul class="orderDatatable_actions mb-0 d-flex flex-wrap" >
+                                <ul class="orderDatatable_actions mb-0 d-flex flex-wrap">
                                     <li>
                                         <a href="#" class="view" data-id="${product.id}">
                                             <i class="uil uil-eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="./product.html?productId=${product.id}"" class="edit" data-id="${product.id}">
+                                        <a href="./product.html?productId=${product.id}" class="edit" data-id="${product.id}">
                                             <i class="uil uil-edit"></i>
                                         </a>
                                     </li>
@@ -102,12 +100,36 @@ $(document).ready(function () {
                             </td>
                         </tr>
                     `;
-                    tbody.append(productRow); // Agregar la fila del producto al tbody
+                    tbody.append(productRow);
                 });
             }
         },
         error: function () {
             console.error('Error al cargar los productos');
+        }
+    });
+
+    // Manejar el evento de "borrar" para cambiar el estado a "draft"
+    $('.table tbody').on('click', '.remove', function (e) {
+        e.preventDefault();
+
+        const productId = $(this).data('id');
+        
+        if (confirm('¿Estás seguro de que deseas cambiar el estado del producto a "draft"?')) {
+            $.ajax({
+                type: 'PATCH',
+                url: `${baseURL}/products/${productId}`,
+                contentType: 'application/json',
+                data: JSON.stringify({ status: 'draft' }),
+                success: function () {
+                    alert('El producto ha sido cambiado a "draft".');
+                    location.reload(); // Recargar la página para reflejar los cambios
+                },
+                error: function () {
+                    console.error('Error al actualizar el estado del producto');
+                    alert('Ocurrió un error al intentar cambiar el estado del producto. Por favor, inténtalo de nuevo.');
+                }
+            });
         }
     });
 });

@@ -125,6 +125,7 @@ $(document).ready(function () {
             status: status === "0" ? "published" : "draft",
             discount_price: discount ? parseFloat(discount) : null,
             image_url: imageUrl,
+            created_at: new Date().toISOString().split('T')[0],
             updated_at: new Date().toISOString().split('T')[0]
         };
 
