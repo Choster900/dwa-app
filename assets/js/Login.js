@@ -40,27 +40,27 @@ $(document).ready(function () {
     });
 
 
-
     $('.signIn-createBtn').on('click', function (e) {
         e.preventDefault();
-
+    
         const name = $('#name').val().trim();
         const username = $('#username').val().trim();
         const email = $('#email').val().trim();
         const password = $('#password-field').val().trim();
+        const accountType = $('.rol-selected').val(); // Obtener el tipo de cuenta seleccionado
         const errorMessage = $('#error-message');
-
+    
         if (!name || !username || !email || !password) {
             errorMessage.text('All fields are required.').show();
             return;
         }
-
+    
         function generateJWT() {
-            return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6"; // Dejamos un jwt quedamos por si acaso para despues
+            return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6"; // Dejar un JWT por si acaso
         }
-
+    
         const createdAt = new Date().toISOString();
-
+    
         const userData = {
             name: name,
             username: username,
@@ -68,14 +68,14 @@ $(document).ready(function () {
             password: password,
             couponId: null,
             jwt: generateJWT(),
-            roles: ["guest"],
-            centralAmericaCountrieId: "" ,
-            phoneNumber: "" ,
+            roles: [accountType], // Asignar el rol según la selección
+            centralAmericaCountrieId: "",
+            phoneNumber: "",
             houseNumberAndStreetName: "",
             created_at: createdAt,
             updated_at: null
         };
-
+    
         $.ajax({
             type: 'POST',
             url: baseURL + '/users',
@@ -83,23 +83,21 @@ $(document).ready(function () {
             data: JSON.stringify(userData),
             success: function (response) {
                 console.log('User created successfully:', response);
-
-
+    
                 localStorage.setItem('userId', response.id);
-
                 document.cookie = `userId=${response.id}; path=/; max-age=${7 * 24 * 60 * 60};`;
-
+    
                 console.log('User ID saved to Local Storage and Cookies:', response.id);
-
+    
                 errorMessage.hide();
                 //alert('User account created successfully!');
                 window.location.href = 'index.html';
-
             },
             error: function () {
                 errorMessage.text('Error occurred while trying to create the user. Please try again.').show();
             }
         });
     });
+    
 
 });

@@ -41,11 +41,12 @@
       "product_name": "Wireless Bluetooth Headphones",
       "product_description": "Noise-cancelling over-ear headphones with long battery life.",
       "product_price": 59.99,
+      "userId": "1",
       "available_stock": 150,
       "category_id": 1,
       "brandId": "1",
+      "status": "published",
       "discount_price": 49.99,
-      "sku": "ATH-5000",
       "image_url": "https://example.com/images/headphones.jpg",
       "created_at": "2024-10-23",
       "updated_at": "2024-10-23"
@@ -55,126 +56,30 @@
       "product_name": "Smartphone Charger",
       "product_description": "Fast-charging USB-C charger compatible with most smartphones.",
       "product_price": 19.99,
+      "userId": "1",
       "available_stock": 0,
       "category_id": 2,
       "brandId": "2",
       "discount_price": null,
-      "sku": "CM-200",
+      "status": "draft",
       "image_url": "https://example.com/images/charger.jpg",
       "created_at": "2024-09-12",
       "updated_at": "2024-10-20"
     },
     {
-      "id": "3",
-      "product_name": "4K Ultra HD Smart TV",
-      "product_description": "55-inch 4K UHD smart TV with built-in streaming apps.",
-      "product_price": 499.99,
-      "available_stock": 75,
-      "category_id": 1,
+      "id": "1",
+      "product_name": "PRUEBA DE PRODUCTO",
+      "product_description": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"",
+      "product_price": 29.5,
+      "userId": "7cf1",
+      "available_stock": "30",
+      "category_id": 2,
       "brandId": "3",
-      "discount_price": 449.99,
-      "sku": "VP-5500",
-      "image_url": "https://example.com/images/tv.jpg",
-      "created_at": "2024-08-15",
-      "updated_at": "2024-10-22"
-    },
-    {
-      "id": "4",
-      "product_name": "Portable Bluetooth Speaker",
-      "product_description": "Water-resistant speaker with deep bass and 12-hour playtime.",
-      "product_price": 89.99,
-      "available_stock": 60,
-      "category_id": 1,
-      "brandId": "1",
-      "discount_price": 74.99,
-      "sku": "AT-SPK",
-      "image_url": "https://example.com/images/speaker.jpg",
-      "created_at": "2024-10-10",
-      "updated_at": "2024-10-15"
-    },
-    {
-      "id": "5",
-      "product_name": "Wireless Earbuds",
-      "product_description": "Compact and lightweight earbuds with high-fidelity sound.",
-      "product_price": 29.99,
-      "available_stock": 100,
-      "category_id": 2,
-      "brandId": "1",
-      "discount_price": 24.99,
-      "sku": "AT-BUD",
-      "image_url": "https://example.com/images/earbuds.jpg",
-      "created_at": "2024-09-05",
-      "updated_at": "2024-10-01"
-    },
-    {
-      "id": "6",
-      "product_name": "Smart Microwave Oven",
-      "product_description": "900W microwave with smart app control and voice commands.",
-      "product_price": 199.99,
-      "available_stock": 40,
-      "category_id": 3,
-      "brandId": "4",
-      "discount_price": 179.99,
-      "sku": "HB-MW-900",
-      "image_url": "https://example.com/images/microwave.jpg",
-      "created_at": "2024-08-30",
-      "updated_at": "2024-10-22"
-    },
-    {
-      "id": "7",
-      "product_name": "Electric Kettle",
-      "product_description": "1.7L electric kettle with rapid boil technology.",
-      "product_price": 39.99,
-      "available_stock": 85,
-      "category_id": 3,
-      "brandId": "4",
-      "discount_price": null,
-      "sku": "HB-KT-1700",
-      "image_url": "https://example.com/images/kettle.jpg",
-      "created_at": "2024-07-15",
-      "updated_at": "2024-10-12"
-    },
-    {
-      "id": "8",
-      "product_name": "Portable Power Bank",
-      "product_description": "10,000mAh power bank for mobile devices with dual USB ports.",
-      "product_price": 24.99,
-      "available_stock": 130,
-      "category_id": 2,
-      "brandId": "5",
-      "discount_price": 19.99,
-      "sku": "PT-PB10000",
-      "image_url": "https://example.com/images/powerbank.jpg",
-      "created_at": "2024-09-22",
-      "updated_at": "2024-10-23"
-    },
-    {
-      "id": "9",
-      "product_name": "Wireless Gaming Mouse",
-      "product_description": "Ergonomic design with customizable buttons and RGB lighting.",
-      "product_price": 49.99,
-      "available_stock": 95,
-      "category_id": 2,
-      "brandId": "2",
-      "discount_price": 44.99,
-      "sku": "CM-GM-100",
-      "image_url": "https://example.com/images/gamingmouse.jpg",
-      "created_at": "2024-08-05",
-      "updated_at": "2024-10-05"
-    },
-    {
-      "id": "10",
-      "product_name": "Smart Air Conditioner",
-      "product_description": "Energy-efficient air conditioner with Wi-Fi connectivity.",
-      "product_price": 299.99,
-      "available_stock": 20,
-      "category_id": 3,
-      "brandId": "4",
-      "discount_price": 269.99,
-      "sku": "HB-AC-SMART",
-      "image_url": "https://example.com/images/airconditioner.jpg",
-      "created_at": "2024-06-30",
-      "updated_at": "2024-10-20"
+      "status": "published",
+      "discount_price": 7,
+      "image_url": "https://example.com/images/headphones.jpg",
+      "created_at": "2024-11-02",
+      "updated_at": "2024-11-02"
     }
   ],
   "comments": [
@@ -233,12 +138,12 @@
     },
     {
       "id": "ce38",
-      "quantity": 2,
+      "quantity": 4,
       "userId": "79df",
       "productId": "8",
       "isSelled": false,
       "added_at": "2024-10-28T20:30:39.138Z",
-      "updated_at": "2024-11-01T19:27:10.308Z"
+      "updated_at": "2024-11-01T20:02:57.337Z"
     }
   ],
   "invoices": [
@@ -321,7 +226,10 @@
       "password": "12345678",
       "couponId": "1",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-      "roles": ["admin", "seller"],
+      "roles": [
+        "admin",
+        "seller"
+      ],
       "created_at": "2024-10-23T10:00:00Z",
       "updated_at": "2024-10-23T12:00:00Z"
     },
@@ -333,7 +241,9 @@
       "password": "hashed_password_2",
       "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ8",
-      "roles": ["customer"],
+      "roles": [
+        "customer"
+      ],
       "created_at": "2024-10-23T10:30:00Z",
       "updated_at": "2024-10-23T12:30:00Z"
     },
@@ -345,11 +255,30 @@
       "password": "12345678",
       "couponId": "2",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
-      "roles": ["guest"],
+      "roles": [
+        "guest"
+      ],
       "centralAmericaCountrieId": "1",
       "phoneNumber": "+503 6162-1431",
       "houseNumberAndStreetName": "123 Example Street",
       "created_at": "2024-10-28T17:09:46.849Z",
+      "updated_at": null
+    },
+    {
+      "id": "7cf1",
+      "name": "VENDEDOR DE PRUEBA",
+      "username": "SELLER1",
+      "email": "seller@gmail.com",
+      "password": "seller",
+      "couponId": null,
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
+      "roles": [
+        "seller"
+      ],
+      "centralAmericaCountrieId": "",
+      "phoneNumber": "",
+      "houseNumberAndStreetName": "",
+      "created_at": "2024-11-02T18:08:15.633Z",
       "updated_at": null
     }
   ],

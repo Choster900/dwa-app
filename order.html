@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>HexaDash</title>
+
+   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   <!-- inject:css-->
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/bootstrap/bootstrap.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/daterangepicker.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/fontawesome.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/footable.standalone.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/fullcalendar@5.2.0.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/jquery-jvectormap-2.0.5.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/jquery.mCustomScrollbar.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/leaflet.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/line-awesome.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/magnific-popup.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/MarkerCluster.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/MarkerCluster.Default.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/select2.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/slick.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/star-rating-svg.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/trumbowyg.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/wickedpicker.min.css">
+
+   <link rel="stylesheet" href="style.css">
+
+   <!-- endinject -->
+
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+
+   <!-- Fonts -->
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+
+   <script src="assets/vendor_assets/js/jquery/jquery-3.5.1.min.js"></script>
+   <script src="assets/vendor_assets/js/jquery/jquery-ui.js"></script>
+
+</head>
+
+<body class="layout-light top-menu">
+
+   <div id="header-placeholder"></div>
+
+   <main class="main-content">
+
+      <div id="header-mobile"></div>
+
+
+      <div class="contents">
+
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="shop-breadcrumb">
+
+                     <div class="breadcrumb-main">
+                        <h4 class="text-capitalize breadcrumb-title">order</h4>
+                        <div class="breadcrumb-action justify-content-center flex-wrap">
+                           <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                 <li class="breadcrumb-item"><a href="#"><i class="uil uil-estate"></i>Home</a></li>
+                                 <li class="breadcrumb-item active" aria-current="page">order</li>
+                              </ol>
+                           </nav>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="userDatatable orderDatatable global-shadow py-30 px-sm-30 px-20 radius-xl w-100 mb-30">
+                     <div class="project-top-wrapper d-flex justify-content-between flex-wrap mb-25 mt-n10">
+                        <div class="d-flex align-items-center flex-wrap justify-content-center">
+                           <div class="project-search order-search  global-shadow mt-10">
+                              <form action="/" class="order-search__form">
+                                 <img src="img/svg/search.svg" alt="search" class="svg">
+                                 <input class="form-control me-sm-2 border-0 box-shadow-none" type="search"
+                                    placeholder="Filter by keyword" aria-label="Search">
+                              </form>
+                           </div><!-- End: .project-search -->
+                           <div class="project-category d-flex align-items-center ms-md-30 mt-xxl-10 mt-15">
+                              <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0  me-10">Status :</p>
+                              <div class="project-tap order-project-tap global-shadow">
+                                 <ul class="nav px-1" id="ap-tab" role="tablist">
+                                    <li class="nav-item">
+                                       <a class="nav-link active" id="ap-overview-tab" data-bs-toggle="pill"
+                                          href="#ap-overview" role="tab" aria-selected="true">All</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link" id="timeline-tab" data-bs-toggle="pill" href="#timeline"
+                                          role="tab" aria-selected="false">Shipped</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link" id="activity-tab" data-bs-toggle="pill" href="#activity"
+                                          role="tab" aria-selected="false">Awaiting
+                                          Shipment</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link" id="draft-tab" data-bs-toggle="pill" href="#draft" role="tab"
+                                          aria-selected="false">Canceled</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div><!-- End: .project-category -->
+                        </div><!-- End: .d-flex -->
+                        <div class="content-center mt-10">
+                           <div class="button-group m-0 mt-xl-0 mt-sm-10 order-button-group">
+                              <button type="button"
+                                 class="order-bg-opacity-secondary text-secondary btn radius-md">Export</button>
+                              <button type="button" class="btn btn-sm btn-primary me-0 radius-md">
+                                 <i class="la la-plus"></i> Add order</button>
+                           </div>
+                        </div><!-- End: .content-center -->
+                     </div><!-- End: .project-top-wrapper -->
+                     <div class="tab-content" id="ap-tabContent">
+                        <div class="tab-pane fade show active" id="ap-overview" role="tabpanel"
+                           aria-labelledby="ap-overview-tab">
+                           <!-- Start Table Responsive -->
+                           <div class="table-responsive">
+                              <table class="table mb-0 table-hover table-borderless border-0">
+                                 <thead>
+                                    <tr class="userDatatable-header">
+                                       <th>
+                                          <div class="d-flex align-items-center">
+
+                                             <div class="bd-example-indeterminate">
+                                                <div class="checkbox-theme-default custom-checkbox  check-all">
+                                                   <input class="checkbox" type="checkbox" id="check-23e">
+                                                   <label for="check-23e">
+                                                      <span class="checkbox-text ms-3">
+                                                         order id
+
+                                                      </span>
+                                                   </label>
+                                                </div>
+                                             </div>
+
+                                          </div>
+                                       </th>
+                                       <th>
+                                          <span class="userDatatable-title">Customers</span>
+                                       </th>
+                                       <th>
+                                          <span class="userDatatable-title">Status</span>
+                                       </th>
+                                       <th>
+                                          <span class="userDatatable-title">Amount</span>
+                                       </th>
+                                       <th>
+                                          <span class="userDatatable-title float-end">Date</span>
+                                       </th>
+                                       <th>
+                                          <span class="userDatatable-title float-end">Actions</span>
+                                       </th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-12">
+                                                         <label for="check-grp-12"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0003
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Kellie Marquot
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-success  text-success rounded-pill active">shiped</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $4,248.66
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 20, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-13">
+                                                         <label for="check-grp-13"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0004
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Carroll Maharry
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-warning  text-warning rounded-pill active">Awaiting
+                                                Shipment</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $14,248.61
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 28, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-14">
+                                                         <label for="check-grp-14"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0005
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Rosenbaum Reichel
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-danger  text-danger rounded-pill active">blocked</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $24,248.90
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 12, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-4">
+                                                         <label for="check-grp-4"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0006
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Ashley Briggs
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-success  text-success rounded-pill active">shiped</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $6,248.87
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 8, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-5">
+                                                         <label for="check-grp-5"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0007
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Carl Jenkins
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-success  text-success rounded-pill active">shiped</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $35,545.66
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 12, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-6">
+                                                         <label for="check-grp-6"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0008
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Bertha Martin
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-success  text-success rounded-pill active">shiped</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $4,248.66
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 14, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-7">
+                                                         <label for="check-grp-7"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0009
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Stacie Hall
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-success  text-success rounded-pill active">shiped</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $34,248.66
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 7, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-15">
+                                                         <label for="check-grp-15"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0010
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Kellie Marquot
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-warning  text-warning rounded-pill active">Awaiting
+                                                Shipment</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $4,248.66
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 9, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-9">
+                                                         <label for="check-grp-9"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0011
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Amanda Jones
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-success  text-success rounded-pill active">shiped</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $14,244.20
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 26, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-10">
+                                                         <label for="check-grp-10"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0012
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Ashley Briggs
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-success  text-success rounded-pill active">shiped</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $4,248.66
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 6, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+
+                                    <tr>
+                                       <td>
+                                          <div class="d-flex align-items-center">
+                                             <div class="me-3 d-flex align-items-center">
+                                                <div class="checkbox-group-wrapper">
+                                                   <div class="checkbox-group d-flex">
+                                                      <div
+                                                         class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex">
+                                                         <input class="checkbox" type="checkbox" id="check-grp-11">
+                                                         <label for="check-grp-11"></label>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="orderDatatable-title">
+                                                <p class="d-block mb-0">
+                                                   #02-0013
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             Stacie Hall
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-status d-inline-block">
+                                             <span
+                                                class="order-bg-opacity-success  text-success rounded-pill active">shiped</span>
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title">
+                                             $4,248.66
+                                          </div>
+                                       </td>
+                                       <td>
+                                          <div class="orderDatatable-title float-end">
+                                             January 7, 2020
+                                          </div>
+                                       </td>
+
+                                       <td>
+                                          <ul class="orderDatatable_actions mb-0 d-flex flex-wrap float-end">
+                                             <li>
+                                                <a href="#" class="view">
+                                                   <i class="uil uil-eye"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="edit">
+                                                   <i class="uil uil-edit"></i>
+                                                </a>
+                                             </li>
+                                             <li>
+                                                <a href="#" class="remove">
+                                                   <i class="uil uil-trash-alt"></i>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <!-- End: tr -->
+
+                                 </tbody>
+                              </table>
+                           </div>
+                           <!-- Table Responsive End -->
+                        </div>
+                        
+                     </div>
+                     <div class="d-flex justify-content-md-end justify-content-center mt-15 pt-25 border-top">
+
+                        <nav class="dm-page ">
+                           <ul class="dm-pagination d-flex">
+                              <li class="dm-pagination__item">
+                                 <a href="#" class="dm-pagination__link pagination-control"><span
+                                       class="la la-angle-left"></span></a>
+                                 <a href="#" class="dm-pagination__link"><span class="page-number">1</span></a>
+                                 <a href="#" class="dm-pagination__link active"><span class="page-number">2</span></a>
+                                 <a href="#" class="dm-pagination__link"><span class="page-number">3</span></a>
+                                 <a href="#" class="dm-pagination__link pagination-control"><span
+                                       class="page-number">...</span></a>
+                                 <a href="#" class="dm-pagination__link"><span class="page-number">12</span></a>
+                                 <a href="#" class="dm-pagination__link pagination-control"><span
+                                       class="la la-angle-right"></span></a>
+                                 <a href="#" class="dm-pagination__option">
+                                 </a>
+                              </li>
+                              <li class="dm-pagination__item">
+                                 <div class="paging-option">
+                                    <select name="page-number" class="page-selection">
+                                       <option value="20">20/page</option>
+                                       <option value="40">40/page</option>
+                                       <option value="60">60/page</option>
+                                    </select>
+                                 </div>
+                              </li>
+                           </ul>
+                        </nav>
+
+
+                     </div>
+                  </div><!-- End: .userDatatable -->
+               </div><!-- End: .col -->
+            </div>
+         </div>
+
+      </div>
+
+      <div id="footer-placeholder"></div>
+
+
+   </main>
+
+</body>
+
+
+
+<div class="overlay-dark-sidebar"></div>
+<div class="customizer-overlay"></div>
+
+<script>
+
+   $(document).ready(function () {
+      $("#header-placeholder").load("./Layouts/Header.html");
+      $("#footer-placeholder").load("./Layouts/Footer.html");
+      $("#header-mobile").load("./Layouts/Sidebar-mobile.html");
+   });
+
+</script>
+
+<script src="config.js"></script>
+<script src="utils/handleSession.js"></script>
+
+</body>
+
+</html>

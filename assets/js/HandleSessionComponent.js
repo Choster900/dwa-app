@@ -27,7 +27,7 @@ $(document).ready(function () {
     } else {
         console.log('No userId cookie found.');
 
-        window.location.href = 'index.html';
-        //$("#boton-carrito-compras").hide();
+        //window.location.href = 'index.html';
+        $(".hidden-session-component").hide();
     }
 });

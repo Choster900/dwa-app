@@ -164,7 +164,7 @@ $(document).ready(function () {
                             "telefonosNotificacion": "61621431",
                             "notificarTransaccionCliente": true
                         },
-                        "urlRedirect": "http://localhost:93/payment-status.html",
+                        "urlRedirect": "http://localhost:96/payment-status.html",
                         "nombre": "string",
                         "apellido": "string",
                         "email": "user@example.com",
@@ -184,7 +184,7 @@ $(document).ready(function () {
                     dataType: "json",
                     success: function (response) {
                         console.log("Transacción exitosa:", response);
-                        window.location.href = response.urlCompletarPago3Ds;
+                      // window.location.href = response.urlCompletarPago3Ds;
 
                     },
                     error: function (xhr, status, error) {

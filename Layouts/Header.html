@@ -94,7 +94,7 @@
                                  <a href="product-details.html" class="">Product Details</a>
                               </li>
                               <li>
-                                 <a href="add-product.html" class="">Product
+                                 <a href="product.html" class="">Product
                                     Add</a>
                               </li>
                               <li>
@@ -433,9 +433,9 @@
             <!-- ends: .nav-flag-select -->
             <li class="nav-author">
                <div class="dropdown-custom">
-                  <a href="javascript:;" class="nav-item-toggle"><img src="img/author-nav.jpg" alt=""
-                        class="rounded-circle">
-                     <span class="nav-item__title">Danial XD<i class="las la-angle-down nav-item__arrow"></i></span>
+                  <a href="javascript:;" class="nav-item-toggle">
+                     <img src="img/author-nav.jpg" alt="" class="rounded-circle">
+                     <span class="nav-item__title">USER UNKNOWN <i class="las la-angle-down nav-item__arrow"></i></span>
                   </a>
                   <div class="dropdown-parent-wrapper">
                      <div class="dropdown-wrapper">
@@ -444,25 +444,31 @@
                               <img src="img/author-nav.jpg" alt="" class="rounded-circle">
                            </div>
                            <div>
-                              <h6 id="name">Rabbi Islam Rony</h6>
+                              <h6 id="name">Guest</h6>
                            </div>
                         </div>
                         <div class="nav-author__options">
                            <ul>
-                              <li>
+                              <!-- Opciones de perfil (solo visibles cuando hay usuario) -->
+                              <li id="profile-option">
                                  <a id="profile-button" href="">
                                     <i class="uil uil-user"></i> Profile</a>
                               </li>
-
                            </ul>
-                           <a href="" class="nav-author__signout">
-                              <i class="uil uil-sign-out-alt"></i> Sign Out</a>
+                           <!-- Botón de inicio de sesión (solo visible cuando no hay usuario) -->
+                           <a href="login.html" class="nav-author__signout" id="login-button">
+                              <i class="uil uil-sign-in-alt"></i> Login
+                           </a>
+                           <!-- Botón de cerrar sesión (solo visible cuando hay usuario) -->
+                           <a href="javascript:;" class="nav-author__signout" id="signout-button">
+                              <i class="uil uil-sign-out-alt"></i> Sign Out
+                           </a>
                         </div>
                      </div>
-                     <!-- ends: .dropdown-wrapper -->
                   </div>
                </div>
             </li>
+            
             <!-- ends: .nav-author -->
          </ul>
          <!-- ends: .navbar-right__menu -->
@@ -477,37 +483,63 @@
    </nav>
 </header>
 <!-- <script src="../config.js"></script>
- --><script>
-
+ -->
+<script>
    function getCookie(name) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(';').shift();
-      return null;
+      return parts.length === 2 ? parts.pop().split(';').shift() : null;
+   }
+
+   function eliminarCookie(name) {
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+   }
+
+   function signOut() {
+      eliminarCookie('userId');
+      window.location.href = 'login.html';
+   }
+
+   // Oculta elementos cuando no hay usuario
+   function ocultarOpcionesSinUsuario() {
+      $(".nav-item__title, #profile-button, #name").hide();
+      $("#signout-button").hide();
+      // Agrega aquí cualquier otro elemento que quieras ocultar
+   }
+
+   function configurarUsuario(response) {
+      $(".nav-item__title").text(response.username);
+      $("#name").text(response.name);
+      $("#login-button").hide();
+
+
+      const port = window.location.port ? `:${window.location.port}` : '';
+      const userProfileUrl = `http://${window.location.hostname}${port}/profile-setting.html?username=${response.username}`;
+
+      $("#profile-button").attr("href", userProfileUrl);
    }
 
    $(document).ready(function () {
-    const userId = getCookie('userId');
+      const userId = getCookie('userId');
 
-    $.ajax({
-        type: "GET",
-        url: `${baseURL}/users/${userId}`,
-        dataType: "json",
-        success: function (response) {
-            console.log(response);
+      if (userId) {
+         $.ajax({
+            type: "GET",
+            url: `${baseURL}/users/${userId}`,
+            dataType: "json",
+            success: configurarUsuario,
+            error: function (error) {
+               console.error("Error al obtener datos del usuario:", error);
+               ocultarOpcionesSinUsuario(); // Oculta opciones si hay error al obtener el usuario
+            }
+         });
+      } else {
+         ocultarOpcionesSinUsuario(); // Oculta opciones si no hay cookie de usuario
+      }
 
-            $(".nav-item__title").text(response.username);
-            $("#name").text(response.name);
-
-            // Obtener el puerto dinámicamente
-            const port = window.location.port ? `:${window.location.port}` : ''; // Obtener el puerto si existe
-            const userProfileUrl = `http://${window.location.hostname}${port}/profile-setting.html?username=${response.username}`;
-
-            // Establecer la ruta en el enlace
-            $("#profile-button").attr("href", userProfileUrl);
-        }
-    });
-});
-
-
+      $('.nav-author__signout').on('click', function (e) {
+         e.preventDefault();
+         signOut();
+      });
+   });
 </script>
