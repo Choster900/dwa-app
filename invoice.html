@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HexaDash</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- inject:css-->
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/bootstrap/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/daterangepicker.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/fontawesome.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/footable.standalone.min.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/fullcalendar@5.2.0.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/jquery-jvectormap-2.0.5.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/jquery.mCustomScrollbar.min.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/leaflet.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/line-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/MarkerCluster.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/MarkerCluster.Default.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/select2.min.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/slick.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/star-rating-svg.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/trumbowyg.min.css">
+
+    <link rel="stylesheet" href="assets/vendor_assets/css/wickedpicker.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- endinject -->
+
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+
+    <script src="assets/vendor_assets/js/jquery/jquery-3.5.1.min.js"></script>
+    <script src="assets/vendor_assets/js/jquery/jquery-ui.js"></script>
+
+</head>
+
+<body class="layout-light top-menu">
+
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+        <div id="header-mobile"></div>
+
+        <div class="contents">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="shop-breadcrumb">
+
+                            <div class="breadcrumb-main">
+                                <h4 class="text-capitalize breadcrumb-title">invoice</h4>
+                                <div class="breadcrumb-action justify-content-center flex-wrap">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#"><i
+                                                        class="uil uil-estate"></i>Home</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Invoice</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="payment-invoice global-shadow radius-xl w-100 mb-30">
+                            <div class="payment-invoice__body">
+                                <div class="payment-invoice-address d-flex justify-content-sm-between">
+                                    <div class="payment-invoice-logo">
+                                        <a href="index.html">
+                                            <img class="dark" src="img/logo-dark.png" alt="logo">
+                                            <img class="light" src="img/logo-white.png" alt="logo">
+                                        </a>
+                                    </div>
+                                    <div class="payment-invoice-address__area">
+                                        <address>Admin Company<br> 795 Folsom Ave, Suite 600<br> San Francisco, CA
+                                            94107, USA<br>
+                                            Reg.
+                                            number : 245000003513</address>
+                                    </div>
+                                </div><!-- End: .payment-invoice-address -->
+                                <div
+                                    class="payment-invoice-qr d-flex justify-content-between mb-40 px-xl-50 px-30 py-sm-30 py-20 ">
+                                    <div class="d-flex justify-content-center mb-lg-0 mb-25">
+                                        <div class="payment-invoice-qr__number">
+                                            <div class="display-3">
+                                                Invoice
+                                            </div>
+                                            <p>No : <span>#642678</span></p>
+                                            <p>Date : <span>Jan 17, 2020</span></p>
+                                        </div>
+                                    </div><!-- End: .d-flex -->
+                                    <div class="d-flex justify-content-center mb-lg-0 mb-25">
+                                        <div class="payment-invoice-qr__code bg-white radius-xl p-20">
+                                            <img src="img/qr.png" alt="qr">
+                                            <p>8364297359912267</p>
+                                        </div>
+                                    </div><!-- End: .d-flex -->
+                                    <div class="d-flex justify-content-center">
+                                        <div class="payment-invoice-qr__address">
+                                            <p>Invoice To:</p>
+                                            <span>Stanley Jones</span><br>
+                                            <span>795 Folsom Ave, Suite 600</span><br>
+                                            <span>San Francisco, CA 94107, USA</span>
+                                        </div>
+                                    </div><!-- End: .d-flex -->
+                                </div><!-- End: .payment-invoice-qr -->
+                                <div class="payment-invoice-table">
+                                    <div class="table-responsive">
+                                        <table id="cart" class="table table-borderless">
+                                            <thead>
+                                                <tr class="product-cart__header">
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Product</th>
+                                                    <th scope="col" class="text-end">Price Per Unit</th>
+                                                    <th scope="col" class="text-end">Quantity</th>
+                                                    <th scope="col" class="text-end">Order Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="3"></td>
+                                                    <td class="order-summery float-right border-0   ">
+                                                        <div class="total">
+                                                            <div class="subtotalTotal mb-0 text-end">
+                                                                Subtotal :
+                                                            </div>
+                                                            <div class="taxes mb-0 text-end">
+                                                                discount :
+                                                            </div>
+                                                            <div class="shipping mb-0 text-end">
+                                                                Shipping charge :
+                                                            </div>
+                                                        </div>
+                                                        <div class="total-money mt-2 text-end">
+                                                            <h6>Total :</h6>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="total-order float-right text-end fs-14 fw-500">
+                                                            <p>$1,690.26</p>
+                                                            <p>-$126.30</p>
+                                                            <p>$46.30</p>
+                                                            <h5 class="text-primary">$1736.00</h5>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="payment-invoice__btn mt-xxl-50 pt-xxl-30">
+                                        <button type="button"
+                                            class="btn border rounded-pill bg-normal text-gray px-25 print-btn">
+                                            <img src="img/svg/printer.svg" alt="printer" class="svg">print</button>
+                                        <button type="button" class="btn border rounded-pill bg-normal text-gray px-25">
+                                            <img src="img/svg/send.svg" alt="send" class="svg">invoice</button>
+                                        <button type="button"
+                                            class="btn-primary btn rounded-pill px-25 text-white download">
+                                            <img src="img/svg/upload.svg" alt="upload" class="svg">download</button>
+                                    </div>
+                                </div><!-- End: .payment-invoice-table -->
+                            </div><!-- End: .payment-invoice__body -->
+                        </div><!-- End: .payment-invoice -->
+                    </div><!-- End: .col -->
+                </div>
+            </div>
+
+        </div>
+
+        <div id="footer-placeholder"></div>
+
+
+    </main>
+
+</body>
+
+
+
+<div class="overlay-dark-sidebar"></div>
+<div class="customizer-overlay"></div>
+
+<script>
+
+    $(document).ready(function () {
+        $("#header-placeholder").load("./Layouts/Header.html");
+        $("#footer-placeholder").load("./Layouts/Footer.html");
+        $("#header-mobile").load("./Layouts/Sidebar-mobile.html");
+    });
+
+</script>
+
+<script src="config.js"></script>
+<script src="utils/handleSession.js"></script>
+<script src="assets/js/Invoice.js"></script>
+</body>
+
+</html>

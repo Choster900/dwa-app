@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     const userId = getCookie('userId');
 
-    /*  $(document).on("click", "#pay", async function () {
+     $(document).on("click", "#pay", async function () {
          try {
              // Obtener el carrito de compras
              const contentCart = await $.ajax({
@@ -36,18 +36,18 @@ $(document).ready(function () {
              }, 0);
  
              const descuento = coupon.descuento ? totPrice * coupon.descuento : 0;
-             const totalAmount = (totPrice - descuento + shippingCost).toFixed(2);
+             const totalAmount = (totPrice - descuento ).toFixed(2);
  
              // Obtener token de Wompi
-             const { access_token: accessToken } = await $.ajax({
+           /*   const { access_token: accessToken } = await $.ajax({
                  type: "POST",
                  url: "http://localhost:8080/api/wompi/getToken",
                  contentType: "application/x-www-form-urlencoded",
                  dataType: "json"
-             });
+             }); */
  
              // Crear transacción con token
-             const transactionResponse = await $.ajax({
+          /*    const transactionResponse = await $.ajax({
                  type: "POST",
                  url: "http://localhost:8080/api/wompi/createTransaction",
                  headers: { "Authorization": `Bearer ${accessToken}` },
@@ -83,18 +83,21 @@ $(document).ready(function () {
                      }
                  }),
                  dataType: "json"
-             });
+             }); */
  
              // Crear la factura
              const invoiceData = {
                  userId: userId,
                  paymentMethodId: "1",
+                 shippingCost : shippingCost,
+                 discount: descuento,
                  total_amount: totalAmount,
                  created_at: new Date().toISOString(),
                  products: contentCart.map(cart => ({
                      productId: cart.product.id,
+                     productId: cart.product.product_name,
                      quantity: cart.quantity,
-                     price: cart.product.discount_price ?? cart.product.product_price
+                     price_per_unit: cart.product.discount_price ?? cart.product.product_price
                  }))
              };
  
@@ -125,14 +128,14 @@ $(document).ready(function () {
          } catch (error) {
              console.error("Error en el proceso de pago:", error);
          }
-     }); */
+     });
 
 
 
 
 
 
-    $(document).on("click", "#pay", function () {
+  /*   $(document).on("click", "#pay", function () {
 
         $.ajax({
             type: "POST",
@@ -196,7 +199,7 @@ $(document).ready(function () {
                 console.error("Error al obtener token:", xhr.responseText);
             }
         });
-    });
+    }); */
 
 
 

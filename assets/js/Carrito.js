@@ -80,6 +80,12 @@ $(document).ready(function () {
                     $("#shipping-charge").text("$" + shippingCost.toFixed(2));
                     $("#total-total").text("$" + (parseFloat(totPrice) - parseFloat(descuento) + parseFloat(shippingCost)).toFixed(2));
                 } else {
+                    $("#discount-price").text(`- $${(descuento).toFixed(2)}`);
+                    $("#discount-div").show(); // Asegúrate de mostrar el div del descuento
+                    $("#percent-discount").text(parseFloat(coupon.descuento) * 100 + "% OFF");
+                    $("#coupon-code").val(coupon.codigo);
+                    $("#shipping-charge").text("$" + shippingCost.toFixed(2));
+                    $("#total-total").text("$" + (parseFloat(totPrice) + parseFloat(shippingCost)).toFixed(2));
                     $("#discount-div").hide(); // Ocultar si no hay descuento
                 }
                 recalcularTotal()
@@ -129,7 +135,6 @@ $(document).ready(function () {
         url: baseURL + "/shopping_cart?_embed=product&isSelled=false&userId=" + userId,
         dataType: "json",
         success: function (response) {
-            console.log(response);
 
             try {
                 if (response.length === 0) {

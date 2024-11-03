@@ -91,7 +91,7 @@ $(document).ready(function () {
             // Obtener la categoria
             $.ajax({
                 type: "GET",
-                url: baseURL + "/categories/" + productResponse.category_id,
+                url: baseURL + "/categories/" + productResponse.categorieId,
                 dataType: "json",
                 success: function (response) {
                     $("#category").html(response.category_name);
@@ -170,6 +170,7 @@ $(document).ready(function () {
                         userId: userId,
                         productId: productId,
                         isSelled: false,
+                        "invoiceStatuseId": 1, //TODO: para mientras se deja en uno (pernsar en un nuevo flujo de estados de productos)
                         added_at: new Date().toISOString(),
                         updated_at: new Date().toISOString()
                     };

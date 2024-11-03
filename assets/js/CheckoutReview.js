@@ -49,6 +49,14 @@ $(document).ready(function () {
                     $("#total-total").text("$" + (parseFloat(totPrice) - parseFloat(descuento) + parseFloat(shippingCost)).toFixed(2));
                     $("#total-table").text("$" + (parseFloat(totPrice) + parseFloat(shippingCost)).toFixed(2));
                 } else {
+                    $("#discount-price").text(`- $${(descuento).toFixed(2)}`);
+                    $("#discount-div").show(); // Asegúrate de mostrar el div del descuento
+                    $("#percent-discount").text(parseFloat(coupon.descuento) * 100 + "% OFF");
+                    $("#coupon-code").val(coupon.codigo);
+                    //  $("#shipping-charge").text("$" + shippingCost.toFixed(2));
+                    $(".shipping>span").text("$" + shippingCost.toFixed(2));
+                    $("#total-total").text("$" + (parseFloat(totPrice) + parseFloat(shippingCost)).toFixed(2));
+                    $("#total-table").text("$" + (parseFloat(totPrice) + parseFloat(shippingCost)).toFixed(2));
                     $("#discount-div").hide(); // Ocultar si no hay descuento
                 }
                 //recalcularTotal()

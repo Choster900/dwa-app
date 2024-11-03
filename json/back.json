@@ -50,6 +50,21 @@
       "image_url": "https://example.com/images/headphones.jpg",
       "created_at": "2024-10-23",
       "updated_at": "2024-10-23"
+    },
+    {
+      "id": "0c61",
+      "product_name": "PRUEBA DE PRODUCTO",
+      "product_description": "xd",
+      "product_price": 150,
+      "userId": "7cf1",
+      "available_stock": "156",
+      "categorieId": 2,
+      "brandId": "4",
+      "status": "published",
+      "discount_price": 23,
+      "image_url": "https://example.com/images/headphones.jpg",
+      "updated_at": "2024-11-02",
+      "created_at": "2024-11-02"
     }
   ],
   "comments": [
@@ -98,23 +113,108 @@
       "isSelled": false,
       "added_at": "2024-10-28T20:30:39.138Z",
       "updated_at": "2024-11-01T20:02:57.337Z"
+    },
+    {
+      "id": "4821",
+      "quantity": 3,
+      "userId": "9650",
+      "productId": "0c61",
+      "isSelled": false,
+      "invoiceStatuseId": 1,
+      "added_at": "2024-11-03T00:46:06.824Z",
+      "updated_at": "2024-11-03T00:46:06.825Z"
+    },
+    {
+      "id": "f3a3",
+      "quantity": 5,
+      "userId": "9650",
+      "productId": "1",
+      "isSelled": false,
+      "invoiceStatuseId": 1,
+      "added_at": "2024-11-03T00:46:26.885Z",
+      "updated_at": "2024-11-03T00:46:26.885Z"
     }
   ],
   "invoices": [
     {
       "id": "a945",
       "userId": "1",
+      "userSeller": "",
       "paymentMethodId": "1",
       "total_amount": 159.97,
+      "invoiceStatuseId": 1,
       "created_at": "2024-10-24T15:00:00Z",
       "products": [
         {
-          "product_id": "1",
+          "productId": "1",
           "product_name": "Wireless Bluetooth Headphones",
           "quantity": 2,
           "price_per_unit": 59.99
         }
       ]
+    },
+    {
+      "id": "f43e",
+      "userId": "9650",
+      "paymentMethodId": "1",
+      "total_amount": "31.75",
+      "invoiceStatuseId": 1,
+      "created_at": "2024-11-02T23:41:56.599Z",
+      "products": [
+        {
+          "productId": "0c61",
+          "product_name": "PRUEBA DE PRODUCTO",
+          "quantity": 2,
+          "price_per_unit": 23
+        }
+      ]
+    }
+  ],
+  "invoiceStatuses": [
+    {
+      "id": 1,
+      "nombre": "pending",
+      "description": "La factura ha sido creada pero está pendiente de verificación o pago."
+    },
+    {
+      "id": 2,
+      "nombre": "approved",
+      "description": "La factura ha sido verificada y aprobada, lista para procesar."
+    },
+    {
+      "id": 3,
+      "nombre": "paid",
+      "description": "El pago de la factura ha sido recibido y confirmado."
+    },
+    {
+      "id": 4,
+      "nombre": "processed",
+      "description": "La factura ha sido procesada y los artículos están listos para su envío."
+    },
+    {
+      "id": 5,
+      "nombre": "shipped",
+      "description": "Los productos de la factura han sido enviados al cliente."
+    },
+    {
+      "id": 6,
+      "nombre": "delivered",
+      "description": "Los productos han sido entregados al cliente."
+    },
+    {
+      "id": 7,
+      "nombre": "completed",
+      "description": "El ciclo de la factura ha sido completado y la transacción está cerrada."
+    },
+    {
+      "id": 8,
+      "nombre": "canceled",
+      "description": "La factura ha sido cancelada, no se procesará."
+    },
+    {
+      "id": 9,
+      "nombre": "refunded",
+      "description": "El importe de la factura ha sido devuelto al cliente."
     }
   ],
   "paymentMethods": [
@@ -185,7 +285,7 @@
     },
     {
       "id": "7cf1",
-      "name": "VENDEDOR DE PRUEBA",
+      "name": "Sergio Lopez",
       "username": "SELLER1",
       "email": "seller@gmail.com",
       "password": "seller",
@@ -194,10 +294,27 @@
       "roles": [
         "seller"
       ],
-      "centralAmericaCountrieId": "",
-      "phoneNumber": "",
-      "houseNumberAndStreetName": "",
+      "centralAmericaCountrieId": "1",
+      "phoneNumber": "70946223",
+      "houseNumberAndStreetName": "123 Example Street",
       "created_at": "2024-11-02T18:08:15.633Z",
+      "updated_at": null
+    },
+    {
+      "id": "9650",
+      "name": "customer",
+      "username": "customer",
+      "email": "customer@gmail.com",
+      "password": "customer",
+      "couponId": null,
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
+      "roles": [
+        "customer"
+      ],
+      "centralAmericaCountrieId": "3",
+      "phoneNumber": "61621431",
+      "houseNumberAndStreetName": "tesserseres",
+      "created_at": "2024-11-02T23:16:23.248Z",
       "updated_at": null
     }
   ],
@@ -219,27 +336,6 @@
       "codigo": "DESCUENTO25",
       "descuento": 0.25,
       "tipo": "fijo"
-    }
-  ],
-  "zonas": [
-    {
-      "id": "local",
-      "descripcion": "Dentro de la misma ciudad",
-      "tarifa_base": 3,
-      "tiempo_entrega": "1-2 días hábiles"
-    },
-    {
-      "id": "nacional",
-      "descripcion": "Dentro del mismo país",
-      "tarifa_base": 5,
-      "tiempo_entrega": "3-5 días hábiles"
-    },
-    {
-      "id": "internacional",
-      "descripcion": "Fuera del país",
-      "tarifa_base": 20,
-      "tarifa_por_peso": 10,
-      "tiempo_entrega": "10-15 días hábiles"
     }
   ],
   "centralAmericaCountries": [
