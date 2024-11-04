@@ -24,7 +24,8 @@ const loadInvoiceDetails = async (invoiceId) => {
         invoice.products.forEach((product, index) => {
             const totalProduct = product.price_per_unit * product.quantity;
             subtotal += totalProduct;
-
+            console.log(product);
+            
             tbody.append(`
                 <tr>
                     <th>${index + 1}</th>

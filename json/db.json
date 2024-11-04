@@ -163,12 +163,14 @@
       "created_at": "2024-11-03T00:54:49.960Z",
       "products": [
         {
-          "productId": "PRUEBA DE PRODUCTO",
+          "productId": "0c61",
+          "product_name": "PRUEBA DE PRODUCTO",
           "quantity": 3,
           "price_per_unit": 23
         },
         {
-          "productId": "Wireless Bluetooth Headphones",
+          "productId": "1",
+          "product_name": "Wireless Bluetooth Headphones",
           "quantity": 5,
           "price_per_unit": 49.99
         }

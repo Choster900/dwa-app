@@ -95,7 +95,7 @@ $(document).ready(function () {
                  created_at: new Date().toISOString(),
                  products: contentCart.map(cart => ({
                      productId: cart.product.id,
-                     productId: cart.product.product_name,
+                     product_name: cart.product.product_name,
                      quantity: cart.quantity,
                      price_per_unit: cart.product.discount_price ?? cart.product.product_price
                  }))
