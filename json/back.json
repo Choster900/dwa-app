@@ -43,7 +43,7 @@
       "product_price": 59.99,
       "userId": "1",
       "available_stock": 150,
-      "category": 1,
+      "categorieId": 1,
       "brandId": "1",
       "status": "published",
       "discount_price": 49.99,
@@ -65,6 +65,51 @@
       "image_url": "https://example.com/images/headphones.jpg",
       "updated_at": "2024-11-02",
       "created_at": "2024-11-02"
+    },
+    {
+      "id": "2a12",
+      "product_name": "NUEVO PRODUCTO DE PRUEBA",
+      "product_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "product_price": 150,
+      "userId": "7cf1",
+      "available_stock": "12",
+      "categorieId": 1,
+      "brandId": "3",
+      "status": "published",
+      "discount_price": 140,
+      "image_url": "https://example.com/images/headphones.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
+    },
+    {
+      "id": "f2a0",
+      "product_name": "PRODUCTO DE PRUEBA 1",
+      "product_description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur",
+      "product_price": 10,
+      "userId": "7cf1",
+      "available_stock": "7",
+      "categorieId": 2,
+      "brandId": "3",
+      "status": "published",
+      "discount_price": 0,
+      "image_url": "https://example.com/images/headphones.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
+    },
+    {
+      "id": "69ca",
+      "product_name": "PRODUCTO DE PRUEBA 2",
+      "product_description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur",
+      "product_price": 11,
+      "userId": "7cf1",
+      "available_stock": "8",
+      "categorieId": 2,
+      "brandId": "3",
+      "status": "published",
+      "discount_price": 0,
+      "image_url": "https://example.com/images/headphones.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
     }
   ],
   "comments": [
@@ -113,26 +158,6 @@
       "isSelled": false,
       "added_at": "2024-10-28T20:30:39.138Z",
       "updated_at": "2024-11-01T20:02:57.337Z"
-    },
-    {
-      "id": "4821",
-      "quantity": 3,
-      "userId": "9650",
-      "productId": "0c61",
-      "isSelled": false,
-      "invoiceStatuseId": 1,
-      "added_at": "2024-11-03T00:46:06.824Z",
-      "updated_at": "2024-11-03T00:46:06.825Z"
-    },
-    {
-      "id": "f3a3",
-      "quantity": 5,
-      "userId": "9650",
-      "productId": "1",
-      "isSelled": false,
-      "invoiceStatuseId": 1,
-      "added_at": "2024-11-03T00:46:26.885Z",
-      "updated_at": "2024-11-03T00:46:26.885Z"
     }
   ],
   "invoices": [
@@ -140,9 +165,11 @@
       "id": "a945",
       "userId": "1",
       "userSeller": "",
+      "shippingCost": 8.5,
+      "discount": 0,
       "paymentMethodId": "1",
       "total_amount": 159.97,
-      "invoiceStatuseId": 1,
+      "invoiceStatuseId": 2,
       "created_at": "2024-10-24T15:00:00Z",
       "products": [
         {
@@ -158,7 +185,9 @@
       "userId": "9650",
       "paymentMethodId": "1",
       "total_amount": "31.75",
-      "invoiceStatuseId": 1,
+      "discount": 0,
+      "shippingCost": 8.5,
+      "invoiceStatuseId": 2,
       "created_at": "2024-11-02T23:41:56.599Z",
       "products": [
         {
@@ -166,6 +195,132 @@
           "product_name": "PRUEBA DE PRODUCTO",
           "quantity": 2,
           "price_per_unit": 23
+        }
+      ]
+    },
+    {
+      "id": "4cc5",
+      "userId": "9650",
+      "paymentMethodId": "1",
+      "discount": 0,
+      "total_amount": "327.70",
+      "shippingCost": 8.5,
+      "invoiceStatuseId": 2,
+      "created_at": "2024-11-03T00:54:49.960Z",
+      "products": [
+        {
+          "productId": "0c61",
+          "product_name": "PRUEBA DE PRODUCTO",
+          "quantity": 3,
+          "price_per_unit": 23
+        },
+        {
+          "productId": "1",
+          "product_name": "Wireless Bluetooth Headphones",
+          "quantity": 5,
+          "price_per_unit": 49.99
+        }
+      ]
+    },
+    {
+      "id": "0d3d",
+      "userId": "9650",
+      "paymentMethodId": "1",
+      "shippingCost": 8.75,
+      "discount": 0,
+      "total_amount": "420.00",
+      "invoiceStatuseId": 2,
+      "created_at": "2024-11-05T14:48:52.272Z",
+      "products": [
+        {
+          "productId": "2a12",
+          "product_name": "NUEVO PRODUCTO DE PRUEBA",
+          "quantity": 3,
+          "price_per_unit": 140
+        }
+      ]
+    },
+    {
+      "id": "b219",
+      "userId": "9650",
+      "paymentMethodId": "1",
+      "shippingCost": 8.75,
+      "discount": 6.800000000000001,
+      "total_amount": "61.20",
+      "invoiceStatuseId": 2,
+      "created_at": "2024-11-05T15:54:08.302Z",
+      "products": [
+        {
+          "productId": "0c61",
+          "product_name": "PRUEBA DE PRODUCTO",
+          "quantity": 2,
+          "price_per_unit": 23
+        },
+        {
+          "productId": "69ca",
+          "product_name": "PRODUCTO DE PRUEBA 2",
+          "quantity": 2,
+          "price_per_unit": 11
+        }
+      ]
+    },
+    {
+      "id": "5e02",
+      "userId": "9650",
+      "paymentMethodId": "1",
+      "shippingCost": 8.75,
+      "discount": 6.800000000000001,
+      "total_amount": "61.20",
+      "invoiceStatuseId": 2,
+      "created_at": "2024-11-05T15:55:48.586Z",
+      "products": [
+        {
+          "productId": "0c61",
+          "product_name": "PRUEBA DE PRODUCTO",
+          "quantity": 2,
+          "price_per_unit": 23
+        },
+        {
+          "productId": "69ca",
+          "product_name": "PRODUCTO DE PRUEBA 2",
+          "quantity": 2,
+          "price_per_unit": 11
+        }
+      ]
+    },
+    {
+      "id": "00cb",
+      "userId": "9650",
+      "paymentMethodId": "1",
+      "shippingCost": 8.75,
+      "discount": 2.3000000000000003,
+      "total_amount": "20.70",
+      "invoiceStatuseId": 2,
+      "created_at": "2024-11-05T15:56:51.667Z",
+      "products": [
+        {
+          "productId": "0c61",
+          "product_name": "PRUEBA DE PRODUCTO",
+          "quantity": 1,
+          "price_per_unit": 23
+        }
+      ]
+    },
+    {
+      "id": "1e11",
+      "userId": "9650",
+      "paymentMethodId": "1",
+      "shippingCost": 8.75,
+      "discount": 0,
+      "total_amount": "10.00",
+      "invoiceStatuseId": 2,
+      "created_at": "2024-11-05T16:06:09.885Z",
+      "products": [
+        {
+          "productId": "f2a0",
+          "product_name": "PRODUCTO DE PRUEBA 1",
+          "quantity": 1,
+          "price_per_unit": 10
         }
       ]
     }
@@ -234,6 +389,18 @@
       },
       "issuingBank": "Example Bank",
       "status": "active"
+    },
+    {
+      "id": "8537",
+      "userId": "9650",
+      "cardType": "credit",
+      "cardHolderName": "SERGIO",
+      "cardNumber": "12344343413213",
+      "expirationDate": "08/27",
+      "securityCode": "140",
+      "billingAddress": {},
+      "issuingBank": "Example Bank",
+      "status": "active"
     }
   ],
   "users": [
@@ -272,7 +439,7 @@
       "username": "Choster900",
       "email": "16adonaysergio@gmail.com",
       "password": "12345678",
-      "couponId": "2",
+      "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
       "roles": [
         "guest"
@@ -304,7 +471,7 @@
       "id": "9650",
       "name": "customer",
       "username": "customer",
-      "email": "customer@gmail.com",
+      "email": "serujiosaru7890@gmail.com",
       "password": "customer",
       "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",

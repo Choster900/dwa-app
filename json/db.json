@@ -158,6 +158,16 @@
       "isSelled": false,
       "added_at": "2024-10-28T20:30:39.138Z",
       "updated_at": "2024-11-01T20:02:57.337Z"
+    },
+    {
+      "id": "1d52",
+      "quantity": 1,
+      "userId": "9650",
+      "productId": "1",
+      "isSelled": false,
+      "invoiceStatuseId": 1,
+      "added_at": "2024-11-05T16:59:54.975Z",
+      "updated_at": "2024-11-05T16:59:54.975Z"
     }
   ],
   "invoices": [
