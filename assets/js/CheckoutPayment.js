@@ -260,7 +260,7 @@ $(document).ready(function () {
                         contentType: "application/json",
                         data: JSON.stringify(paymentMethodData),
                         success: function () {
-                            alert("Payment method created successfully.");
+                            window.location.href = 'checkout-review.html';
                         },
                         error: function () {
                             alert("Failed to create payment method. Please try again.");

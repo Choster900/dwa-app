@@ -1,0 +1,177 @@
+{
+    "categories": [
+      {
+        "id": "1",
+        "category_name": "Electronics"
+      },
+      {
+        "id": "2",
+        "category_name": "Accessories"
+      },
+      {
+        "id": "3",
+        "category_name": "Home Appliances"
+      }
+    ],
+    "brands": [
+      {
+        "id": "1",
+        "brand_name": "AudioTech"
+      },
+      {
+        "id": "2",
+        "brand_name": "ChargeMaster"
+      },
+      {
+        "id": "3",
+        "brand_name": "ViewPlus"
+      },
+      {
+        "id": "4",
+        "brand_name": "HomeBreeze"
+      },
+      {
+        "id": "5",
+        "brand_name": "PowerTech"
+      }
+    ],
+    "products": [
+      {
+        "id": "1",
+        "product_name": "Wireless Bluetooth Headphones",
+        "product_description": "Noise-cancelling over-ear headphones with long battery life.",
+        "product_price": 59.99,
+        "userId": "1",
+        "available_stock": 150,
+        "categorieId": 1,
+        "brandId": "1",
+        "status": "published",
+        "discount_price": 49.99,
+        "image_url": "https://example.com/images/headphones.jpg",
+        "created_at": "2024-10-23",
+        "updated_at": "2024-10-23"
+      }
+    ],
+    "comments": [
+      {
+        "id": "1",
+        "user": "John Doe",
+        "comment": "Great sound quality and comfortable to wear for long periods.",
+        "rating": 4,
+        "created_at": "2024-10-20",
+        "productId": "1"
+      }
+    ],
+    "shopping_cart": [
+      
+    ],
+    "invoices": [
+      
+     
+    ],
+    "invoiceStatuses": [
+      {
+        "id": 1,
+        "nombre": "pending",
+        "description": "La factura ha sido creada pero está pendiente de verificación o pago."
+      },
+      {
+        "id": 2,
+        "nombre": "approved",
+        "description": "La factura ha sido verificada y aprobada, lista para procesar."
+      },
+      {
+        "id": 3,
+        "nombre": "paid",
+        "description": "El pago de la factura ha sido recibido y confirmado."
+      },
+      {
+        "id": 4,
+        "nombre": "processed",
+        "description": "La factura ha sido procesada y los artículos están listos para su envío."
+      },
+      {
+        "id": 5,
+        "nombre": "shipped",
+        "description": "Los productos de la factura han sido enviados al cliente."
+      },
+      {
+        "id": 6,
+        "nombre": "delivered",
+        "description": "Los productos han sido entregados al cliente."
+      },
+      {
+        "id": 7,
+        "nombre": "completed",
+        "description": "El ciclo de la factura ha sido completado y la transacción está cerrada."
+      },
+      {
+        "id": 8,
+        "nombre": "canceled",
+        "description": "La factura ha sido cancelada, no se procesará."
+      },
+      {
+        "id": 9,
+        "nombre": "refunded",
+        "description": "El importe de la factura ha sido devuelto al cliente."
+      }
+    ],
+    "paymentMethods": [
+      
+    ],
+    "users": [
+      
+   
+    ],
+    "coupons": [
+      {
+        "id": "1",
+        "codigo": "DESCUENTO1",
+        "descuento": 0.1,
+        "tipo": "porcentaje"
+      },
+      {
+        "id": "2",
+        "codigo": "DESCUENTO5",
+        "descuento": 0.5,
+        "tipo": "fijo"
+      }
+    ],
+    "centralAmericaCountries": [
+      {
+        "id": "1",
+        "name": "El Salvador",
+        "average_shipping_cost": 8.5
+      },
+      {
+        "id": "2",
+        "name": "Guatemala",
+        "average_shipping_cost": 9
+      },
+      {
+        "id": "3",
+        "name": "Honduras",
+        "average_shipping_cost": 8.75
+      },
+      {
+        "id": "4",
+        "name": "Nicaragua",
+        "average_shipping_cost": 9.25
+      },
+      {
+        "id": "5",
+        "name": "Costa Rica",
+        "average_shipping_cost": 10
+      },
+      {
+        "id": "6",
+        "name": "Panama",
+        "average_shipping_cost": 10.5
+      },
+      {
+        "id": "7",
+        "name": "Belize",
+        "average_shipping_cost": 9.5
+      }
+    ]
+  }
