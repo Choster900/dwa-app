@@ -29,6 +29,8 @@ const loadUserInvoices = async () => {
 
 // Función para crear una fila de factura
 const createInvoiceRow = (invoice) => {
+    console.log(invoice);
+    
     // Calcular el total sumando el shippingCost y el total_amount, luego restando el descuento
     const totalWithShippingAndDiscount = (parseFloat(invoice.total_amount) + parseFloat(invoice.shippingCost)) - parseFloat(invoice.discount);
 

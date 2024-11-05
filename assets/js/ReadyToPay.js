@@ -29,9 +29,15 @@ $(document).ready(function () {
             const coupon = userData[0]?.coupon || {};
             const shippingCost = userData[0]?.centralAmericaCountrie?.average_shipping_cost || 0;
 
+            const email = userData[0]?.email || 'test@example.com';
+            const phoneNumber = userData[0]?.phoneNumber || '61621431';
+            const username = userData[0]?.username || 'username desconocido';
+
             // Calcular el precio total del carrito
             const totPrice = contentCart.reduce((acc, cart) => {
-                const price = cart.product.discount_price ?? cart.product.product_price;
+                const price = (cart.product.discount_price !== null && cart.product.discount_price !== 0)
+                    ? cart.product.discount_price
+                    : cart.product.product_price;
                 return acc + (price * cart.quantity);
             }, 0);
 
@@ -39,15 +45,15 @@ $(document).ready(function () {
             const totalAmount = (totPrice - descuento).toFixed(2);
 
             // Obtener token de Wompi
-            /*   const { access_token: accessToken } = await $.ajax({
+              const { access_token: accessToken } = await $.ajax({
                   type: "POST",
                   url: "http://localhost:8080/api/wompi/getToken",
                   contentType: "application/x-www-form-urlencoded",
                   dataType: "json"
-              }); */
+              });
 
             // Crear transacción con token
-            /*    const transactionResponse = await $.ajax({
+               const transactionResponse = await $.ajax({
                    type: "POST",
                    url: "http://localhost:8080/api/wompi/createTransaction",
                    headers: { "Authorization": `Bearer ${accessToken}` },
@@ -61,13 +67,13 @@ $(document).ready(function () {
                        },
                        "monto": 0.01,
                        "configuracion": {
-                           "emailsNotificacion": "16adonaysergio@gmail.com",
+                           "emailsNotificacion": email,
                            "urlWebhook": null,
-                           "telefonosNotificacion": "61621431",
+                           "telefonosNotificacion": phoneNumber,
                            "notificarTransaccionCliente": true
                        },
-                       "urlRedirect": "http://localhost:93/payment-status.html",
-                       "nombre": "string",
+                       "urlRedirect": "http://localhost:99/payment-status.html",
+                       "nombre": username,
                        "apellido": "string",
                        "email": "user@example.com",
                        "ciudad": "test",
@@ -77,13 +83,13 @@ $(document).ready(function () {
                        "codigoPostal": "05003",
                        "telefono": "61621431",
                        "datosAdicionales": {
-                           "additionalProp1": "string",
-                           "additionalProp2": "string",
-                           "additionalProp3": "string"
+                           "additionalProp1": "COMPRA HECHA DESDE PROYECTO DE DWA - additionalProp1",
+                           "additionalProp2": "COMPRA HECHA DESDE PROYECTO DE DWA - additionalProp2",
+                           "additionalProp3": "COMPRA HECHA DESDE PROYECTO DE DWA - additionalProp3"
                        }
                    }),
                    dataType: "json"
-               }); */
+               });
 
             // Crear la factura
             const invoiceData = {
@@ -92,13 +98,13 @@ $(document).ready(function () {
                 shippingCost: shippingCost,
                 discount: descuento,
                 total_amount: totalAmount,
-                invoiceStatuseId: 1,
+                invoiceStatuseId: 2,
                 created_at: new Date().toISOString(),
                 products: contentCart.map(cart => ({
                     productId: cart.product.id,
                     product_name: cart.product.product_name,
                     quantity: cart.quantity,
-                    price_per_unit: cart.product.discount_price ?? cart.product.product_price
+                    price_per_unit: (cart.product.discount_price != null && cart.product.discount_price > 0) ? cart.product.discount_price : cart.product.product_price
                 }))
             };
 
@@ -124,7 +130,8 @@ $(document).ready(function () {
             console.log("Productos eliminados del carrito con éxito.");
 
             // Redirigir al usuario
-            window.location.href = transactionResponse.urlCompletarPago3Ds;
+           window.location.href = transactionResponse.urlCompletarPago3Ds;
+            //window.location.href = 'payment-status.html';
 
         } catch (error) {
             console.error("Error en el proceso de pago:", error);

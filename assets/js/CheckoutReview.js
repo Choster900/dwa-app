@@ -28,7 +28,9 @@ $(document).ready(function () {
 
                 const coupon = response[0]?.coupon || {};
                 const totPrice = totalOrder.reduce((acc, cart) => {
-                    const price = cart.product.discount_price !== null ? cart.product.discount_price : cart.product.product_price;
+                    const price = (cart.product.discount_price !== null && cart.product.discount_price !== 0)
+                        ? cart.product.discount_price
+                        : cart.product.product_price;
                     return acc + (price * cart.quantity);
                 }, 0);
 
@@ -335,8 +337,6 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 if (response && response.length > 0) {
-                    alert("alert")
-                    console.log(response);
                     
                     // Si el método de pago existe, lo mostramos
                     displayPaymentMethod(response[0]);
@@ -383,4 +383,26 @@ $(document).ready(function () {
     }
 
     loadPaymentMethod()
+
+    $.ajax({
+        type: "GET",
+        url: `${baseURL}/users/${userId}`, // Endpoint para obtener la información del usuario
+        dataType: "json",
+        success: function(response) {
+            // Extraer la información del usuario
+            const userName = response.name || "N/A";
+            const userPhone = response.phoneNumber || "N/A";
+            const userAddress = `${response.houseNumberAndStreetName || "N/A"}, Suite 600 San Francisco, CA 94107 United States`;
+            
+            // Actualizar el contenido HTML
+            $(".check-review__contact").html(`
+                <p>${userName} <br> Phone: ${userPhone}</p>
+                <span>${userAddress}</span>
+            `);
+        },
+        error: function(error) {
+            console.error("Error fetching user data:", error);
+            // Puedes manejar el error aquí, mostrando un mensaje al usuario si lo deseas
+        }
+    });
 });

@@ -61,11 +61,16 @@ $(document).ready(function () {
                 console.log(response);
 
                 const coupon = response[0]?.coupon || {};
+
                 const totPrice = totalOrder.reduce((acc, cart) => {
-                    const price = cart.product.discount_price !== null ? cart.product.discount_price : cart.product.product_price;
+                    const price = (cart.product.discount_price !== null && cart.product.discount_price !== 0)
+                        ? cart.product.discount_price
+                        : cart.product.product_price;
                     return acc + (price * cart.quantity);
                 }, 0);
-
+                
+                console.log(totPrice);
+                
                 // Mostrar el subtotal antes de aplicar el descuento
                 $('#subtotal-value').text(`$${totPrice.toFixed(2)}`);
 

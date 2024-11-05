@@ -86,7 +86,9 @@ $(document).ready(function () {
 
                 const coupon = response[0]?.coupon || {};
                 const totPrice = totalOrder.reduce((acc, cart) => {
-                    const price = cart.product.discount_price !== null ? cart.product.discount_price : cart.product.product_price;
+                    const price = (cart.product.discount_price !== null && cart.product.discount_price !== 0)
+                        ? cart.product.discount_price
+                        : cart.product.product_price;
                     return acc + (price * cart.quantity);
                 }, 0);
 
