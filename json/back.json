@@ -37,77 +37,152 @@
   ],
   "products": [
     {
-      "id": "1",
-      "product_name": "Wireless Bluetooth Headphones",
-      "product_description": "Noise-cancelling over-ear headphones with long battery life.",
-      "product_price": 59.99,
-      "userId": "1",
-      "available_stock": 150,
-      "categorieId": 1,
+      "id": "2",
+      "product_name": "Smart LED TV 55 inch",
+      "product_description": "Ultra HD Smart TV with built-in streaming apps and voice control.",
+      "product_price": 499.99,
+      "userId": "48a4",
+      "available_stock": 75,
+      "categorieId": "1",
       "brandId": "1",
       "status": "published",
-      "discount_price": 49.99,
-      "image_url": "https://example.com/images/headphones.jpg",
-      "created_at": "2024-10-23",
-      "updated_at": "2024-10-23"
+      "discount_price": 449.99,
+      "image_url": "https://example.com/images/smart-tv.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
     },
     {
-      "id": "0c61",
-      "product_name": "PRUEBA DE PRODUCTO",
-      "product_description": "xd",
-      "product_price": 150,
-      "userId": "7cf1",
-      "available_stock": "156",
-      "categorieId": 2,
+      "id": "3",
+      "product_name": "Portable Bluetooth Speaker",
+      "product_description": "Water-resistant Bluetooth speaker with powerful sound.",
+      "product_price": 79.99,
+      "userId": "48a4",
+      "available_stock": 120,
+      "categorieId": "1",
+      "brandId": "2",
+      "status": "published",
+      "discount_price": 69.99,
+      "image_url": "https://example.com/images/bluetooth-speaker.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
+    },
+    {
+      "id": "4",
+      "product_name": "Wireless Charging Pad",
+      "product_description": "Fast wireless charging pad compatible with most smartphones.",
+      "product_price": 29.99,
+      "userId": "48a4",
+      "available_stock": 200,
+      "categorieId": "2",
+      "brandId": "5",
+      "status": "published",
+      "discount_price": null,
+      "image_url": "https://example.com/images/wireless-charger.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
+    },
+    {
+      "id": "5",
+      "product_name": "Air Fryer",
+      "product_description": "Healthy air fryer for quick and easy cooking with less oil.",
+      "product_price": 89.99,
+      "userId": "48a4",
+      "available_stock": 50,
+      "categorieId": "3",
       "brandId": "4",
       "status": "published",
-      "discount_price": 23,
-      "image_url": "https://example.com/images/headphones.jpg",
-      "updated_at": "2024-11-02",
-      "created_at": "2024-11-02"
-    },
-    {
-      "id": "2a12",
-      "product_name": "NUEVO PRODUCTO DE PRUEBA",
-      "product_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "product_price": 150,
-      "userId": "7cf1",
-      "available_stock": "12",
-      "categorieId": 1,
-      "brandId": "3",
-      "status": "published",
-      "discount_price": 140,
-      "image_url": "https://example.com/images/headphones.jpg",
+      "discount_price": 79.99,
+      "image_url": "https://example.com/images/air-fryer.jpg",
       "created_at": "2024-11-05",
       "updated_at": "2024-11-05"
     },
     {
-      "id": "f2a0",
-      "product_name": "PRODUCTO DE PRUEBA 1",
-      "product_description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur",
-      "product_price": 10,
-      "userId": "7cf1",
-      "available_stock": "7",
-      "categorieId": 2,
+      "id": "6",
+      "product_name": "Smart Home Security Camera",
+      "product_description": "Wireless security camera with night vision and two-way audio.",
+      "product_price": 99.99,
+      "userId": "48a4",
+      "available_stock": 60,
+      "categorieId": "1",
       "brandId": "3",
       "status": "published",
-      "discount_price": 0,
-      "image_url": "https://example.com/images/headphones.jpg",
+      "discount_price": 89.99,
+      "image_url": "https://example.com/images/security-camera.jpg",
       "created_at": "2024-11-05",
       "updated_at": "2024-11-05"
     },
     {
-      "id": "69ca",
-      "product_name": "PRODUCTO DE PRUEBA 2",
-      "product_description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur",
-      "product_price": 11,
-      "userId": "7cf1",
-      "available_stock": "8",
-      "categorieId": 2,
+      "id": "7",
+      "product_name": "Smart Thermostat",
+      "product_description": "Wi-Fi enabled thermostat to control home temperature remotely.",
+      "product_price": 149.99,
+      "userId": "48a4",
+      "available_stock": 40,
+      "categorieId": "3",
+      "brandId": "4",
+      "status": "published",
+      "discount_price": null,
+      "image_url": "https://example.com/images/smart-thermostat.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
+    },
+    {
+      "id": "8",
+      "product_name": "USB-C Hub",
+      "product_description": "Multi-port USB-C hub with HDMI, USB-A, and SD card reader.",
+      "product_price": 39.99,
+      "userId": "48a4",
+      "available_stock": 100,
+      "categorieId": "2",
+      "brandId": "5",
+      "status": "published",
+      "discount_price": 34.99,
+      "image_url": "https://example.com/images/usb-c-hub.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
+    },
+    {
+      "id": "9",
+      "product_name": "Noise Cancelling Earbuds",
+      "product_description": "Compact earbuds with noise cancellation and rich sound quality.",
+      "product_price": 89.99,
+      "userId": "48a4",
+      "available_stock": 85,
+      "categorieId": "1",
+      "brandId": "1",
+      "status": "published",
+      "discount_price": 79.99,
+      "image_url": "https://example.com/images/noise-cancelling-earbuds.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
+    },
+    {
+      "id": "10",
+      "product_name": "Electric Kettle",
+      "product_description": "Rapid boiling electric kettle with auto shut-off feature.",
+      "product_price": 39.99,
+      "userId": "48a4",
+      "available_stock": 90,
+      "categorieId": "3",
+      "brandId": "4",
+      "status": "published",
+      "discount_price": null,
+      "image_url": "https://example.com/images/electric-kettle.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
+    },
+    {
+      "id": "11",
+      "product_name": "Smartwatch with Fitness Tracker",
+      "product_description": "Stylish smartwatch with heart rate monitor and fitness tracking.",
+      "product_price": 199.99,
+      "userId": "48a4",
+      "available_stock": 70,
+      "categorieId": "1",
       "brandId": "3",
       "status": "published",
-      "discount_price": 0,
-      "image_url": "https://example.com/images/headphones.jpg",
+      "discount_price": 179.99,
+      "image_url": "https://example.com/images/smartwatch.jpg",
       "created_at": "2024-11-05",
       "updated_at": "2024-11-05"
     }
@@ -122,205 +197,29 @@
       "productId": "1"
     }
   ],
-  "shopping_cart": [
-    {
-      "quantity": 1,
-      "userId": "1",
-      "productId": "1",
-      "isSelled": false,
-      "added_at": "2024-10-24T14:30:00Z",
-      "updated_at": "2024-10-28T20:20:55.063Z",
-      "id": "1"
-    },
-    {
-      "quantity": 2,
-      "userId": "1",
-      "productId": "2",
-      "isSelled": true,
-      "added_at": "2024-10-24T14:30:00Z",
-      "updated_at": "2024-10-24T14:30:00Z",
-      "id": "2"
-    },
-    {
-      "id": "3",
-      "userId": "2",
-      "productId": "2",
-      "isSelled": true,
-      "quantity": 3,
-      "added_at": "2024-10-24T14:31:00Z",
-      "updated_at": "2024-10-24T14:31:00Z"
-    },
-    {
-      "id": "ce38",
-      "quantity": 4,
-      "userId": "79df",
-      "productId": "8",
-      "isSelled": false,
-      "added_at": "2024-10-28T20:30:39.138Z",
-      "updated_at": "2024-11-01T20:02:57.337Z"
-    }
-  ],
+  "shopping_cart": [],
   "invoices": [
     {
-      "id": "a945",
-      "userId": "1",
-      "userSeller": "",
+      "id": "0dce",
+      "userId": "e736",
+      "paymentMethodId": "1",
       "shippingCost": 8.5,
       "discount": 0,
-      "paymentMethodId": "1",
-      "total_amount": 159.97,
+      "total_amount": "340.00",
       "invoiceStatuseId": 2,
-      "created_at": "2024-10-24T15:00:00Z",
+      "created_at": "2024-11-05T17:44:34.793Z",
       "products": [
         {
-          "productId": "1",
-          "product_name": "Wireless Bluetooth Headphones",
+          "productId": "1cd9",
+          "product_name": "PRUEBA - CON DESCUENTO - PRECIO 100 . DESCUENTO 0",
           "quantity": 2,
-          "price_per_unit": 59.99
-        }
-      ]
-    },
-    {
-      "id": "f43e",
-      "userId": "9650",
-      "paymentMethodId": "1",
-      "total_amount": "31.75",
-      "discount": 0,
-      "shippingCost": 8.5,
-      "invoiceStatuseId": 2,
-      "created_at": "2024-11-02T23:41:56.599Z",
-      "products": [
-        {
-          "productId": "0c61",
-          "product_name": "PRUEBA DE PRODUCTO",
-          "quantity": 2,
-          "price_per_unit": 23
-        }
-      ]
-    },
-    {
-      "id": "4cc5",
-      "userId": "9650",
-      "paymentMethodId": "1",
-      "discount": 0,
-      "total_amount": "327.70",
-      "shippingCost": 8.5,
-      "invoiceStatuseId": 2,
-      "created_at": "2024-11-03T00:54:49.960Z",
-      "products": [
-        {
-          "productId": "0c61",
-          "product_name": "PRUEBA DE PRODUCTO",
-          "quantity": 3,
-          "price_per_unit": 23
+          "price_per_unit": 100
         },
         {
-          "productId": "1",
-          "product_name": "Wireless Bluetooth Headphones",
-          "quantity": 5,
-          "price_per_unit": 49.99
-        }
-      ]
-    },
-    {
-      "id": "0d3d",
-      "userId": "9650",
-      "paymentMethodId": "1",
-      "shippingCost": 8.75,
-      "discount": 0,
-      "total_amount": "420.00",
-      "invoiceStatuseId": 2,
-      "created_at": "2024-11-05T14:48:52.272Z",
-      "products": [
-        {
-          "productId": "2a12",
-          "product_name": "NUEVO PRODUCTO DE PRUEBA",
-          "quantity": 3,
+          "productId": "fcae",
+          "product_name": "PRODUCTO DE PRUEBA - CON DESCUENTO - PRECIO 150 . DESCUENTO 140",
+          "quantity": 1,
           "price_per_unit": 140
-        }
-      ]
-    },
-    {
-      "id": "b219",
-      "userId": "9650",
-      "paymentMethodId": "1",
-      "shippingCost": 8.75,
-      "discount": 6.800000000000001,
-      "total_amount": "61.20",
-      "invoiceStatuseId": 2,
-      "created_at": "2024-11-05T15:54:08.302Z",
-      "products": [
-        {
-          "productId": "0c61",
-          "product_name": "PRUEBA DE PRODUCTO",
-          "quantity": 2,
-          "price_per_unit": 23
-        },
-        {
-          "productId": "69ca",
-          "product_name": "PRODUCTO DE PRUEBA 2",
-          "quantity": 2,
-          "price_per_unit": 11
-        }
-      ]
-    },
-    {
-      "id": "5e02",
-      "userId": "9650",
-      "paymentMethodId": "1",
-      "shippingCost": 8.75,
-      "discount": 6.800000000000001,
-      "total_amount": "61.20",
-      "invoiceStatuseId": 2,
-      "created_at": "2024-11-05T15:55:48.586Z",
-      "products": [
-        {
-          "productId": "0c61",
-          "product_name": "PRUEBA DE PRODUCTO",
-          "quantity": 2,
-          "price_per_unit": 23
-        },
-        {
-          "productId": "69ca",
-          "product_name": "PRODUCTO DE PRUEBA 2",
-          "quantity": 2,
-          "price_per_unit": 11
-        }
-      ]
-    },
-    {
-      "id": "00cb",
-      "userId": "9650",
-      "paymentMethodId": "1",
-      "shippingCost": 8.75,
-      "discount": 2.3000000000000003,
-      "total_amount": "20.70",
-      "invoiceStatuseId": 2,
-      "created_at": "2024-11-05T15:56:51.667Z",
-      "products": [
-        {
-          "productId": "0c61",
-          "product_name": "PRUEBA DE PRODUCTO",
-          "quantity": 1,
-          "price_per_unit": 23
-        }
-      ]
-    },
-    {
-      "id": "1e11",
-      "userId": "9650",
-      "paymentMethodId": "1",
-      "shippingCost": 8.75,
-      "discount": 0,
-      "total_amount": "10.00",
-      "invoiceStatuseId": 2,
-      "created_at": "2024-11-05T16:06:09.885Z",
-      "products": [
-        {
-          "productId": "f2a0",
-          "product_name": "PRODUCTO DE PRUEBA 1",
-          "quantity": 1,
-          "price_per_unit": 10
         }
       ]
     }
@@ -372,116 +271,36 @@
       "description": "El importe de la factura ha sido devuelto al cliente."
     }
   ],
-  "paymentMethods": [
-    {
-      "id": "1",
-      "userId": "79df",
-      "cardType": "credit",
-      "cardHolderName": "John Doe",
-      "cardNumber": "4111111111111111",
-      "expirationDate": "12/26",
-      "securityCode": "123",
-      "billingAddress": {
-        "street": "Main St.",
-        "city": "San Francisco",
-        "postalCode": "94103",
-        "country": "USA"
-      },
-      "issuingBank": "Example Bank",
-      "status": "active"
-    },
-    {
-      "id": "8537",
-      "userId": "9650",
-      "cardType": "credit",
-      "cardHolderName": "SERGIO",
-      "cardNumber": "12344343413213",
-      "expirationDate": "08/27",
-      "securityCode": "140",
-      "billingAddress": {},
-      "issuingBank": "Example Bank",
-      "status": "active"
-    }
-  ],
+  "paymentMethods": [],
   "users": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "username": "Choster901",
-      "email": "john.doe@example.com",
-      "password": "12345678",
-      "couponId": "1",
-      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-      "roles": [
-        "admin",
-        "seller"
-      ],
-      "created_at": "2024-10-23T10:00:00Z",
-      "updated_at": "2024-10-23T12:00:00Z"
-    },
-    {
-      "id": "2",
-      "name": "Jane Smith",
-      "username": "Choster902",
-      "email": "jane.smith@example.com",
-      "password": "hashed_password_2",
-      "couponId": null,
-      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ8",
-      "roles": [
-        "customer"
-      ],
-      "created_at": "2024-10-23T10:30:00Z",
-      "updated_at": "2024-10-23T12:30:00Z"
-    },
-    {
-      "id": "79df",
+      "id": "e736",
       "name": "SERGIO ADONAY LOPEZ MEJIA",
-      "username": "Choster900",
-      "email": "16adonaysergio@gmail.com",
-      "password": "12345678",
+      "username": "Customer",
+      "email": "customer@gmail.com",
+      "password": "customer",
       "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
-      "roles": [
-        "guest"
-      ],
+      "roles": ["customer"],
       "centralAmericaCountrieId": "1",
-      "phoneNumber": "+503 6162-1431",
-      "houseNumberAndStreetName": "123 Example Street",
-      "created_at": "2024-10-28T17:09:46.849Z",
+      "phoneNumber": "61621431",
+      "houseNumberAndStreetName": "SANTA TECLA . CALLE PANAMERICANA",
+      "created_at": "2024-11-05T17:29:14.854Z",
       "updated_at": null
     },
     {
-      "id": "7cf1",
-      "name": "Sergio Lopez",
-      "username": "SELLER1",
+      "id": "48a4",
+      "name": "NOMBRE DE PRUEBA PARA VENDEDOR",
+      "username": "VENDEDOR",
       "email": "seller@gmail.com",
       "password": "seller",
       "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
-      "roles": [
-        "seller"
-      ],
-      "centralAmericaCountrieId": "1",
-      "phoneNumber": "70946223",
-      "houseNumberAndStreetName": "123 Example Street",
-      "created_at": "2024-11-02T18:08:15.633Z",
-      "updated_at": null
-    },
-    {
-      "id": "9650",
-      "name": "customer",
-      "username": "customer",
-      "email": "serujiosaru7890@gmail.com",
-      "password": "customer",
-      "couponId": null,
-      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
-      "roles": [
-        "customer"
-      ],
-      "centralAmericaCountrieId": "3",
-      "phoneNumber": "61621431",
-      "houseNumberAndStreetName": "tesserseres",
-      "created_at": "2024-11-02T23:16:23.248Z",
+      "roles": ["seller"],
+      "centralAmericaCountrieId": "",
+      "phoneNumber": "",
+      "houseNumberAndStreetName": "",
+      "created_at": "2024-11-05T17:30:51.838Z",
       "updated_at": null
     }
   ],
@@ -496,12 +315,6 @@
       "id": "2",
       "codigo": "DESCUENTO5",
       "descuento": 0.5,
-      "tipo": "fijo"
-    },
-    {
-      "id": "3",
-      "codigo": "DESCUENTO25",
-      "descuento": 0.25,
       "tipo": "fijo"
     }
   ],
