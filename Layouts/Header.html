@@ -79,7 +79,7 @@
             <div class="hexadash-top-menu position-relative">
                <ul class="d-flex align-items-center flex-wrap">
 
-                  <li class="has-subMenu">
+                  <li class="has-subMenu hidden-session-component">
                      
                      <a href="#" class="">eCommerce</a>
                      <ul class="subMenu">
@@ -90,14 +90,14 @@
                                  <a href="cart.html" class="">Cart</a>
                               </li>
                           
-                              <li>
+                             <!--  <li>
                                  <a href="invoice.html" class="">Invoices</a>
-                              </li>
+                              </li> -->
                            </ul>
                         </li>
                      </ul>
                   </li>
-                  <li class="has-subMenu">
+                  <li class="has-subMenu hidden-session-component component-seller ">
                      
                      <a href="#" class="">Seller</a>
                      <ul class="subMenu">
@@ -442,7 +442,7 @@
                                  <a id="profile-button" href="">
                                     <i class="uil uil-user"></i> Profile</a>
                               </li>
-                              <li>
+                              <li class="hidden-session-component component-customer">
                                  <a href="bills.html">
                                     <i class="uil uil-key-skeleton"></i>Bills</a>
                               </li>
@@ -476,6 +476,7 @@
 </header>
 <!-- <script src="../config.js"></script>
  -->
+<script src="../assets/js/HandleSessionComponent.js"></script>
 <script>
    function getCookie(name) {
       const value = `; ${document.cookie}`;

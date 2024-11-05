@@ -5,7 +5,7 @@ $(document).ready(function () {
     function obtenerProductosFiltradosPorPrecio(minPrecio, maxPrecio) {
         $.ajax({
             type: "GET",
-            url: baseURL + "/products",
+            url: baseURL + "/products?status=published",
             dataType: "json",
             success: function (products) {
                 // Limpiar lista de productos antes de mostrar los nuevos

@@ -39,27 +39,33 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: baseURL + "/paymentMethods?status=active&userId=" + userId,
+        url: `${baseURL}/paymentMethods?status=active&userId=${userId}`,
         dataType: "json",
         success: function (response) {
-            const paymentMethod = response[0];
+            if (response && response.length > 0) {
+                const { cardNumber, cardHolderName, expirationDate, securityCode } = response[0];
 
-            // Populate the form with data from the payment method
-            $("#payment1").val(paymentMethod.cardNumber);
-            $("#payment2").val(paymentMethod.cardHolderName);
+                // Populate the form with data from the payment method
+                $("#payment1").val(cardNumber);
+                $("#payment2").val(cardHolderName);
 
-            // Format month and year to match select values
-            const expirationParts = paymentMethod.expirationDate.split("/");
-            const month = expirationParts[0].padStart(2, '0'); // Ensure month is 2 digits
-            const year = "20" + expirationParts[1]; // Year in YYYY format
+                // Format month and year to match select values
+                const [month, yearSuffix] = expirationDate.split("/").map(part => part.padStart(2, '0'));
+                const year = `20${yearSuffix}`;
 
-            // Set the values in the select elements
-            $("#month").val(month).trigger('change');
-            $("#year").val(year).trigger('change');
-            $("#payment5").val(paymentMethod.securityCode);
-
+                // Set the values in the select elements
+                $("#month").val(month).trigger('change');
+                $("#year").val(year).trigger('change');
+                $("#payment5").val(securityCode);
+            } else {
+                console.warn("No active payment methods found for the user.");
+            }
+        },
+        error: function () {
+            console.error("Failed to retrieve payment methods.");
         }
     });
+
 
     $.ajax({
         type: "GET",
@@ -98,6 +104,12 @@ $(document).ready(function () {
                     $("#shipping-charge").text("$" + shippingCost.toFixed(2));
                     $("#total-total").text("$" + (parseFloat(totPrice) - parseFloat(descuento) + parseFloat(shippingCost)).toFixed(2));
                 } else {
+                    $("#discount-price").text(`- $${(descuento).toFixed(2)}`);
+                    $("#discount-div").show(); // Asegúrate de mostrar el div del descuento
+                    $("#percent-discount").text(parseFloat(coupon.descuento) * 100 + "% OFF");
+                    $("#coupon-code").val(coupon.codigo);
+                    $("#shipping-charge").text("$" + shippingCost.toFixed(2));
+                    $("#total-total").text("$" + (parseFloat(totPrice) + parseFloat(shippingCost)).toFixed(2));
                     $("#discount-div").hide(); // Ocultar si no hay descuento
                 }
                 //recalcularTotal()
@@ -160,6 +172,106 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    $(document).on("click", "#btn-save-next", function () {
+        // Captura los valores de cada campo del formulario
+        const cardNumber = $("#payment1").val().trim();
+        const cardHolderName = $("#payment2").val().trim();
+        const month = $("#month").val();
+        const year = $("#year").val();
+        const securityCode = $("#payment5").val().trim();
+
+        // Verificación de campos requeridos
+        let isValid = true;
+        if (!cardNumber) {
+            alert("Please enter your card number.");
+            isValid = false;
+        }
+        if (!cardHolderName) {
+            alert("Please enter the name on the card.");
+            isValid = false;
+        }
+        if (!month) {
+            alert("Please select the expiration month.");
+            isValid = false;
+        }
+        if (!year) {
+            alert("Please select the expiration year.");
+            isValid = false;
+        }
+        if (!securityCode) {
+            alert("Please enter the CVV code.");
+            isValid = false;
+        }
+
+        // Si algún campo es inválido, detener la ejecución
+        if (!isValid) {
+            return;
+        }
+
+        // Datos para enviar
+        const paymentMethodData = {
+            userId: userId,
+            cardType: "credit",
+            cardHolderName: cardHolderName,
+            cardNumber: cardNumber,
+            expirationDate: `${month}/${year.slice(-2)}`,  // Formatea el mes/año
+            securityCode: securityCode,
+            billingAddress: {
+                street: $("#billing-street").val(),
+                city: $("#billing-city").val(),
+                postalCode: $("#billing-postalCode").val(),
+                country: $("#billing-country").val()
+            },
+            issuingBank: "Example Bank",
+            status: "active"
+        };
+
+        // Verificación y envío de solicitud GET para decidir si hacer POST o PATCH
+        $.ajax({
+            type: "GET",
+            url: `${baseURL}/paymentMethods?userId=${userId}&status=active`,
+            dataType: "json",
+            success: function (response) {
+                if (response.length > 0) {
+                    const paymentMethodId = response[0].id;
+                    $.ajax({
+                        type: "PATCH",
+                        url: `${baseURL}/paymentMethods/${paymentMethodId}`,
+                        contentType: "application/json",
+                        data: JSON.stringify(paymentMethodData),
+                        success: function () {
+                            //alert("Payment method updated successfully.");
+
+                            window.location.href = 'checkout-review.html';
+
+                        },
+                        error: function () {
+                            alert("Failed to update payment method. Please try again.");
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: `${baseURL}/paymentMethods`,
+                        contentType: "application/json",
+                        data: JSON.stringify(paymentMethodData),
+                        success: function () {
+                            alert("Payment method created successfully.");
+                        },
+                        error: function () {
+                            alert("Failed to create payment method. Please try again.");
+                        }
+                    });
+                }
+            },
+            error: function () {
+                alert("Failed to retrieve payment methods. Please try again.");
+            }
+        });
+    });
+
 
 
 });

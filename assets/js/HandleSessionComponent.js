@@ -19,6 +19,35 @@ $(document).ready(function () {
                 } else {
                     console.error('No user found with the provided ID.');
                 }
+
+                // Ocultar todos los componentes específicos de roles al inicio
+                $(".component-seller, .component-customer, .component-admin").hide();
+
+                // Supongamos que `response.roles` es un array de roles del usuario
+                const roles = response.roles;
+
+                // Definir un objeto para almacenar la relación entre roles y componentes
+                const roleComponents = {
+                    'seller': '.component-seller',
+                    'customer': '.component-customer',
+                    'admin': '.component-admin'
+                };
+
+                // Recorrer los roles del usuario y mostrar los componentes según los roles asignados
+                roles.forEach(role => {
+                    const componentClass = roleComponents[role];
+                    if (componentClass) {
+                        $(componentClass).show();
+                    }
+                });
+
+                // Ejemplo adicional: ocultar componentes específicos si el usuario es solo "admin"
+                if (roles.includes('admin') && roles.length === 1) {
+                    // Ocultar componentes específicos si el usuario tiene solo el rol 'admin'
+                    $(".component-seller, .component-customer").hide();
+                }
+
+
             },
             error: function () {
                 console.error('Error occurred while trying to retrieve the user.');

@@ -81,11 +81,7 @@ $(document).ready(function () {
                             </td>
                             <td>
                                 <ul class="orderDatatable_actions mb-0 d-flex flex-wrap">
-                                    <li>
-                                        <a href="#" class="view" data-id="${product.id}">
-                                            <i class="uil uil-eye"></i>
-                                        </a>
-                                    </li>
+                                   
                                     <li>
                                         <a href="./product.html?productId=${product.id}" class="edit" data-id="${product.id}">
                                             <i class="uil uil-edit"></i>

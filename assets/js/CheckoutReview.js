@@ -327,4 +327,60 @@ $(document).ready(function () {
         actualizarSubtotal(cartItemId, quantity, productPrice);
         actualizarCarrito(cartItemId, quantity);
     });
+
+    function loadPaymentMethod() {
+        $.ajax({
+            type: "GET",
+            url: baseURL + "/paymentMethods?status=active&userId=" + userId,
+            dataType: "json",
+            success: function (response) {
+                if (response && response.length > 0) {
+                    alert("alert")
+                    console.log(response);
+                    
+                    // Si el método de pago existe, lo mostramos
+                    displayPaymentMethod(response[0]);
+                } else {
+                    // Si no existe, mostramos el botón para agregar uno nuevo
+                    showAddCardButton();
+                }
+            },
+            error: function () {
+                console.error("Error al obtener el método de pago.");
+            }
+        });
+    }
+
+    // Mostrar el método de pago en el contenedor
+    function displayPaymentMethod(paymentMethod) {
+        const cardEnding = paymentMethod.cardNumber.slice(-4);
+
+        const paymentHtml = `
+            <div class="d-flex mb-20 align-items-center">
+                <div class="radio-theme-default custom-radio me-2">
+                    <input class="radio" type="radio" name="radio-vertical2" value="0" id="radio-vl6">
+                    <label for="radio-vl6">
+                        <span class="radio-text"></span>
+                    </label>
+                </div>
+                <span class="crc__method">
+                    <img src="img/ms.png" alt="img"> •••• •••• •••• ${cardEnding}
+                </span>
+            </div>
+        `;
+
+        $("#payment-method-container").html(paymentHtml);
+    }
+
+    // Mostrar botón para agregar una nueva tarjeta si no hay método de pago
+    function showAddCardButton() {
+        const addCardHtml = `
+            <button type="submit" class="border-0 crc__title-btn shadow-none bg-transparent color-info content-center fs-13 fw-500 p-0">
+                <img class="svg" src="img/svg/plus.svg" alt="">Add new card
+            </button>
+        `;
+        $("#payment-method-container").html(addCardHtml);
+    }
+
+    loadPaymentMethod()
 });

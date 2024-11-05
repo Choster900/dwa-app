@@ -19,6 +19,8 @@ const loadInvoiceStatuses = async () => {
         // Agrega el elemento "All" primero
         statusContainer.append(createStatusTab('All', 'ap-overview', true));
 
+        console.log(statuses);
+        
         // Recorre cada estado y crea un elemento de navegación
         statuses.forEach(status => {
             statusContainer.append(createStatusTab(status.nombre, status.nombre.toLowerCase()));

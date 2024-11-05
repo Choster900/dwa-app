@@ -43,7 +43,7 @@
       "product_price": 59.99,
       "userId": "1",
       "available_stock": 150,
-      "category": 1,
+      "categorieId": 1,
       "brandId": "1",
       "status": "published",
       "discount_price": 49.99,
@@ -65,6 +65,21 @@
       "image_url": "https://example.com/images/headphones.jpg",
       "updated_at": "2024-11-02",
       "created_at": "2024-11-02"
+    },
+    {
+      "id": "2a12",
+      "product_name": "NUEVO PRODUCTO DE PRUEBA",
+      "product_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "product_price": 150,
+      "userId": "7cf1",
+      "available_stock": "12",
+      "categorieId": 1,
+      "brandId": "3",
+      "status": "published",
+      "discount_price": 140,
+      "image_url": "https://example.com/images/headphones.jpg",
+      "created_at": "2024-11-05",
+      "updated_at": "2024-11-05"
     }
   ],
   "comments": [
@@ -160,6 +175,7 @@
       "discount": 0,
       "total_amount": "327.70",
       "shippingCost": 8.5,
+      "invoiceStatuseId": 1,
       "created_at": "2024-11-03T00:54:49.960Z",
       "products": [
         {
@@ -173,6 +189,24 @@
           "product_name": "Wireless Bluetooth Headphones",
           "quantity": 5,
           "price_per_unit": 49.99
+        }
+      ]
+    },
+    {
+      "id": "0d3d",
+      "userId": "9650",
+      "paymentMethodId": "1",
+      "shippingCost": 8.75,
+      "discount": 0,
+      "total_amount": "420.00",
+      "invoiceStatuseId": 1,
+      "created_at": "2024-11-05T14:48:52.272Z",
+      "products": [
+        {
+          "productId": "2a12",
+          "product_name": "NUEVO PRODUCTO DE PRUEBA",
+          "quantity": 3,
+          "price_per_unit": 140
         }
       ]
     }
@@ -241,6 +275,18 @@
       },
       "issuingBank": "Example Bank",
       "status": "active"
+    },
+    {
+      "id": "8537",
+      "userId": "9650",
+      "cardType": "credit",
+      "cardHolderName": "SERGIO",
+      "cardNumber": "12344343413213",
+      "expirationDate": "08/27",
+      "securityCode": "140",
+      "billingAddress": {},
+      "issuingBank": "Example Bank",
+      "status": "active"
     }
   ],
   "users": [
@@ -279,7 +325,7 @@
       "username": "Choster900",
       "email": "16adonaysergio@gmail.com",
       "password": "12345678",
-      "couponId": "2",
+      "couponId": null,
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ6",
       "roles": [
         "guest"
